@@ -6,37 +6,37 @@ export default function MenuServico() {
             <ul className="flex flex-wrap justify-center gap-2">
                 <li className="lg:flex-1">
                     <Link href={'/'} className="flex justify-center items-center">
-                        <img src="/menuServico/portal-transparencia.png" alt="" className="xl:w-[160px] rounded-md" />
+                        <img src="/menuServico/portal-transparencia.png" alt="" className="xl:w-[160px] rounded-md shadow-md" />
                     </Link>
                 </li>
                 <li className="lg:flex-1">
                     <Link href={'/'} className="flex justify-center items-center">
-                        <img src="/menuServico/processos_licitatorios.png" alt="" className="xl:w-[160px] rounded-md border" />
+                        <img src="/menuServico/processos_licitatorios.png" alt="" className="xl:w-[160px] rounded-md shadow-md" />
                     </Link>
                 </li>
                 <li className="lg:flex-1">
                     <Link href={'/'} className="flex justify-center items-center">
-                        <img src="/menuServico/atendimento_cidadao.png" alt="" className="xl:w-[160px] rounded-md border" />
+                        <img src="/menuServico/atendimento_cidadao.png" alt="" className="xl:w-[160px] rounded-md shadow-md" />
                     </Link>
                 </li>
                 <li className="lg:flex-1">
                     <Link href={'/'} className="flex justify-center items-center">
-                        <img src="/menuServico/protocolo_internet.png" alt="" className="xl:w-[160px] rounded-md border" />
+                        <img src="/menuServico/protocolo_internet.png" alt="" className="xl:w-[160px] rounded-md shadow-md" />
                     </Link>
                 </li>
                 <li className="lg:flex-1">
                     <Link href={'/'} className="flex justify-center items-center">
-                        <img src="/menuServico/declaracao_issqn.png" alt="" className="xl:w-[160px] rounded-md border" />
+                        <img src="/menuServico/declaracao_issqn.png" alt="" className="xl:w-[160px] rounded-md shadow-md" />
                     </Link>
                 </li>
                 <li className="lg:flex-1">
                     <Link href={'/'} className="flex justify-center items-center">
-                        <img src="/menuServico/ouvidoria_municipal.png" alt="" className="xl:w-[160px] rounded-md border" />
+                        <img src="/menuServico/ouvidoria_municipal.png" alt="" className="xl:w-[160px] rounded-md shadow-md" />
                     </Link>
                 </li>
                 <li className="lg:flex-1">
                     <Link href={'/'} className="flex justify-center items-center">
-                        <img src="/menuServico/portal_nfse.png" alt="" className="xl:w-[160px] rounded-md border" />
+                        <img src="/menuServico/portal_nfse.png" alt="" className="xl:w-[160px] rounded-md border shadow-md" />
                     </Link>
                 </li>
             </ul>

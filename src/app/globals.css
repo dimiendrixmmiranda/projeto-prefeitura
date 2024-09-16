@@ -6,7 +6,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  --verde: #47B479
+  --verde: #47B479;
+  --verde-medio: #2e8858;
+  --verde-escuro: #004225;
+  --scrollbar-track: #073f28;
+  --scrollbar-thumb: #7fe0b8;
+  --cinza-claro: #dadddf;
+  --cinza-medio: #c1c5c7;
+  --cinza-escuro: #686a6b;
+  --marrom: #AC1B1B;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,9 +39,299 @@ body {
   }
 }
 
-.card {
+/* COMEÇO MENUCABECALHO */
+.menuCabecalho {
+  display: none;
+}
+
+.menuCabecalho>li {
+  border-radius: 6px 6px 0 0;
+  transition: .6s ease;
+}
+
+.menuCabecalho>li:hover {
+  background-color: white;
+  color: var(--verde);
+}
+
+.menuCabecalho>li:hover p span {
+  rotate: -90deg;
+  transition: .6s ease;
+}
+
+.menuCabecalho>li:hover ul {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  max-height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.menuCabecalho>li:hover ul::-webkit-scrollbar {
+  width: 3px;
+}
+
+.menuCabecalho>li:hover ul::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+}
+
+.menuCabecalho>li:hover ul::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+}
+
+.menuCabecalho>li ul li {
+  background-color: var(--verde-medio);
+  color: white;
+  line-height: 20px;
+  border-bottom: solid 1px white;
+  text-align: center;
+}
+
+.menuCabecalho>li ul li:hover {
+  background-color: var(--verde-escuro);
+  transition: .6s ease;
+}
+
+/* FIM MENUCABECALHO */
+
+/* COMEÇO BANNER */
+.banner {
+  display: grid;
+  max-width: 95%;
+  margin: 0 auto;
+  gap: .5em;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto repeat(2, 90px);
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.banner li {
+  margin: 0 auto;
+}
+
+.banner li:nth-child(3) {
+  grid-row: 2/4;
+}
+/* FINAL BANNER */
+
+/* COMEÇO SWIPPER ANIVERSARIANTES */
+.aniversariantes .swiper-button-prev, .aniversariantes .swiper-button-next{
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.swiper-slider {
+  box-shadow: 0 0 4px 2px black !important;
+}
+
+.p-accordion-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-accordion {
+  background-color: red;
+  max-height: 90% !important;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.cabecalho .p-menubar {
+  padding: 0;
+  background-color: transparent;
+}
+
+.cabecalho .p-menubar .p-menuitem-link {
+  padding: .5em;
+  font-size: .85em;
+  font-weight: bold;
+}
+
+.cabecalho .p-menubar .p-submenu-list {
+  max-width: 120px;
+  box-shadow: 0 0 1px .5px black;
+}
+
+.cabecalho .p-submenu-list .p-menuitem-content {
+  border-bottom: solid 1px black;
+}
+
+
+.cabecalho .p-menubar .p-menuitem-text {
+  line-height: 1.2;
+  color: white;
+}
+
+.cabecalho .p-menuitem-active .p-menuitem-text {
+  color: var(--verde);
+}
+
+.cabecalho .p-menuitem-content:hover {
+  background-color: white;
+  color: var(--verde) !important;
+}
+
+.cabecalho .p-menuitem-content:hover .p-menuitem-text {
+  color: var(--verde) !important;
+}
+
+.cabecalho .p-submenu-list .p-menuitem-content:hover {
+  background-color: var(--cinza-claro);
+}
+
+.noticias-card ul {
+  padding-bottom: 4em;
+}
+
+.noticias-card .card {
   display: grid;
   grid-template-columns: 45% 1fr;
-  border-radius: 8px;
+}
+
+.noticias-card .card div {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+}
+
+.noticias-card .card div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider3d {
+  width: 95%;
+  margin: 20px auto;
+}
+
+.menu-lateral nav ul li:hover ul {
+  display: flex;
+}
+
+.slider3d {
+  /* background-color: red; */
+  height: 320px;
+  overflow-y: hidden;
+}
+
+.slider3d .swiper {
+  height: 260px
+}
+
+.pagina-noticia{
+  max-width: 95%;
+  margin: 0 auto;
+}
+.pagina-noticia .card {
+  max-width: 650px;
+  height: fit-content;
+}
+
+@media screen and (min-width: 425px) {
+  .banner {
+    grid-template-rows: auto repeat(2, 130px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .banner {
+    gap: 1em;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .banner li:nth-child(3) {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  .menuCabecalho {
+    display: flex;
+  }
+
+  .noticia {
+    height: 1720px;
+  }
+
+  .noticias-card {
+    height: 100%;
+    max-height: 1140px;
+  }
+
+  .slider3d {
+    /* background-color: red; */
+    height: 360px;
+    overflow-y: hidden;
+  }
+
+  .slider3d .swiper {
+    height: 260px
+  }
+  .pagina-noticia{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+  }
+  .pagina-noticia h2{
+    width: 100%;
+    font-size: 2em;
+  }
+  .pagina-noticia-container{
+    display: flex;
+    gap: 1.5em;
+  }
+
+}
+
+@media screen and (min-width: 1280px) {
+  .cabecalho .p-menubar .p-submenu-list {
+    max-width: 160px;
+  }
+
+  .noticia {
+    height: 1880px;
+  }
+
+  .noticias-card {
+    height: 100%;
+    max-height: 1310px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .cabecalho .p-menubar .p-menuitem-link {
+    padding: .5em;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  .cabecalho .p-menubar .p-submenu-list {
+    max-width: 170px;
+  }
+  .pagina-noticia{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+  }
+  .pagina-noticia h2{
+    width: 100%;
+    font-size: 2.5em;
+  }
+  .pagina-noticia-container{
+    display: flex;
+    gap: 1.5em;
+  }
 }

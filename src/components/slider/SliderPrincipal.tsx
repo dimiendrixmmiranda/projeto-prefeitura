@@ -6,14 +6,10 @@ import { Pagination, Navigation } from 'swiper/modules';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createSlugWithId } from '@/utils/createSlug';
-import { Noticia } from '@/interfaces/Noticia';
-import listaNoticias from '@/data/noticias';
+import banners from '@/data/banners';
 
-interface SliderProps {
-    noticiasSlider: Noticia[]; // Definir o tipo corretamente como um objeto que contém um array de notícias
-}
+export default function SliderPrincipal() {
 
-export default function Slider({ noticiasSlider }: SliderProps) {
     const [alturaSlider, setAlturaSlider] = useState(280);
 
     useEffect(() => {
@@ -52,21 +48,20 @@ export default function Slider({ noticiasSlider }: SliderProps) {
                 className="mySwiper"
             >
                 {
-                    noticiasSlider.length > 0 ? noticiasSlider.map((noticia, i) => (
-                        <SwiperSlide key={noticia.id}>
-                            <Link href={`/noticias/${createSlugWithId(noticia.titulo, noticia.id)}`}>
-                                <img
-                                    src={noticia.enderecoImagem}
-                                    alt={`Imagem ${noticia.titulo}`}
-                                    className='w-full'
-                                    style={{ height: `${alturaSlider}px`, objectFit: 'cover' }}
-                                />
-                                <h1 className='absolute bottom-8 font-bold w-[90%] text-xl flex justify-center text-center md:text-3xl md:bottom-10 lg:bottom-16 lg:text-4xl xl:bottom-20' style={{left: '50%', transform: 'translate(-50%)'}}>{noticia.titulo}</h1>
-                            </Link>
-                        </SwiperSlide>
-
-                    )
-                    ) : (<p>No news available</p>)
+                    banners.map((banner, i) => {
+                        return (
+                            <SwiperSlide key={i}>
+                                <Link href={banner.link}>
+                                    <img
+                                        src={banner.urlImage}
+                                        alt={banner.titulo}
+                                        className='w-full'
+                                        style={{ height: `${alturaSlider}px`, objectFit: 'cover' }}
+                                    />
+                                </Link>
+                            </SwiperSlide>
+                        )
+                    })
                 }
             </Swiper>
         </div>
