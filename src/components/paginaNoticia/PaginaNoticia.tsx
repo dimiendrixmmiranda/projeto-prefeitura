@@ -11,7 +11,7 @@ export default function NoticiaPage({ params }: { params: { slug: string } }) {
 
     return (
         <div>
-            <h1>{noticia.title}</h1>
+            <h1>{noticia.titulo}</h1>
             {/* Resto do conteúdo */}
         </div>
     );
