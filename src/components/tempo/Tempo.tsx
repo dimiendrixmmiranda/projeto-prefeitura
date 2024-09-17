@@ -1,6 +1,7 @@
 'use client'
 import { stringDataHora } from "@/utils/dataHora";
 import { requisicaoTempo } from "@/utils/requisicaoTempo";
+import traduzirCondicao from "@/utils/traduzirCondicaoClima";
 import { useEffect, useState } from "react";
 import { FaCloudRain } from "react-icons/fa6";
 import { WiStrongWind } from "react-icons/wi";
@@ -80,13 +81,62 @@ export default function Weather() {
     if (error) {
         return <p>{error}</p>;
     }
-    const arrayTempoHoraHora = weatherData != null ? weatherData.forecast.forecastday[0].hour.slice(0, containerTempoHora) : null
+
+    let arrayTempoHora: any[] = []
+
+    if (containerTempoHora <= 4) {
+        weatherData != null ?
+            arrayTempoHora = [
+                weatherData.forecast.forecastday[0].hour[0],
+                weatherData.forecast.forecastday[0].hour[5],
+                weatherData.forecast.forecastday[0].hour[11],
+                weatherData.forecast.forecastday[0].hour[18],
+            ]
+            : null
+    } else if (containerTempoHora <= 5) {
+        weatherData != null ?
+            arrayTempoHora = [
+                weatherData.forecast.forecastday[0].hour[0],
+                weatherData.forecast.forecastday[0].hour[5],
+                weatherData.forecast.forecastday[0].hour[12],
+                weatherData.forecast.forecastday[0].hour[16],
+                weatherData.forecast.forecastday[0].hour[23],
+            ]
+            : null
+    } else if (containerTempoHora <= 6) {
+        weatherData != null ?
+            arrayTempoHora = [
+                weatherData.forecast.forecastday[0].hour[0],
+                weatherData.forecast.forecastday[0].hour[5],
+                weatherData.forecast.forecastday[0].hour[10],
+                weatherData.forecast.forecastday[0].hour[15],
+                weatherData.forecast.forecastday[0].hour[20],
+                weatherData.forecast.forecastday[0].hour[23],
+            ]
+            : null
+    } else if (containerTempoHora <= 8) {
+        weatherData != null ?
+            arrayTempoHora = [
+                weatherData.forecast.forecastday[0].hour[0],
+                weatherData.forecast.forecastday[0].hour[3],
+                weatherData.forecast.forecastday[0].hour[6],
+                weatherData.forecast.forecastday[0].hour[9],
+                weatherData.forecast.forecastday[0].hour[12],
+                weatherData.forecast.forecastday[0].hour[15],
+                weatherData.forecast.forecastday[0].hour[18],
+                weatherData.forecast.forecastday[0].hour[21],
+            ]
+            : null
+    }else{
+        return null
+    }
 
     const maxTemp = weatherData?.forecast.forecastday[0].day.maxtemp_c
     const minTemp = weatherData?.forecast.forecastday[0].day.mintemp_c
+    const condicaoDoTempo = weatherData?.current.condition.text
 
     return (
-        <div className='w-full bg-blue-500 h-40 relative md:h-44 xl:h-48'>
+        <div className='w-full bg-blue-500 h-[170px] relative md:h-44 xl:h-48' style={{boxShadow:'2px 2px 4px black'}}>
             {weatherData ? (
                 <div>
                     <h2 className="font-black text-xl ml-2 mt-1 md:ml-5 md:mt-2 xl:text-3xl xl:ml-6">Joaquim Távora - PR</h2>
@@ -96,13 +146,13 @@ export default function Weather() {
                         <p className="leading-4 uppercase font-bold xl:leading-5 xl:text-md">Min: {minTemp != undefined ? minTemp.toFixed(0) : 'null'}ºC</p>
 
                     </div>
-                    <div className="absolute top-[-8px] right-6 flex flex-col justify-center items-center">
+                    <div className="absolute top-[-6px] right-[6px] flex flex-col justify-center items-center md:right-[24px] md:top-[0]">
                         <img src={weatherData.current.condition.icon} alt="" />
-                        <p className="-mt-4 text-center font-bold">Nublado</p>
+                        <p className="-mt-3 text-center font-bold">{condicaoDoTempo != undefined ? traduzirCondicao(condicaoDoTempo) : 'Desconhecido'}</p>
                     </div>
                     <ul className="absolute bottom-2 left-[50%] w-[95%] h-14 flex justify-around gap-1 overflow-hidden" style={{ transform: 'translate(-50%)' }}>
                         {
-                            arrayTempoHoraHora?.map((objeto, i) => {
+                            arrayTempoHora?.map((objeto, i) => {
                                 return (
                                     <li key={i} className="flex-1 max-w-[85px] flex rounded-md bg-blue-900 relative overflow-hidden">
                                         <p className="font-black text-lg absolute top-[50%] left-[50%]" style={{ transform: 'translate(-50%, -85%)' }}>{objeto.temp_c.toFixed(0)}ºC</p>

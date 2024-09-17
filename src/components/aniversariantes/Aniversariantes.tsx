@@ -9,7 +9,7 @@ export default function Aniversariantes() {
     const data = `${dia}-${mes}`
 
     const aniversariantesDoDia = aniversariantes.filter(aniversariante => aniversariante.dataNascimento === data)
-    console.log(aniversariantesDoDia)
+
     return (
         <div className="aniversariantes lg:w-[50%]">
             <Swiper

@@ -2,6 +2,7 @@ import Aniversariantes from "@/components/aniversariantes/Aniversariantes";
 import Banners from "@/components/banners/Banners";
 import MenuServico from "@/components/menuServico/MenuServico";
 import Noticias from "@/components/noticias/Noticias";
+import SecretariasCarousel from "@/components/secretarias/Secretarias";
 import Sidebar from "@/components/sidebar/Sidebar";
 import SliderPrincipal from "@/components/slider/SliderPrincipal";
 import Slider3d from "@/components/slider3d/Slider3d";
@@ -25,6 +26,8 @@ export default function Home() {
                 <Aniversariantes></Aniversariantes>
                 <Tempo></Tempo>
             </div>
+
+            <SecretariasCarousel></SecretariasCarousel>
         </Pagina>
     );
 }

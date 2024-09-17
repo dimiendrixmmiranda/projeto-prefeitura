@@ -117,10 +117,12 @@ body {
 .banner li:nth-child(3) {
   grid-row: 2/4;
 }
+
 /* FINAL BANNER */
 
 /* COMEÇO SWIPPER ANIVERSARIANTES */
-.aniversariantes .swiper-button-prev, .aniversariantes .swiper-button-next{
+.aniversariantes .swiper-button-prev,
+.aniversariantes .swiper-button-next {
   color: white;
   text-shadow: 1px 1px 2px black;
 }
@@ -224,14 +226,44 @@ body {
   height: 260px
 }
 
-.pagina-noticia{
-  max-width: 95%;
-  margin: 0 auto;
+/* COMEÇO SECRETARIAS */
+.secretarias-carousel {
+  text-align: center;
+  padding: 20px;
 }
-.pagina-noticia .card {
-  max-width: 650px;
-  height: fit-content;
+
+.card-secretaria {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  height: 300px;
 }
+
+.card-secretaria img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.card-secretaria h3 {
+  margin-bottom: 10px;
+}
+
+.card-secretaria p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* FIM SECRETARIAS */
 
 @media screen and (min-width: 425px) {
   .banner {
@@ -276,22 +308,6 @@ body {
   .slider3d .swiper {
     height: 260px
   }
-  .pagina-noticia{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 90%;
-    margin: 0 auto;
-    gap: 1em;
-  }
-  .pagina-noticia h2{
-    width: 100%;
-    font-size: 2em;
-  }
-  .pagina-noticia-container{
-    display: flex;
-    gap: 1.5em;
-  }
-
 }
 
 @media screen and (min-width: 1280px) {
@@ -318,20 +334,5 @@ body {
 
   .cabecalho .p-menubar .p-submenu-list {
     max-width: 170px;
-  }
-  .pagina-noticia{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 90%;
-    margin: 0 auto;
-    gap: 1em;
-  }
-  .pagina-noticia h2{
-    width: 100%;
-    font-size: 2.5em;
-  }
-  .pagina-noticia-container{
-    display: flex;
-    gap: 1.5em;
   }
 }

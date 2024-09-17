@@ -116,7 +116,7 @@ export const aniversariantes = [
     {
         nome: 'joyce silva',
         urlImg: '/avatar-mulher.png',
-        dataNascimento: '16-09', 
+        dataNascimento: '17-09', 
         anoNascimento: '1998',
         anosDeServico: 4
     },

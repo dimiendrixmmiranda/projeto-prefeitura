@@ -8,7 +8,12 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "01/09/24, 16:34",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['fbpagdfabg', 'fupgabifdga'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sem nibh, vehicula non lectus non, eleifend viverra nunc. Sed interdum euismod orci, eget ultrices urna fermentum faucibus. Nam egestas hendrerit fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer sodales erat id commodo ornare. Sed at accumsan neque, et suscipit turpis. Mauris nec leo eget purus vehicula ullamcorper. Donec tincidunt, arcu nec imperdiet bibendum, sapien ligula rhoncus felis, a consectetur diam ipsum mollis lacus. Aliquam vel eros scelerisque, congue sem quis, fermentum lorem.',
+        'Duis a volutpat elit. Curabitur fermentum ligula ac orci pretium eleifend. Sed bibendum sit amet nisi a venenatis. Nunc bibendum tristique nunc, at scelerisque tellus lacinia quis. Vestibulum venenatis congue purus, a blandit magna tempor ut. Cras at consequat nisl. Sed congue lacinia dictum. Fusce laoreet dui non augue varius scelerisque. Fusce faucibus, massa nec condimentum interdum, massa dolor sodales purus, luctus mattis magna purus euismod quam. Integer gravida sollicitudin arcu, vel posuere diam hendrerit nec. Etiam eu venenatis erat. Proin non ex ut tortor dignissim aliquet ut id elit. Aenean convallis, ligula et egestas consequat, nunc sem iaculis dui, et volutpat ante nisi ac neque. Mauris in erat finibus lorem lacinia tincidunt sit amet sed diam.',
+        'Sed nec eleifend odio, vitae elementum ex. Fusce tristique ligula eget dictum tincidunt. Curabitur consequat enim ante, at ultricies enim molestie in. Praesent venenatis nulla sed sem condimentum aliquet. Nullam tempor, tortor vitae consectetur sagittis, ligula diam pretium mi, sed fringilla odio nisi sit amet sapien. Mauris volutpat ligula dolor, id vehicula diam lacinia vel. Nunc hendrerit, quam gravida maximus pharetra, dolor metus tincidunt leo, et tempor lacus eros ac nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sagittis eget nunc quis tincidunt. Integer at neque et augue suscipit cursus eget non mi.',
+        'Pellentesque dignissim accumsan nunc, venenatis rhoncus mauris dictum at. Nunc eu est purus. Sed tristique risus et massa porta, sed euismod ligula dignissim. Quisque quis faucibus est. Etiam egestas tristique augue, ut sollicitudin mi hendrerit quis. Vestibulum vestibulum ex non arcu tempor aliquam. Sed pulvinar massa lobortis vehicula accumsan.',
+    ],
     id: 1,
 }),
 adicionarNoticia({
