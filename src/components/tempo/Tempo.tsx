@@ -1,7 +1,7 @@
 'use client'
 import { stringDataHora } from "@/utils/dataHora";
 import { requisicaoTempo } from "@/utils/requisicaoTempo";
-import traduzirCondicao from "@/utils/traduzirCondicaoClima";
+import condicaoClima from "@/utils/traduzirCondicaoClima";
 import { useEffect, useState } from "react";
 import { FaCloudRain } from "react-icons/fa6";
 import { WiStrongWind } from "react-icons/wi";
@@ -12,6 +12,7 @@ interface WeatherData {
         condition: {
             text: string;
             icon: string;
+            code: number;
         };
     };
     forecast: {
@@ -38,6 +39,9 @@ export default function Weather() {
     const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
     const [error, setError] = useState<string | null>(null);
     const [containerTempoHora, setContainerTempoHora] = useState(4)
+    const maxTemp = weatherData?.forecast.forecastday[0].day.maxtemp_c
+    const minTemp = weatherData?.forecast.forecastday[0].day.mintemp_c
+    const codigoCondicaoTempo = weatherData?.current.condition.code
 
     useEffect(() => {
         const fetchWeather = async () => {
@@ -127,16 +131,12 @@ export default function Weather() {
                 weatherData.forecast.forecastday[0].hour[21],
             ]
             : null
-    }else{
+    } else {
         return null
     }
 
-    const maxTemp = weatherData?.forecast.forecastday[0].day.maxtemp_c
-    const minTemp = weatherData?.forecast.forecastday[0].day.mintemp_c
-    const condicaoDoTempo = weatherData?.current.condition.text
-
     return (
-        <div className='w-full bg-blue-500 h-[170px] relative md:h-44 xl:h-48' style={{boxShadow:'2px 2px 4px black'}}>
+        <div className='w-full h-[170px] relative md:h-44 xl:h-48 tempo' style={{ boxShadow: '2px 2px 4px black', textShadow: '1px 1px 2px black'}}>
             {weatherData ? (
                 <div>
                     <h2 className="font-black text-xl ml-2 mt-1 md:ml-5 md:mt-2 xl:text-3xl xl:ml-6">Joaquim Távora - PR</h2>
@@ -148,7 +148,7 @@ export default function Weather() {
                     </div>
                     <div className="absolute top-[-6px] right-[6px] flex flex-col justify-center items-center md:right-[24px] md:top-[0]">
                         <img src={weatherData.current.condition.icon} alt="" />
-                        <p className="-mt-3 text-center font-bold">{condicaoDoTempo != undefined ? traduzirCondicao(condicaoDoTempo) : 'Desconhecido'}</p>
+                        <p className="-mt-3 text-center font-bold">{codigoCondicaoTempo != undefined ? condicaoClima(codigoCondicaoTempo): ''}</p>
                     </div>
                     <ul className="absolute bottom-2 left-[50%] w-[95%] h-14 flex justify-around gap-1 overflow-hidden" style={{ transform: 'translate(-50%)' }}>
                         {

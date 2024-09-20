@@ -45,8 +45,8 @@ export default function Aniversariantes() {
                         ))
                     ) : (
                         <SwiperSlide>
-                            <div className='w-full bg-zinc-400 h-40 relative md:h-44 xl:h-48'>
-                                <h2 className='absolute top-[50%] left-[50%] whitespace-nowrap text-lg font-black sm:text-2xl md:text-3xl' style={{transform: 'translate(-50%, -50%)'}}>Sem Aniversariantes Hoje!</h2>
+                            <div className='w-full bg-zinc-400 h-40 relative md:h-44 xl:h-48' style={{ boxShadow: '2px 2px 4px black' }}>
+                                <h2 className='absolute top-[50%] left-[50%] whitespace-nowrap text-lg font-black sm:text-2xl md:text-3xl' style={{ transform: 'translate(-50%, -50%)' }}>Sem Aniversariantes Hoje!</h2>
                             </div>
                         </SwiperSlide>
                     )

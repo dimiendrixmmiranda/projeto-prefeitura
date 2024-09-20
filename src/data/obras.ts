@@ -1,4 +1,4 @@
-const obras = [
+const arrayDeObras = [
     {
         "linkNoticia": "http://www.joaquimtavora.pr.gov.br/index.php?sessao=b054603368ovb0&amp;id=3232",
         "linkImagem": "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/tb_200923083021_3766797743539919004655763681785397063697606n_jpg.jpg",
@@ -615,4 +615,5 @@ const obras = [
         "titulo": "Estrada Caça e Pesca - Patrulha do Campo"
     }
 ]
-export default obras;
+
+export default arrayDeObras
