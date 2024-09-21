@@ -262,13 +262,56 @@ body {
   font-size: 1em;
   color: #666;
 }
+
 /* FIM SECRETARIAS */
 
-.tempo{
+.tempo {
   background-image: url('../../public/chuva.jpg');
   background-size: cover;
 }
 
+.lista-redes-sociais li {
+  position: relative;
+}
+
+.lista-redes-sociais li:hover {
+  transition: .6s ease;
+  margin-bottom: 1em;
+  scale: 1.1;
+}
+
+.lista-redes-sociais li::before {
+  content: attr(data-rede);
+  font-size: .5em;
+  text-transform: uppercase;
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  background-color: black;
+  padding: .2em;
+  border-radius: 4px;
+  transform: translate(-50%);
+  display: none;
+}
+
+.lista-redes-sociais li::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translate(-50%);
+  display: none;
+}
+
+.lista-redes-sociais li:hover::before,
+.lista-redes-sociais li:hover::after {
+  display: block;
+}
 
 @media screen and (min-width: 425px) {
   .banner {
@@ -291,6 +334,14 @@ body {
   .emprego {
     display: grid;
     grid-template-columns: repeat(2, 50%);
+  }
+  .rodape{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto 100px 200px auto
+  }
+  .rodape h3{
+    grid-column: 1/3;
   }
 }
 

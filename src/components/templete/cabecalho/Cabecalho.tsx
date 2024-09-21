@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Offcanvas from "./Offcanvas";
-import { IoMdArrowDropright } from "react-icons/io";
 import { FaFacebookSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
@@ -50,17 +49,17 @@ export default function Cabecalho() {
                 </ul>
             </div>
             <div className='hidden xl:flex mx-4'>
-                <ul className="flex items-center gap-2">
-                    <li>
+                <ul className="flex items-center gap-2 lista-redes-sociais">
+                    <li className="" data-rede="facebook">
                         <Link href={'/'}><FaFacebookSquare className="text-2xl" /></Link>
                     </li>
-                    <li>
+                    <li className="" data-rede="instagram">
                         <Link href={'/'}><AiFillInstagram className="text-2xl" /></Link>
                     </li>
-                    <li>
+                    <li className="" data-rede="Email">
                         <Link href={'/'}><MdEmail className="text-2xl" /></Link>
                     </li>
-                    <li>
+                    <li className="" data-rede="SAC">
                         <Link href={'/'}><IoChatboxEllipses className="text-2xl" /></Link>
                     </li>
                 </ul>
