@@ -1,4 +1,3 @@
-import axios from 'axios';
 import possibilidadeCondicao from '../data/possibilidadesCondicao.json';
 
 export default function condicaoClima(codigo: number): string {
@@ -6,3 +5,4 @@ export default function condicaoClima(codigo: number): string {
     const dia = condicao != undefined ? condicao?.day : ''
     return dia
 }
+  

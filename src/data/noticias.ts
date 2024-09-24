@@ -9,10 +9,11 @@ adicionarNoticia({
     data: "01/09/24, 16:34",
     enderecoImagem: "./wireframe.png",
     conteudoMateria: [
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sem nibh, vehicula non lectus non, eleifend viverra nunc. Sed interdum euismod orci, eget ultrices urna fermentum faucibus. Nam egestas hendrerit fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer sodales erat id commodo ornare. Sed at accumsan neque, et suscipit turpis. Mauris nec leo eget purus vehicula ullamcorper. Donec tincidunt, arcu nec imperdiet bibendum, sapien ligula rhoncus felis, a consectetur diam ipsum mollis lacus. Aliquam vel eros scelerisque, congue sem quis, fermentum lorem.',
-        'Duis a volutpat elit. Curabitur fermentum ligula ac orci pretium eleifend. Sed bibendum sit amet nisi a venenatis. Nunc bibendum tristique nunc, at scelerisque tellus lacinia quis. Vestibulum venenatis congue purus, a blandit magna tempor ut. Cras at consequat nisl. Sed congue lacinia dictum. Fusce laoreet dui non augue varius scelerisque. Fusce faucibus, massa nec condimentum interdum, massa dolor sodales purus, luctus mattis magna purus euismod quam. Integer gravida sollicitudin arcu, vel posuere diam hendrerit nec. Etiam eu venenatis erat. Proin non ex ut tortor dignissim aliquet ut id elit. Aenean convallis, ligula et egestas consequat, nunc sem iaculis dui, et volutpat ante nisi ac neque. Mauris in erat finibus lorem lacinia tincidunt sit amet sed diam.',
-        'Sed nec eleifend odio, vitae elementum ex. Fusce tristique ligula eget dictum tincidunt. Curabitur consequat enim ante, at ultricies enim molestie in. Praesent venenatis nulla sed sem condimentum aliquet. Nullam tempor, tortor vitae consectetur sagittis, ligula diam pretium mi, sed fringilla odio nisi sit amet sapien. Mauris volutpat ligula dolor, id vehicula diam lacinia vel. Nunc hendrerit, quam gravida maximus pharetra, dolor metus tincidunt leo, et tempor lacus eros ac nulla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sagittis eget nunc quis tincidunt. Integer at neque et augue suscipit cursus eget non mi.',
-        'Pellentesque dignissim accumsan nunc, venenatis rhoncus mauris dictum at. Nunc eu est purus. Sed tristique risus et massa porta, sed euismod ligula dignissim. Quisque quis faucibus est. Etiam egestas tristique augue, ut sollicitudin mi hendrerit quis. Vestibulum vestibulum ex non arcu tempor aliquam. Sed pulvinar massa lobortis vehicula accumsan.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
     ],
     id: 1,
 }),
@@ -22,7 +23,13 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "02/09/24, 10:20",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Lorem ipsum dolor sit amet', 'Consectetur adipiscing elit'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 2,
 }),
 adicionarNoticia({
@@ -31,7 +38,13 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "03/09/24, 14:15",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Exposições de arte', 'Shows de música ao vivo'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 3,
 }),
 adicionarNoticia({
@@ -40,7 +53,13 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "04/09/24, 18:00",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Resultados dos jogos', 'Entrevistas com os atletas'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 4,
 }),
 adicionarNoticia({
@@ -49,7 +68,13 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "05/09/24, 09:45",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Aumento de postos de vacinação', 'Depoimentos de moradores'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 5,
 }),
 adicionarNoticia({
@@ -58,7 +83,13 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "06/09/24, 11:20",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Investimentos do governo', 'Benefícios para a população'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 6,
 }),
 adicionarNoticia({
@@ -67,7 +98,13 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "07/09/24, 15:40",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Pratos típicos da região', 'Entrevistas com chefs locais'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 7,
 }),
 adicionarNoticia({
@@ -76,7 +113,13 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "08/09/24, 08:00",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Doações recebidas', 'Melhoria nos serviços de saúde'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 8,
 }),
 adicionarNoticia({
@@ -85,7 +128,13 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "09/09/24, 10:30",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Temas apresentados', 'Premiação dos melhores projetos'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 9,
 }),
 adicionarNoticia({
@@ -94,8 +143,15 @@ adicionarNoticia({
     autor: "Dimi Martins",
     data: "10/09/24, 13:00",
     enderecoImagem: "./wireframe.png",
-    conteudoMateria: ['Atividades de leitura', 'Doação de livros'],
+    conteudoMateria: [
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec egestas urna, in fermentum magna. Maecenas sed vulputate felis, non faucibus neque. Mauris mattis orci quis libero accumsan, quis posuere leo faucibus. Integer faucibus auctor consectetur. Cras iaculis tristique metus, sed sagittis erat tincidunt a. Maecenas imperdiet leo dui, eget porta arcu sodales nec. Donec imperdiet vestibulum mattis. Vestibulum non dolor lacus.'
+    ],
     id: 10,
 })
+
 
 export default listaNoticias

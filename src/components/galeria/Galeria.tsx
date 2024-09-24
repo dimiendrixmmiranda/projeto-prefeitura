@@ -26,7 +26,7 @@ export default function Galeria(props: any) { // Recebendo as imagens como prop
     }
 
     return (
-        <div className="card flex mx-auto h-fit max-w-[650px]">
+        <div className="card flex mx-auto h-fit max-w-[650px] xl:w-[650px]">
             <Galleria value={props.images} responsiveOptions={responsiveOptions} numVisible={5}
                 item={itemTemplate} thumbnail={thumbnailTemplate} />
         </div>

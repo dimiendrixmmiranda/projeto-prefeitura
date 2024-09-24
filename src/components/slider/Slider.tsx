@@ -2,12 +2,11 @@
 // Import Swiper core and required modules
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createSlugWithId } from '@/utils/createSlug';
 import { Noticia } from '@/interfaces/Noticia';
-import listaNoticias from '@/data/noticias';
 
 interface SliderProps {
     noticiasSlider: Noticia[]; // Definir o tipo corretamente como um objeto que contém um array de notícias
@@ -47,8 +46,12 @@ export default function Slider({ noticiasSlider }: SliderProps) {
                 pagination={{
                     clickable: true,
                 }}
+                autoplay={{
+                    delay: 6000,
+                    disableOnInteraction: false
+                }}
                 navigation={true}
-                modules={[Pagination, Navigation]}
+                modules={[Pagination, Navigation, Autoplay]}
                 className="mySwiper"
             >
                 {

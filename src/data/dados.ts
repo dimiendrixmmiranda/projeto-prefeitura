@@ -109,14 +109,14 @@ export const aniversariantes = [
     {
         nome: 'leandro donizete',
         urlImg: '/avatar-homem.png',
-        dataNascimento: '15-09', 
+        dataNascimento: '24-09', 
         anoNascimento: '1998',
         anosDeServico: 8
     },
     {
         nome: 'joyce silva',
         urlImg: '/avatar-mulher.png',
-        dataNascimento: '17-09', 
+        dataNascimento: '24-09', 
         anoNascimento: '1998',
         anosDeServico: 4
     },

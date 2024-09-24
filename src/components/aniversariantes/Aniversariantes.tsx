@@ -27,18 +27,13 @@ export default function Aniversariantes() {
                     aniversariantesDoDia.length > 0 ? (
                         aniversariantesDoDia.map((aniversariante, i) => (
                             <SwiperSlide key={i}>
-                                <div className='w-full bg-[--verde-escuro] h-40 relative md:h-44 xl:h-48'>
-                                    <div className='w-[130px] h-[130px] bg-zinc-300 absolute left-2 top-[50%] md:w-[150px] md:h-[150px] xl:w-[175px] xl:h-[175px]' style={{ transform: 'translate(0, -50%)', borderRadius: '100%' }}>
-                                        <img src={aniversariante.urlImg} alt="Imagem do aniversariante" className='w-full h-full object-cover' />
+                                <div className='w-full flex items-center gap-2 p-2 bg-[--verde-escuro] h-40 relative md:h-44 xl:h-48'>
+                                    <div className='bg-white w-[130px] h-[130px] rounded-full p-1'>
+                                        <img src={aniversariante.urlImg} alt="" className='w-full' />
                                     </div>
-                                    <div className='w-[50%] h-[95%] absolute right-2 top-[50%] sm:w-[60%] sm:py-3 md:py-4 md:w-[75%] lg:w-[65%] lg:py-2 xl:w-[70%]' style={{ transform: 'translate(0,-50%)' }}>
-                                        <div className='w-full h-full relative flex flex-col justify-between'>
-                                            <h2 className='leading-5 font-black text-center text-[1em] md:text-[1.5em] md:leading-7 lg:text-[1.3em] xl:text-[1.7em] xl:leading-8'>
-                                                Hoje quem apaga as velinhas é o servidor(a) {aniversariante.nome.toUpperCase()}!
-                                            </h2>
-                                            <h3 className='font-semibold leading-[14px] text-[.7em] text-center md:text-[1.2em] md:leading-5 lg:text-[.95em] xl:text-[1.2em] xl:leading-6'>Obrigado pelos seus {aniversariante.anosDeServico} anos de serviço. Muitas felicidades e muitos anos de vida!</h3>
-                                            <h4 className='leading-3 text-[.7em] text-center md:text-[1em] lg:text-[.75em] xl:text-[.9em]'>ATT: Prefeitura Municipal de Joaquim Távora</h4>
-                                        </div>
+                                    <div className='flex flex-col justify-evenly max-w-[50%] h-full sm:max-w-[60%] md:max-w-[80%] lg:max-w-[70%]'>
+                                        <h2 className='font-black leading-4 text-[.9em] md:text-[1.4em] md:leading-7 lg:text-[1.2em]'>Hoje quem apaga as velinhas é o nosso querido funcionário {aniversariante.nome}! Obrigado pelos seus {aniversariante.anosDeServico} anos de serviço</h2>
+                                        <h3 className='font-medium leading-4 text-[.7em] md:text-[1em] md:leading-5 lg:text-[.9em]'>A Prefeitura Municipal de Joaquim Távora te deseja muita SÁUDE e PROSPERIDADE!</h3>
                                     </div>
                                 </div>
                             </SwiperSlide>

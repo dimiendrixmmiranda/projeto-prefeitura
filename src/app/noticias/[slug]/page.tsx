@@ -50,16 +50,27 @@ export default function Home() {
 
     return (
         <Pagina>
-            <div className='text-black max-w-[95%] mx-auto' id='topo'>
-                <h2 className='font-bold text-2xl leading-6 mt-8 mb-4 text-center md:text-[1.7em] lg:text-start xl:text-[2.4em]'>{informacoesDaNoticia.titulo}</h2>
-                <h4 className='leading-5 font-semibold mb-6 xl:text-[1.4em]'>{informacoesDaNoticia.descricao}</h4>
-                <div className='xl:flex gap-6'>
-                    <Galeria images={images}></Galeria>
-                    <ul className='md:mt-5 lg:mt-0'>
-                        {informacoesDaNoticia.conteudoMateria.map((paragrafo, i) => (
-                            <li key={i} className='mt-4 md:mt-0'>{paragrafo}</li>
-                        ))}
-                    </ul>
+            <div className='text-black max-w-[95%] mx-auto mt-4 xl:flex-wrap' id='topo'>
+                <div className='flex flex-col gap-2'>
+                    <h1 className='font-black text-2xl leading-6 md:text-4xl'>{informacoesDaNoticia.titulo}</h1>
+                    <h2 className='font-semibold text-lg leading-6 md:text-2xl'>{informacoesDaNoticia.descricao}</h2>
+                </div>
+                <div className='flex flex-col mt-4 gap-6 xl:flex-row'>
+                    <div className='flex flex-col justify-center items-center xl:w-fit'>
+                        <Galeria images={images}></Galeria>
+                        <p className='self-start mt-1'>{informacoesDaNoticia.autor} - {informacoesDaNoticia.data}</p>
+                    </div>
+                    <div>
+                        <ul className='flex flex-col gap-2'>
+                            {informacoesDaNoticia.conteudoMateria.map((paragrafo, index) => {
+                                return (
+                                    <li key={index}>
+                                        <p>{paragrafo}</p>
+                                    </li>
+                                )
+                            })}
+                        </ul>
+                    </div>
                 </div>
                 <div className='mt-8 w-full flex justify-around text-white lg:justify-end lg:gap-2 xl:gap-4'>
                     <Link href={'#topo'} className='bg-[--verde] p-2 font-black rounded-md flex gap-1 whitespace-nowrap justify-center items-center text-sm'>
