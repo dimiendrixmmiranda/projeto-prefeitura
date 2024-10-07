@@ -3,7 +3,7 @@ const secretarias = [
         nome: 'Secretaria Municipal de Saúde',
         telefone: '(43) 39113065',
         encarregado:'Lando Norris',
-        imagem: '/wireframe.png', // Atualize com o caminho correto
+        imagem: '/wireframe.png',
     },
     {
         nome: 'Secretaria Municipal de Administração',

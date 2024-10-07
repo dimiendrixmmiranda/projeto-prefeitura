@@ -7,25 +7,19 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import { GrFormPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
-
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import Link from 'next/link';
-
-// Definindo o tipo para cada objeto no arrayImagens
-interface Obra {
-    linkNoticia: string;
-    linkImagem: string;
-    titulo: string;
-}
+import { Card } from '@/core/card/card';
+import { createSlugWithId } from '@/utils/createSlug';
 
 // Definindo o tipo para as props do componente
 interface Slider3dProps {
     titulo: string;
-    arrayImagens: Obra[];
-    galeriaObras: boolean;
+    arrayImagens: Card[];
+    navegacao: boolean;
 }
 
-export default function Slider3d({ titulo, arrayImagens, galeriaObras }: Slider3dProps) {
+export default function Slider3d({ titulo, arrayImagens, navegacao }: Slider3dProps) {
     const [imagemAmpliada, setImagemAmpliada] = useState<string | null>(null);
 
     // Função para ampliar a imagem
@@ -69,28 +63,29 @@ export default function Slider3d({ titulo, arrayImagens, galeriaObras }: Slider3
                 className="swiper_container"
             >
                 {
-                    galeriaObras ? (
-                        arrayImagens.map((obra, i) => (
+                    navegacao ? (
+                        arrayImagens.map((card, i) => (
                             <div key={i}>
                                 <SwiperSlide>
-                                    <Link href={obra.linkNoticia} className='overflow-hidden'>
-                                        <img src={obra.linkImagem} alt={obra.linkImagem} className='h-full w-full object-cover' />
-                                        <h2 className='absolute w-[90%] flex justify-center items-center mx-auto text-xl font-black text-center leading-6 uppercase' style={{ bottom: '15%', left: '50%', transform: 'translate(-50%)', textShadow: '1px 1px 2px black' }}>{obra.titulo}</h2>
+                                    
+                                    <Link href={`/obras/${createSlugWithId(card.titulo, card.id)}`} className='overflow-hidden'>
+                                        <img src={card.imagem} alt={card.titulo} className='h-full w-full object-cover' />
+                                        <h2 className='absolute w-[90%] flex justify-center items-center mx-auto text-xl font-black text-center leading-6 uppercase' style={{ bottom: '15%', left: '50%', transform: 'translate(-50%)', textShadow: '1px 1px 2px black' }}>{card.titulo}</h2>
                                     </Link>
                                 </SwiperSlide>
                             </div>
                         ))
                     ) : (
-                        arrayImagens.map((obra, i) => (
+                        arrayImagens.map((card, i) => (
                             <div key={i}>
                                 <SwiperSlide>
                                     <img
-                                        src={obra.linkImagem}
-                                        alt={obra.linkImagem}
+                                        src={card.imagem}
+                                        alt={card.titulo}
                                         className='h-full w-full object-cover cursor-pointer'
-                                        onClick={() => ampliarImagem(obra.linkImagem)} // Amplia a imagem quando clicada
+                                        onClick={() => ampliarImagem(card.imagem)} // Amplia a imagem quando clicada
                                     />
-                                    <h2 className='absolute w-[90%] flex justify-center items-center mx-auto text-xl font-black text-center leading-6 uppercase' style={{ bottom: '15%', left: '50%', transform: 'translate(-50%)', textShadow: '1px 1px 2px black' }}>{obra.titulo}</h2>
+                                    <h2 className='absolute w-[90%] flex justify-center items-center mx-auto text-xl font-black text-center leading-6 uppercase' style={{ bottom: '15%', left: '50%', transform: 'translate(-50%)', textShadow: '1px 1px 2px black' }}>{card.titulo}</h2>
                                 </SwiperSlide>
                             </div>
                         ))

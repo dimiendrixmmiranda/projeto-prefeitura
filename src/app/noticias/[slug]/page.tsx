@@ -1,17 +1,25 @@
 'use client';
 import Galeria from '@/components/galeria/Galeria';
 import Pagina from '@/components/templete/Pagina';
-import listaNoticias from '@/data/noticias';
+import { listaDeNoticias } from '@/core/constants/listaDeNoticias';
+import { Noticia } from '@/core/noticia/noticia';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { IoIosArrowRoundBack, IoIosArrowRoundUp } from "react-icons/io";
 
 export default function Home() {
-    const { slug } = useParams();
-    // Expressão regular para capturar o número após o último traço
-    const buscarIndice = slug?.toString().match(/-(\s*\d+)$/);
-    const indice = buscarIndice != null ? parseInt(buscarIndice[1]) : null;
-    const informacoesDaNoticia = listaNoticias.filter((noticia) => noticia.id == indice)[0];
+    const params = useParams();
+    const slug = typeof params.slug === 'string' ? params.slug : params.slug?.[0];
+    const [noticia, setNoticia] = useState<Noticia | null>(null);
+    
+    useEffect(() => {
+        if (slug) {
+            const noticiaId = slug?.split('-')[0];
+            const noticiaEncontrada = listaDeNoticias.find(n => n.id === Number(noticiaId));
+            noticiaEncontrada != null ? setNoticia(noticiaEncontrada) : ''
+        }
+    }, [slug]);
 
     const images = [
         {
@@ -31,8 +39,8 @@ export default function Home() {
         },
     ];
 
-    // Verificação se informacoesDaNoticia é válido
-    if (!informacoesDaNoticia) {
+    // Verificação se noticia é válido
+    if (!noticia) {
         return (
             <Pagina>
                 <div className="text-black max-w-[95%] mx-auto" id="topo">
@@ -52,17 +60,17 @@ export default function Home() {
         <Pagina>
             <div className='text-black max-w-[95%] mx-auto mt-4 xl:flex-wrap' id='topo'>
                 <div className='flex flex-col gap-2'>
-                    <h1 className='font-black text-2xl leading-6 md:text-4xl'>{informacoesDaNoticia.titulo}</h1>
-                    <h2 className='font-semibold text-lg leading-6 md:text-2xl'>{informacoesDaNoticia.descricao}</h2>
+                    <h1 className='font-black text-2xl leading-6 md:text-4xl'>{noticia.titulo}</h1>
+                    <h2 className='font-semibold text-lg leading-6 md:text-2xl'>{noticia.descricao}</h2>
                 </div>
                 <div className='flex flex-col mt-4 gap-6 xl:flex-row'>
                     <div className='flex flex-col justify-center items-center xl:w-fit'>
                         <Galeria images={images}></Galeria>
-                        <p className='self-start mt-1'>{informacoesDaNoticia.autor} - {informacoesDaNoticia.data}</p>
+                        <p className='self-start mt-1'>{noticia.autor} - {noticia.data}</p>
                     </div>
                     <div>
                         <ul className='flex flex-col gap-2'>
-                            {informacoesDaNoticia.conteudoMateria.map((paragrafo, index) => {
+                            {noticia.conteudoMateria.map((paragrafo, index) => {
                                 return (
                                     <li key={index}>
                                         <p>{paragrafo}</p>

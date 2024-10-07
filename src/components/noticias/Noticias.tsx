@@ -3,9 +3,8 @@ import Slider from "../slider/Slider";
 import React, { useState } from "react";
 import { Paginator } from 'primereact/paginator';
 import Link from "next/link";
-import noticias from "@/data/noticias";
 import { createSlugWithId } from "@/utils/createSlug";
-import listaNoticias from "@/data/noticias";
+import { listaDeNoticias } from "@/core/constants/listaDeNoticias";
 
 export default function Noticias() {
     const [first, setFirst] = useState(0);
@@ -15,12 +14,12 @@ export default function Noticias() {
         setFirst(event.first);
         setRows(event.rows);
     };
-    const displayDeNoticias = noticias.slice(3 + first, 3 + first + rows);
+    const displayDeNoticias = listaDeNoticias.slice(3 + first, 3 + first + rows);
     
     return (
         <div className="max-w-[95%] mx-auto lg:max-w-[70%] lg:mx-0 lg:ml-6 noticia">
             <div>
-                <Slider noticiasSlider={listaNoticias.slice(0, 4)}></Slider>
+                <Slider noticiasSlider={listaDeNoticias.slice(0, 4)}></Slider>
             </div>
             <div className="mt-4 noticias-card relative">
                 <ul className="flex flex-col gap-2">
@@ -41,7 +40,7 @@ export default function Noticias() {
                         </li>
                     ))}
                 </ul>
-                <Paginator first={first} rows={rows} totalRecords={noticias.length} onPageChange={onPageChange} className="absolute mt-auto w-full bottom-0 xl:mt-8" />
+                <Paginator first={first} rows={rows} totalRecords={listaDeNoticias.length} onPageChange={onPageChange} className="absolute mt-auto w-full bottom-0 xl:mt-8" />
             </div>
         </div>
     )

@@ -9,7 +9,7 @@ import SliderPrincipal from "@/components/slider/SliderPrincipal";
 import Slider3d from "@/components/slider3d/Slider3d";
 import Pagina from "@/components/templete/Pagina";
 import Tempo from "@/components/tempo/Tempo";
-import arrayFotosCidade from "@/data/fotosDaCidade";
+import { listaDeImagensCidade, listaDeObras } from "@/core/constants";
 import arrayDeObras from "@/data/obras";
 
 export default function Home() {
@@ -24,19 +24,14 @@ export default function Home() {
                 <Noticias></Noticias>
             </div>
             <Banners className="banner lg:hidden"></Banners>
-
-            <Slider3d titulo="Galeria De Obras" arrayImagens={arrayDeObras} galeriaObras={true}></Slider3d>
-
+            <Slider3d titulo="Galeria De Obras" arrayImagens={listaDeObras} navegacao={true}></Slider3d>
             <div className="flex flex-col w-[95%] mx-auto gap-4 lg:flex-row flex-nowrap xl:mt-14 xl:w-[90%]">
                 <Aniversariantes></Aniversariantes>
                 <Tempo></Tempo>
             </div>
-
             <SecretariasCarousel></SecretariasCarousel>
-
             <FormularioEmprego></FormularioEmprego>
-
-            <Slider3d titulo="Galeria de Fotos de Joaquim Távora" arrayImagens={arrayFotosCidade} galeriaObras={false}></Slider3d>
+            <Slider3d titulo="Galeria de Fotos de Joaquim Távora" arrayImagens={listaDeImagensCidade} navegacao={false}></Slider3d>
         </Pagina>
     );
 }

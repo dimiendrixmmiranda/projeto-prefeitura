@@ -6,7 +6,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { createSlugWithId } from '@/utils/createSlug';
-import { Noticia } from '@/interfaces/Noticia';
+import { Noticia } from '@/core/noticia/noticia';
 
 interface SliderProps {
     noticiasSlider: Noticia[]; // Definir o tipo corretamente como um objeto que contém um array de notícias
@@ -55,7 +55,7 @@ export default function Slider({ noticiasSlider }: SliderProps) {
                 className="mySwiper"
             >
                 {
-                    noticiasSlider.length > 0 ? noticiasSlider.map((noticia, i) => (
+                    noticiasSlider.length > 0 ? noticiasSlider.map((noticia) => (
                         <SwiperSlide key={noticia.id}>
                             <Link href={`/noticias/${createSlugWithId(noticia.titulo, noticia.id)}`}>
                                 <img

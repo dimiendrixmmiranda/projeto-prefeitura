@@ -74,6 +74,9 @@ const arrayDeObras = [
         "linkImagem": "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/tb_310122090617_2ed64965ddc640269d7f42907c38e8d7_jpg.jpg",
         "titulo": "INAUGURAÇÃO BASE MÓVEL DO SAMU (CENTRO DE EVENTOS JOAQUIM TÁVORA 28/01/22)."
     },
+
+
+
     {
         "linkNoticia": "http://www.joaquimtavora.pr.gov.br/index.php?sessao=b054603368ovb0&amp;id=2924",
         "linkImagem": "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/tb_230421144714_1768212031259851929193402081855021835639799n_jpg.jpg",
@@ -134,6 +137,11 @@ const arrayDeObras = [
         "linkImagem": "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/tb_070820093949_8c33fb88dd4243b0ab57bac9dac2539c_jpg.jpg",
         "titulo": "Visita Deputado Romanelli (06/08)"
     },
+
+
+
+
+
     {
         "linkNoticia": "http://www.joaquimtavora.pr.gov.br/index.php?sessao=b054603368ovb0&amp;id=2798",
         "linkImagem": "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/tb_050820094515_dd70ebff5b8b4d739cc6b9ccdde20269_jpg.jpg",
@@ -469,6 +477,12 @@ const arrayDeObras = [
         "linkImagem": "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/tb_140917214330_2172837214235292277654364657241964355134346n_jpg.jpg",
         "titulo": "Calçamento com Lajotas Sextavadas, meio fio e Calçadas Rua das Bananeiras Bairro São Sebastião"
     },
+
+
+
+
+
+
     {
         "linkNoticia": "http://www.joaquimtavora.pr.gov.br/index.php?sessao=b054603368ovb0&amp;id=1755",
         "linkImagem": "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/tb_130917160518_3cede9b08ed04afc96728cb5a3d667e1_jpg.jpg",
