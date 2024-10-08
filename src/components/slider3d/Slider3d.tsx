@@ -7,7 +7,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import { GrFormPrevious } from "react-icons/gr";
 import { GrNext } from "react-icons/gr";
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { EffectCoverflow, Pagination, Navigation, Autoplay} from 'swiper/modules';
 import Link from 'next/link';
 import { Card } from '@/core/card/card';
 import { createSlugWithId } from '@/utils/createSlug';
@@ -47,11 +47,15 @@ export default function Slider3d({ titulo, arrayImagens, navegacao }: Slider3dPr
                     depth: 100,
                     modifier: 2.5,
                 }}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false
+                }}
                 navigation={{
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 }}
-                modules={[EffectCoverflow, Pagination, Navigation]}
+                modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
                 breakpoints={{
                     765: {
                         slidesPerView: 2,

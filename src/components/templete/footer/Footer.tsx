@@ -9,7 +9,7 @@ import { IoChatboxEllipses } from "react-icons/io5";
 
 export default function Footer() {
     return (
-        <footer className="bg-[--verde] flex flex-col mt-8 md:flex-row md:flex-wrap lg:mt-14 xl:mt-10 pb-3 rodape">
+        <footer className="bg-[--verde] flex flex-col md:flex-row md:flex-wrap rodape">
             <h3 className="text-center leading-6 text-xl font-bold w-full p-2 py-3 lg:text-2xl bg-[#236D45]">Horário de Atendimento: Segunda a Sexta, das 7h30 as 11h30 e das 13h as 17h</h3>
             <div className="mx-auto md:mx-0 md:w-full p-2 flex items-center">
                 <Link href={'/'} className="flex items-center">
