@@ -231,7 +231,7 @@ body {
   text-align: center;
   padding: 20px;
 }
-
+/* 
 .card-secretaria {
   background: #fff;
   border-radius: 10px;
@@ -239,7 +239,7 @@ body {
   padding: 20px;
   text-align: center;
   position: relative;
-  height: 300px;
+  height: 340px;
 }
 
 .card-secretaria img {
@@ -261,7 +261,7 @@ body {
 .card-secretaria p {
   font-size: 1em;
   color: #666;
-}
+} */
 
 /* FIM SECRETARIAS */
 

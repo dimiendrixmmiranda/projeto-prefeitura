@@ -19,8 +19,8 @@ export default function Home() {
             
             <MenuServico></MenuServico>
             
-            <div className="flex mt-8 justify-center h-fit">
-                <Sidebar></Sidebar>
+            <div className="flex mt-8 justify-center h-fit max-w-[95%] mx-auto gap-16">
+                <Sidebar banner={true}></Sidebar>
                 <Noticias></Noticias>
             </div>
             <Banners className="banner lg:hidden"></Banners>

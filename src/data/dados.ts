@@ -36,7 +36,7 @@ export const menuCabecalho = [
             'Cultura e Eventos',
             'Demografia',
             'Etimologia',
-            'Símbolos Municipais',
+            'Assistência Social',
         ]
     },
     {

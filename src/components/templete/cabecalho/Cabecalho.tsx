@@ -1,11 +1,12 @@
+'use client'
 import Link from "next/link";
 import Offcanvas from "./Offcanvas";
 import { FaFacebookSquare } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { IoChatboxEllipses } from "react-icons/io5";
-import { menuCabecalho } from "@/data/dados";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { listaDeMenus } from "@/core/constants";
 
 export default function Cabecalho() {
     return (
@@ -22,20 +23,20 @@ export default function Cabecalho() {
             <div>
                 <ul className="flex h-full justify-center items-center gap-1 menuCabecalho text-sm xl:text-lg">
                     {
-                        menuCabecalho.map((objeto, i) => {
+                        listaDeMenus.map((objeto, i) => {
                             return (
                                 <li key={i} className="relative">
                                     <p className="flex justify-center items-center gap-1 cursor-pointer p-2">
-                                        {objeto.tituloCabecalho}
+                                        {objeto.texto}
                                         <span><MdKeyboardArrowDown className="text-xl" /></span>
                                     </p>
-                                    {objeto.subtitulos ?
+                                    {objeto.subtitulo ?
                                         <ul className="hidden">
                                             {
-                                                objeto.subtitulos.map((subtitulo, j) => {
+                                                objeto.subtitulo.map((subtitulo, j) => {
                                                     return (
                                                         <li key={j} className="cursor-pointer p-2">
-                                                            <Link href={'/'}>{subtitulo}</Link>
+                                                            <Link href={subtitulo.link}>{subtitulo.texto}</Link>
                                                         </li>
                                                     )
                                                 })

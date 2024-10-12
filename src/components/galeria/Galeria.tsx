@@ -1,7 +1,13 @@
 import React from 'react';
 import { Galleria } from 'primereact/galleria';
+import { Imagem } from '@/core/imagem/imagem';
 
-export default function Galeria(props: any) { // Recebendo as imagens como prop
+
+interface GaleriaProps{
+    imagens: Imagem[]
+}
+
+export default function Galeria({imagens}: GaleriaProps) { // Recebendo as imagens como prop
     const responsiveOptions = [
         {
             breakpoint: '991px',
@@ -27,7 +33,7 @@ export default function Galeria(props: any) { // Recebendo as imagens como prop
 
     return (
         <div className="card flex mx-auto h-fit max-w-[650px] xl:w-[650px]">
-            <Galleria value={props.images} responsiveOptions={responsiveOptions} numVisible={5}
+            <Galleria value={imagens} responsiveOptions={responsiveOptions} numVisible={5}
                 item={itemTemplate} thumbnail={thumbnailTemplate} />
         </div>
     )

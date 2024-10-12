@@ -1,5 +1,6 @@
 'use client';
 import Galeria from '@/components/galeria/Galeria';
+import Sidebar from '@/components/sidebar/Sidebar';
 import Pagina from '@/components/templete/Pagina';
 import { listaDeNoticias } from '@/core/constants/listaDeNoticias';
 import { Noticia } from '@/core/noticia/noticia';
@@ -12,7 +13,7 @@ export default function Home() {
     const params = useParams();
     const slug = typeof params.slug === 'string' ? params.slug : params.slug?.[0];
     const [noticia, setNoticia] = useState<Noticia | null>(null);
-    
+
     useEffect(() => {
         if (slug) {
             const noticiaId = slug?.split('-')[0];
@@ -58,35 +59,41 @@ export default function Home() {
 
     return (
         <Pagina>
-            <div className='text-black max-w-[95%] mx-auto mt-4 xl:flex-wrap' id='topo'>
-                <div className='flex flex-col gap-2'>
-                    <h1 className='font-black text-2xl leading-6 md:text-4xl'>{noticia.titulo}</h1>
-                    <h2 className='font-semibold text-lg leading-6 md:text-2xl'>{noticia.descricao}</h2>
+            <div className='max-w-[95%] mx-auto mb-5' style={{display: 'grid', gridTemplateColumns: '25% 1fr'}}>
+                <div className='hidden lg:flex flex-col'>
+                    <h2 className='uppercase font-black text-3xl text-black text-center py-2 mt-4'>Menu</h2>
+                    <Sidebar banner={false}></Sidebar>
                 </div>
-                <div className='flex flex-col mt-4 gap-6 xl:flex-row'>
-                    <div className='flex flex-col justify-center items-center xl:w-fit'>
-                        <Galeria images={images}></Galeria>
-                        <p className='self-start mt-1'>{noticia.autor} - {noticia.data}</p>
+                <div className='text-black max-w-[95%] mx-auto mt-4 col-span-2 lg:col-span-1' id='topo'>
+                    <div className='flex flex-col gap-2'>
+                        <h1 className='font-black text-2xl leading-6 md:text-4xl'>{noticia.titulo}</h1>
+                        <h2 className='font-semibold text-lg leading-6 md:text-2xl'>{noticia.descricao}</h2>
                     </div>
-                    <div>
-                        <ul className='flex flex-col gap-2'>
-                            {noticia.conteudoMateria.map((paragrafo, index) => {
-                                return (
-                                    <li key={index}>
-                                        <p>{paragrafo}</p>
-                                    </li>
-                                )
-                            })}
-                        </ul>
+                    <div className='flex flex-col mt-4 gap-6'>
+                        <div className='flex flex-col justify-center items-center mx-auto xl:w-fit'>
+                            <Galeria imagens={images}></Galeria>
+                            <p className='self-start mt-1'>{noticia.autor} - {noticia.data}</p>
+                        </div>
+                        <div>
+                            <ul className='flex flex-col gap-2'>
+                                {noticia.conteudoMateria.map((paragrafo, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <p>{paragrafo}</p>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div className='mt-8 w-full flex justify-around text-white lg:justify-end lg:gap-2 xl:gap-4'>
-                    <Link href={'#topo'} className='bg-[--verde] p-2 font-black rounded-md flex gap-1 whitespace-nowrap justify-center items-center text-sm'>
-                        Voltar ao Topo<IoIosArrowRoundUp className='text-xl font-bold' />
-                    </Link>
-                    <Link href={'/'} className='bg-[--verde] p-2 font-black rounded-md flex gap-1 whitespace-nowrap justify-center items-center text-sm'>
-                        Voltar ao Início<IoIosArrowRoundBack className='text-xl font-bold' />
-                    </Link>
+                    <div className='mt-8 w-full flex justify-around text-white lg:justify-end lg:gap-2 xl:gap-4'>
+                        <Link href={'#topo'} className='bg-[--verde] p-2 font-black rounded-md flex gap-1 whitespace-nowrap justify-center items-center text-sm'>
+                            Voltar ao Topo<IoIosArrowRoundUp className='text-xl font-bold' />
+                        </Link>
+                        <Link href={'/'} className='bg-[--verde] p-2 font-black rounded-md flex gap-1 whitespace-nowrap justify-center items-center text-sm'>
+                            Voltar ao Início<IoIosArrowRoundBack className='text-xl font-bold' />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </Pagina>
