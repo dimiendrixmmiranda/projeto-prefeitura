@@ -13,6 +13,7 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 
 import Link from 'next/link';
 import { menuCabecalho } from '@/data/dados';
+import { listaDeMenus } from '@/core/constants';
 
 export default function Offcanvas() {
     const [visible, setVisible] = useState(false);
@@ -24,13 +25,13 @@ export default function Offcanvas() {
 
                 <Accordion>
                     {
-                        menuCabecalho.map((cabecalho, i) => {
+                        listaDeMenus.map((cabecalho, i) => {
                             return (
-                                <AccordionTab key={i} header={cabecalho.tituloCabecalho} className='flex flex-col'>
+                                <AccordionTab key={i} header={cabecalho.texto} className='flex flex-col'>
                                     {
-                                        cabecalho.subtitulos.map((subtitulo, j) => {
+                                        cabecalho.subtitulo.map((subtitulo, j) => {
                                             return (
-                                                <Link href={'/'} key={j} className='p-2 font-bold'>{subtitulo}</Link>
+                                                <Link href={subtitulo.link} key={j} className='p-2 font-bold'>{subtitulo.texto}</Link>
                                             )
                                         })
                                     }
