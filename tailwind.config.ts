@@ -12,6 +12,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        'sm': '425px',  // Novo breakpoint
+        'md': '768px',  // Tamanho padrão
+        'lg': '1024px', // Tamanho padrão
+        'xl': '1280px', // Tamanho padrão
+        '2xl': '1440px', // Tamanho padrão
+      },
     },
   },
   plugins: [],

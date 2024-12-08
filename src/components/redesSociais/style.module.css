@@ -1,0 +1,33 @@
+.link{
+    position: relative;
+}
+.link:hover{
+    margin-bottom: 7px;
+    transition: .3s ease-in-out;
+}
+.link:hover::after{
+    content: attr(data-content); /*aqui quero passar o atributo*/
+    background-color: black;
+    font-size: .45em;
+    width: 250%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.link:hover::before{
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+}

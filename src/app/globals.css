@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&display=swap');
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --verde: #009846;
+  --verde-hover: #017a3a;
+  --verde-claro: #47B479;
+  --verde-escuro: #19442D;
+  --marrom: #AC1B1B;
+  --cinza: #F1F0E8;
+  --fonte-primaria: "Parkinsans", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +26,35 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--fonte-primaria);
+}
+
+.caixa{
+  display: flex;
+  position: relative;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.p-paginator .p-paginator-first, .p-paginator .p-paginator-last, .p-paginator .p-inputwrapper{
+  display: none;
+}
+
+@media screen and (min-width: 425px){
+  .caixa{
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px){
+  .caixa{
+    grid-template-columns: 190px 1fr;
+    gap: 1em;
+  }
+}
+@media screen and (min-width: 1280px){
+  .caixa{
+    grid-template-columns: 300px 1fr;
+    gap: 1em;
+  }
 }
