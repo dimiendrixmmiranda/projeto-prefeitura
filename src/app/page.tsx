@@ -15,7 +15,7 @@ export default function App() {
 	return (
 		<div>
 			<Template>
-				<Slider estilo="h-48 sm:h-60 md:h-[400px] lg:h-[480px] xl:h-[600px]"></Slider>
+				<Slider estilo="h-56 sm:h-60 md:h-[400px] lg:h-[480px] xl:h-[600px]"></Slider>
 				<MenuServico></MenuServico>
 				<div className="caixa">
 					<div className="flex flex-col items-center gap-2">
