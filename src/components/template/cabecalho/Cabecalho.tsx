@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Cabecalho() {
     return (
-        <header className="bg-[--verde] p-2 py-3 flex md:py-3 lg:gap-2 xl:gap-4">
+        <header className="bg-[--verde] p-2 py-3 flex md:py-3 lg:gap-2 xl:gap-4" id="topo">
             <Link href={'/'} className="flex gap-1 items-center lg:mr-3 xl:mr-0">
                 <div className="relative w-[40px] h-full md:w-[40px]">
                     <Image src={'/logo-prefeitura.png'} alt="Brasão de Joaquim Távora - PR" className="object-contain" fill></Image>

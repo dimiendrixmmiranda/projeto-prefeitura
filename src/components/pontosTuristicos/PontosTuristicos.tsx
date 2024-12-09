@@ -17,7 +17,7 @@ export default function PontosTuristicos() {
     const [pontoTuristico, setPontoTuristico] = useState<null | PontoTuristico>(null)
     return (
         <div className='my-12'>
-            <h2 className='bg-[--verde] mt-4 text-white w-full py-3 text-2xl font-black uppercase flex justify-center gap-1 items-center leading-4 mb-3 lg:mb-5 lg:p-3 lg:text-3xl xl:mb-6'>
+            <h2 className='bg-[--verde] mt-4 text-white w-full py-3 text-xl font-black uppercase flex justify-center gap-1 items-center leading-4 mb-3 lg:mb-5 lg:p-3 lg:text-3xl xl:mb-6'>
                 <RiLandscapeFill />
                 Conheça Nossa Cidade
             </h2>

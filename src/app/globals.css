@@ -29,31 +29,58 @@ body {
   font-family: var(--fonte-primaria);
 }
 
-.caixa{
+.caixa {
   display: flex;
   position: relative;
   max-width: 95%;
   margin: 0 auto;
 }
 
-.p-paginator .p-paginator-first, .p-paginator .p-paginator-last, .p-paginator .p-inputwrapper{
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-last,
+.p-paginator .p-inputwrapper {
   display: none;
 }
 
-@media screen and (min-width: 425px){
-  .caixa{
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--verde) !important;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #666;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: green;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+
+@media screen and (min-width: 425px) {
+  .caixa {
     max-width: 95%;
     margin: 0 auto;
   }
 }
-@media screen and (min-width: 768px){
-  .caixa{
+
+@media screen and (min-width: 768px) {
+  .caixa {
     grid-template-columns: 190px 1fr;
     gap: 1em;
   }
 }
-@media screen and (min-width: 1280px){
-  .caixa{
+
+@media screen and (min-width: 1280px) {
+  .caixa {
     grid-template-columns: 300px 1fr;
     gap: 1em;
   }
