@@ -1,3 +1,4 @@
 export default interface Submenu{
-    nome: string
+    nome: string,
+    link: string
 }

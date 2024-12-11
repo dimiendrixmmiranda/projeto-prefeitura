@@ -18,7 +18,7 @@ export default function MenuSuperior() {
                                     menu.submenu.map((sub, j) => {
                                         return (
                                             <li key={j}>
-                                                <Link href={'/'} className="flex justify-center items-center">
+                                                <Link href={sub.link} className="flex justify-center items-center">
                                                     {sub.nome}
                                                 </Link>
                                             </li>

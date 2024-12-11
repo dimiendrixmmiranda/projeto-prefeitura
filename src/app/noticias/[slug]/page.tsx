@@ -5,10 +5,8 @@ import Noticia from "@/core/noticia/Noticia";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Galleria } from 'primereact/galleria';
-import Ancora from "@/components/ancora/Ancora";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { FaArrowCircleUp } from "react-icons/fa";
 import style from './style.module.css'
+import AncoraContainer from "@/components/ancora/AncoraContainer";
 
 interface GalleriaItem {
     itemImageSrc: string; // URL da imagem principal
@@ -100,10 +98,7 @@ export default function Page() {
                                     )
                                 })}
                             </ul>
-                            <div className="flex gap-2 justify-center md:justify-end col-span-2">
-                                <Ancora icone={<IoIosArrowDropleftCircle />} link="/" texto="Voltar"></Ancora>
-                                <Ancora icone={<FaArrowCircleUp />} link="#topo" texto="Voltar ao Topo"></Ancora>
-                            </div>
+                            <AncoraContainer></AncoraContainer>
                         </div>
 
                     ) : ''
