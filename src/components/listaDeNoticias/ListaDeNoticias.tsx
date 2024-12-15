@@ -23,7 +23,7 @@ export default function ListaDeNoticias() {
 
     return (
         <div>
-            <ul className="flex flex-col mt-2 gap-1 lg:max-w-[900px] lg:h-[870px] lg:mx-auto lg:gap-4 xl:mt-6">
+            <ul className="flex flex-col mt-2 gap-1 lg:max-w-[900px] lg:h-[900px] lg:mx-auto lg:gap-4 xl:mt-6">
                 {noticiasExibidas.map((noticia, index) => (
                     <CardNoticia key={index} noticia={noticia}></CardNoticia>
                 ))}

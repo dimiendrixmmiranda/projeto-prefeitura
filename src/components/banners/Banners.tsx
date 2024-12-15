@@ -13,7 +13,7 @@ export default function Banners({ estilo }: BannerProps) {
             {
                 listaDeBanners.map((banner, i) => {
                     return (
-                        <li key={i} className="w-full h-full overflow-hidden border border-black">
+                        <li key={i} className="w-full h-full overflow-hidden" style={{boxShadow: '0 0 2px 1px var(--verde)'}}>
                             <Link href={banner.link}>
                                 <div className="relative w-full h-full">
                                     <Image alt={banner.texto} src={banner.imagem} fill className="object-cover"></Image>

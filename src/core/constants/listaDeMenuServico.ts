@@ -31,4 +31,21 @@ export const listaDeMenuServico: MenuServico[] = [
         link: '/',
         texto: 'Carta de Serviço'
     },
+    // refazer artes
+    // {
+    //     imagem: '/banners/radar-transparencia.png',
+    //     link: '/',
+    //     texto: 'Radar Da Transparência'
+    // },
+    // {
+    //     imagem: '/banners/sala-empreendedor.png',
+    //     link: '/',
+    //     texto: 'Sala do Empreendedor'
+    // },
+    // // até essa
+    // {
+    //     imagem: '/banners/educacao.png',
+    //     link: '/',
+    //     texto: 'Carta de Serviço'
+    // },
 ]

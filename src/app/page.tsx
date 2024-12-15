@@ -22,7 +22,7 @@ export default function App() {
 					<div className="flex flex-col items-center gap-2">
 						<MenuAcessoRapido></MenuAcessoRapido>
 						<MenuAcessoRapidoWeb></MenuAcessoRapidoWeb>
-						<Banners estilo="hidden lg:grid grid-rows-3 h-full w-full gap-1"></Banners>
+						<Banners estilo="hidden grid-rows-3 h-full w-full gap-3 lg:grid xl:max-w-[90%]"></Banners>
 					</div>
 					<div className="overflow-hidden xl:mx-auto">
 						<SliderDeNoticias></SliderDeNoticias>
