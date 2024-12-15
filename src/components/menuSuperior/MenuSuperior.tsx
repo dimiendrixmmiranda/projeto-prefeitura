@@ -13,11 +13,11 @@ export default function MenuSuperior() {
                             <p className="cursor-pointer w-full h-full flex justify-center items-center whitespace-nowrap py-1 xl:py-2 xl:px-1">
                                 {menu.item} <GoTriangleRight />
                             </p>
-                            <ul>
+                            <ul className="bg-[--verde]">
                                 {
                                     menu.submenu.map((sub, j) => {
                                         return (
-                                            <li key={j}>
+                                            <li key={j} className={menu.submenu.length - 1 <= j ? '' : 'border-b border-black'}>
                                                 <Link href={sub.link} className="flex justify-center items-center">
                                                     {sub.nome}
                                                 </Link>

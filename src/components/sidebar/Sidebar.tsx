@@ -31,7 +31,7 @@ export default function SidebarComponent() {
                                                     {
                                                         menu.submenu != null ? menu.submenu.map((submenuitem, j) => {
                                                             return (
-                                                                <Link key={j} href={'/'} className='border-[--verde] border-2 p-1 rounded-md text-[--verde] font-bold'>{submenuitem.nome}</Link>
+                                                                <Link key={j} href={menu.submenu[j].link} className='border-[--verde] border-2 p-1 rounded-md text-[--verde] font-bold'>{submenuitem.nome}</Link>
                                                             )
                                                         }) : ''
                                                     }

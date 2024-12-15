@@ -1,4 +1,6 @@
+import { createSlugWithId } from "@/utils/createSlug";
 import Menu from "../menu/Menu";
+import { listaDeSecretarias } from "./listaDeSecretarias";
 
 export const listaDeMenus: Menu[] = [
     {
@@ -22,7 +24,7 @@ export const listaDeMenus: Menu[] = [
         item: 'Nossa Cidade',
         submenu: [
             {
-                link: '/',
+                link: '/nossaCidade/aspectosEducacionais',
                 nome: "Aspectos Educacionais"
             },
             {
@@ -46,47 +48,23 @@ export const listaDeMenus: Menu[] = [
                 nome: "Demografia"
             },
             {
-                link: '/',
+                link: '/nossaCidade/etimologia',
                 nome: "Etimologia"
             },
             {
-                link: '/',
+                link: '/nossaCidade/simbolosMunicipais',
                 nome: "Simbolos Municipais"
             },
         ]
     },
     {
         item: 'Secretarias',
-        submenu: [
-            {
-                link: '/',
-                nome: "Secretaria da Educação"
-            },
-            {
-                link: '/',
-                nome: "Secretaria da Saúde"
-            },
-            {
-                link: '/',
-                nome: "Secretaria de Urbanismo, Obras Públicas, Transporte e Viação"
-            },
-            {
-                link: '/',
-                nome: "Secretaria da Cultura"
-            },
-            {
-                link: '/',
-                nome: "Secretaria do Esporte, Lazer e Turismo"
-            },
-            {
-                link: '/',
-                nome: "Secretaria da Agricultura"
-            },
-            {
-                link: '/',
-                nome: "Secretaria da Indústria, Comércio, Habitação e Inovação"
-            },
-        ]
+        submenu: listaDeSecretarias.map(secretaria => {
+            return {
+                link: `/secretarias/${createSlugWithId(secretaria.nome, secretaria.id)}`,
+                nome: secretaria.nome
+            }
+        })
     },
     {
         item: 'Serviços',

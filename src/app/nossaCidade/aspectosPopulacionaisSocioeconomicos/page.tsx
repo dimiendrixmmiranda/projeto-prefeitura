@@ -1,5 +1,6 @@
 import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
+import Image from "next/image";
 
 export default function AspectosGeograficos() {
     return (
@@ -30,9 +31,12 @@ export default function AspectosGeograficos() {
                         <h3 className="text-xl font-bold">Aspectos Econômicos</h3>
                         <p style={{ textIndent: '2em' }}>O município possui solos férteis, predominantemente de terra roxa, reconhecidos por sua alta produtividade, e massapé, que, apesar de ser menos profundo, também oferece boas condições para o cultivo. A economia local é diversificada e se apoia principalmente na agricultura, pecuária, comércio e indústria. A produção agrícola é bastante variada, com destaque para o cultivo de grãos, frutas e hortaliças, que atendem tanto ao consumo interno quanto à exportação. As indústrias locais estão fortemente voltadas à avicultura e à produção rural, com fábricas que processam produtos alimentícios e derivados do setor agropecuário. Além disso, o comércio e os serviços urbanos estão em plena expansão, com o crescimento do número de estabelecimentos comerciais, mercados, restaurantes e centros de serviços, impulsionando a economia local e atraindo novos investimentos.</p>
                     </li>
-                    <li className="flex flex-col gap-1">
-                        <h3 className="text-xl font-bold">Infraestrutura e Localização</h3>
+                    <li className="flex flex-col gap-1 lg:grid lg:grid-cols-2">
+                        <h3 className="text-xl font-bold col-span-3">Infraestrutura e Localização</h3>
                         <p style={{ textIndent: '2em' }}>Joaquim Távora está estrategicamente localizada e bem conectada a municípios vizinhos, com acesso facilitado por ferrovia e rodovia. A cidade está a apenas 12 km de Quatiguá via ferrovia e 8 km por rodovia, e a 36 km de Santo Antônio da Platina por rodovia. A capital Curitiba está a 472 km por ferrovia e 341 km por rodovia, o que proporciona boas opções de transporte para a região. A cidade conta com ruas asfaltadas ou pavimentadas, o que facilita o tráfego e a mobilidade urbana. A infraestrutura de serviços essenciais, como a agência dos Correios, demonstra o progresso local e o crescimento da cidade, que, apesar de enfrentar os desafios da transição política e econômica nacional, continua a se desenvolver. A presença dessas conexões e serviços é fundamental para sustentar a expansão econômica e atrair investimentos para a região.</p>
+                        <div className="relative w-[300px] h-[300px] mx-auto">
+                            <Image alt="Mapa de Joaquim Távora divisas" src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSosRDMA2S5sMwibGgGZqdu-zdxoohHpo3Eg&s'} fill className="object-cover"></Image>
+                        </div>
                     </li>
                 </ul>
                 <AncoraContainer></AncoraContainer>

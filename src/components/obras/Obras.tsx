@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Navigation } from 'swiper/modules';
 import { PiTractorFill } from "react-icons/pi";
 import Image from 'next/image';
 import useResponsiveHeight from '@/hooks/useResponsiveHeight';
@@ -35,7 +35,11 @@ export default function Obras() {
                     modifier: 1,
                     slideShadows: false,
                 }}
-                modules={[EffectCoverflow, Navigation]}
+                autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false
+                }}
+                modules={[EffectCoverflow, Navigation, Autoplay]}
                 spaceBetween={30}
                 className='w-[95%] h-[250px] sm:h-[300px] xl:h-[320px]'
             >
@@ -69,12 +73,12 @@ export default function Obras() {
             <Dialog
                 header={obra?.titulo}
                 visible={visible}
-                className='w-[90%] h-[70%] sm:h-[85%] md:h-[75%] lg:w-[70%] xl:w-[35%]'
+                className='w-[90%] h-[70%] sm:h-[85%] md:h-[75%] md:w-[60%] lg:w-[45%] xl:w-[35%]'
                 onHide={() => setVisible(false)}
             >
                 {
                     obra != undefined ?
-                        <div className='w-full h-full gap-2' style={{ display: 'grid', gridTemplateRows: '60% 30% 1fr' }}>
+                    <div className='w-full h-full gap-2 md:gap-4 xl:gap-6' style={{ display: 'grid', gridTemplateRows: '1fr auto auto' }}>
                             <div className='relative w-full h-full'>
                                 <Image src={obra?.imagem} alt={obra?.titulo} fill className='object-cover'></Image>
                             </div>

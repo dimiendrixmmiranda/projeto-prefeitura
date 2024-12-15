@@ -8,9 +8,9 @@ export default function AspectosGeograficos() {
             <div className="text-black p-2 max-w-[1200px] mx-auto">
                 <h2 className="font-black text-2xl leading-7 my-4">Aspectos Geográficos do Município</h2>
                 <ul className="flex flex-col gap-6">
-                    <li className="flex flex-col gap-2">
+                    <li className="flex flex-col gap-1 lg:grid lg:grid-cols-2">
                         <p style={{ textIndent: '2em' }}>Joaquim Távora é um município localizado na região norte do estado do Paraná, inserido na mesorregião Norte Pioneiro, conhecida por seu papel histórico no desenvolvimento agrário e econômico do estado. Faz divisa com os municípios de Quatiguá ao norte, Guapirama a noroeste, Santo Antônio da Platina a oeste, e Carlópolis ao sul e sudeste. A cidade ocupa uma posição privilegiada devido à proximidade com importantes centros urbanos regionais e sua inserção em uma paisagem diversificada, com relevância tanto para a agricultura quanto para a preservação ambiental.</p>
-                        <div className="w-full max-w-[360px] h-[400px] relative mx-auto">
+                        <div className="w-full max-w-[360px] h-[400px] relative mx-auto lg:h-[200px] lg:w-[200px]">
                             <Image alt="municipio de joaquim Távora e suas divisas" src={'https://www.controlemunicipal.com.br/inga/sistema/imagens/123/gd_260517110342_mapa_joaquim_tavora_limites_jpg.jpg'} fill className="object-cover"></Image>
                         </div>
                     </li>
@@ -71,6 +71,14 @@ export default function AspectosGeograficos() {
                         <p style={{ textIndent: '2em' }}>Embora a transformação da paisagem tenha reduzido a cobertura vegetal original, Joaquim Távora ainda abriga uma diversidade considerável de espécies. Fauna como capivaras, jaguatiricas, tatus e diversas aves encontram refúgio nos remanescentes florestais e nas áreas de preservação.</p>
                         <p style={{ textIndent: '2em' }}>A biodiversidade é protegida, em parte, por programas de conservação e iniciativas locais, como a educação ambiental em escolas e ações de reflorestamento promovidas por organizações governamentais e não governamentais.</p>
                         <p style={{ textIndent: '2em' }}>O uso do solo predominantemente agrícola, associado ao manejo inadequado em algumas áreas, resultou em problemas como a compactação do solo, erosão e assoreamento dos cursos d’água. O monocultivo de grãos, embora economicamente relevante, exige práticas mais sustentáveis para mitigar impactos ambientais, como a rotação de culturas e o plantio direto.</p>
+                        <div className="grid w-full gap-5 lg:grid-cols-2 my-4">
+                            <div className="w-[300px] h-[300px] relative md:w-[500px]">
+                                <Image alt="Rio das Cinzas" src={'https://upload.wikimedia.org/wikipedia/commons/4/47/Rio_das_Cinzas_021206_REFON.jpg'} fill className="object-cover"></Image>
+                            </div>
+                            <div className="w-[300px] h-[300px] relative md:w-[500px]">
+                                <Image alt="Rio das Itarare" src={'https://upload.wikimedia.org/wikipedia/commons/4/47/Rio_Itarar%C3%A9_-_Visto_da_Ponte_Divisa_PR-SP.jpg'} fill className="object-cover"></Image>
+                            </div>
+                        </div>
                     </li>
                 </ul>
                 <AncoraContainer></AncoraContainer>

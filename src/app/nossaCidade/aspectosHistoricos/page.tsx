@@ -1,5 +1,6 @@
 import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
+import Image from "next/image";
 
 export default function AspectosGeograficos() {
     return (
@@ -7,9 +8,14 @@ export default function AspectosGeograficos() {
             <div className="text-black p-2 max-w-[1200px] mx-auto">
                 <h2 className="font-black text-2xl leading-7 my-4">Aspectos Históricos do Município</h2>
                 <ul className="flex flex-col gap-6">
-                    <li className="flex flex-col gap-1">
+                    <li className="flex flex-col gap-1 lg:grid lg:grid-cols-2">
                         <p style={{ textIndent: '2em' }}>
                             O processo histórico que culminou na configuração atual do município pode ser traçado até suas raízes mais remotas, evidenciando uma sequência de desmembramentos ao longo do tempo. De acordo com Ferreira (1996, p. 384), tudo começou com a criação de Paranaguá, em 29 de março de 1648. Posteriormente, Curitiba emancipou-se de Paranaguá em 29 de março de 1693. Jaguariaíva surgiu em 24 de setembro de 1788, desmembrando-se de Curitiba, e, em 24 de março de 1876, foi a vez de São José da Boa Vista emancipar-se de Jaguariaíva. Em 6 de setembro de 1888, Tomazina se originou de São José da Boa Vista, enquanto Jacarezinho emancipou-se de Tomazina em 2 de abril de 1900. Em 31 de março de 1914, Santo Antônio da Platina foi desmembrado de Jacarezinho, e, finalmente, Joaquim Távora tornou-se independente de Santo Antônio da Platina em 10 de abril de 1929.</p>
+                        <div className="w-[400px] h-[400px] relative mx-auto lg:w-[400px] lg:h-[300px]">
+                            <Image alt="Mapa do Paraná em 1929" src={'https://www.iat.pr.gov.br/sites/agua-terra/arquivos_restritos/files/styles/escala_1140_largura_/public/imagem/2020-04/mapa15g.webp?itok=Vp8TqUqQ'} fill className="object-cover"></Image>
+                        </div>
+                    </li>
+                    <li className="flex flex-col gap-1">
                         <p style={{ textIndent: '2em' }}>
                             Até o final do século XIX, a área atualmente ocupada pelo município era habitada por nações indígenas, que mantiveram contato com exploradores e colonizadores, principalmente vindos de São Paulo e Minas Gerais. Esses desbravadores eram atraídos pela presença de rios como o Tibagi, o Itararé e o Paranapanema. Além disso, como destaca Wachowicz (1987, p. 9), outro fator que incentivou a entrada de fazendeiros na região foi o interesse estratégico no contato com o elemento indígena, visando utilizar os indígenas na desejada comunicação com a província de Mato Grosso.</p>
                         <p style={{ textIndent: '2em' }}>
@@ -18,8 +24,16 @@ export default function AspectosGeograficos() {
                             Além dos paulistas e dos mineiros, houve grande influência de imigrantes na formação da sociedade local com a introdução de muitos hábitos culturais trazidos na bagagem como o gosto por músicas e danças diferentes, plantio e utilização de legumes na culinária e conhecimentos de básicas e racionais técnicas agrícolas, comerciais e de construção civil.</p>
                         <p style={{ textIndent: '2em' }}>
                             Ao longo de sua história, diversas correntes imigratórias contribuíram para a formação do município, com destaque para os eslavos (poloneses, ucranianos, russos, entre outros), japoneses, portugueses, italianos, alemães, espanhóis e árabes, incluindo sírios, libaneses, turcos e outros.</p>
+
+                    </li>
+                    <li className="flex flex-col gap-1 lg:grid lg:grid-cols-2">
                         <p style={{ textIndent: '2em' }}>
                             A formação nuclear original de Joaquim Távora remonta ao ano de 1915, cuja área era integrante da Fazenda Jaboticabal da Barra Grande de propriedade dos irmãos João Ayres e Job Ayres Dias. Uma das maiores contribuições para o desenvolvimento do lugar se deu por Miguel Dias, o primeiro chefe político do Distrito de <b>Afonso Camargo</b>, nome primitivo do município. Em sua propriedade agrícola, às margens do povoamento, formada de uma grande porcentagem de terra roxa, em 1929 cultivava-se por volta de 30.000 pés de café.</p>
+                        <div className="w-[400px] h-[400px] relative mx-auto lg:w-[300px] lg:h-[200px]">
+                            <Image alt="Irmãos João Ayres e Job Ayres Dias" src={'https://www.crmpr.org.br/dbimages/11387_img.jpg'} fill className="object-cover"></Image>
+                        </div>
+                    </li>
+                    <li className="flex flex-col gap-1">
                         <p style={{ textIndent: '2em' }}>
                             Jerônimo Vaz Vieira e seu filho, Antônio Joaquim Vieira, também se estabeleceram na região, desempenhando um papel significativo no processo de colonização do município. Na época, a área contava apenas com o patrimônio de Barra Grande, que gradualmente atraiu um grande contingente populacional, impulsionado principalmente pela chegada dos trilhos da Estrada de Ferro da Rede de Viação Paraná–Rio Grande. Uma passagem de Martins (op. cit., p. 110-111) é notável por expressar uma preocupação ecológica diante do desmatamento na região, além de apresentar detalhes peculiares sobre a Estação Afonso Camargo.</p>
                     </li>

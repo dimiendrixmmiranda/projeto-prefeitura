@@ -2,87 +2,73 @@ import PontoTuristico from "../pontosTuristicos/PontosTuristicos";
 
 export const listaDePontosTuristicos: PontoTuristico[] = [
     {
-        arrayDeImagens: [
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-        ],
-        descricao: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        id:1,
-        thumbnail: '/wireframe.png',
-        titulo: 'Meu Ponto Turístico Legal!'
+        id: 1,
+        titulo: "Praça Central",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "A Praça Central é o coração da cidade, cercada de árvores, bancos e uma bela fonte no centro."
     },
     {
-        arrayDeImagens: [
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-        ],
-        descricao: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        id:1,
-        thumbnail: '/wireframe.png',
-        titulo: 'Meu Ponto Turístico Legal!'
+        id: 2,
+        titulo: "Igreja Matriz",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "A Igreja Matriz é um dos marcos históricos de Joaquim Távora, conhecida por sua arquitetura tradicional."
     },
     {
-        arrayDeImagens: [
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-        ],
-        descricao: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        id:1,
-        thumbnail: '/wireframe.png',
-        titulo: 'Meu Ponto Turístico Legal!'
+        id: 3,
+        titulo: "Parque Municipal",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "O Parque Municipal oferece trilhas, áreas de lazer e uma vista deslumbrante do pôr do sol."
     },
     {
-        arrayDeImagens: [
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-        ],
-        descricao: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        id:1,
-        thumbnail: '/wireframe.png',
-        titulo: 'Meu Ponto Turístico Legal!'
+        id: 4,
+        titulo: "Mirante do Horizonte",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "O Mirante do Horizonte é um local perfeito para admirar a paisagem e tirar belas fotos."
     },
     {
-        arrayDeImagens: [
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-        ],
-        descricao: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        id:1,
-        thumbnail: '/wireframe.png',
-        titulo: 'Meu Ponto Turístico Legal!'
+        id: 5,
+        titulo: "Museu Histórico",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "O Museu Histórico preserva a memória e a cultura local, com exposições permanentes e temporárias."
     },
     {
-        arrayDeImagens: [
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-        ],
-        descricao: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        id:1,
-        thumbnail: '/wireframe.png',
-        titulo: 'Meu Ponto Turístico Legal!'
+        id: 6,
+        titulo: "Cachoeira Bela Vista",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "A Cachoeira Bela Vista é um refúgio natural perfeito para quem busca tranquilidade e contato com a natureza."
     },
     {
-        arrayDeImagens: [
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-            '/wireframe.png',
-        ],
-        descricao: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        id:1,
-        thumbnail: '/wireframe.png',
-        titulo: 'Meu Ponto Turístico Legal!'
+        id: 7,
+        titulo: "Estação Ferroviária Antiga",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "A antiga Estação Ferroviária é um marco histórico que relembra o período áureo das ferrovias na região."
     },
-]
+    {
+        id: 8,
+        titulo: "Portal da Cidade",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "O Portal da Cidade é um ponto de boas-vindas que encanta os visitantes com seu design acolhedor."
+    },
+    {
+        id: 9,
+        titulo: "Feira de Artesanato Local",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "A feira reúne artesãos locais e oferece uma grande variedade de produtos típicos da região."
+    },
+    {
+        id: 10,
+        titulo: "Bosque da Família",
+        thumbnail: "/wireframe.png",
+        arrayDeImagens: ["/wireframe.png", "/wireframe.png", "/wireframe.png", "/wireframe.png"],
+        descricao: "Um espaço agradável para piqueniques, caminhadas e momentos de lazer em família."
+    }
+];

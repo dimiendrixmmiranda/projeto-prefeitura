@@ -1,5 +1,6 @@
 import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
+import Image from "next/image";
 
 export default function AspectosGeograficos() {
     return (
@@ -14,9 +15,15 @@ export default function AspectosGeograficos() {
                             A vida social em Joaquim Távora é centrada nos espaços públicos, como praças e campos esportivos, que servem como locais de encontro e lazer. O futebol, por exemplo, é uma das grandes paixões da população, sendo um elemento que reforça o sentimento de união e pertencimento. A gastronomia local também é um reflexo das tradições da cidade, com pratos que destacam os sabores da culinária paranaense e rural, muitas vezes preparados com ingredientes frescos da própria região.</p>
                         <p style={{ textIndent: '2em' }}>
                             Além disso, há uma valorização da história e da educação, com esforços voltados para preservar a memória da cidade e incentivar o aprendizado nas escolas locais. Esse cuidado com o passado e o compromisso com o futuro demonstram o equilíbrio entre tradição e modernidade que caracteriza Joaquim Távora, tornando-a uma cidade que, mesmo pequena, é rica em aspectos socioculturais que refletem o coração de sua comunidade.</p>
-
                     </li>
-
+                    <li className="flex flex-col gap-5 mx-auto lg:grid lg:grid-cols-2">
+                        <div className="relative w-[300px] h-[300px] md:w-[500px]">
+                            <Image alt="Santuario Santíssimo Nome de Jesus" src={'https://rotadorosario.org/wp-content/uploads/2019/07/ssnj003-1024x575.jpg'} fill className="object-cover"></Image>
+                        </div>
+                        <div className="relative w-[300px] h-[300px] md:w-[500px]">
+                            <Image alt="Rodeio Tavorense" src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzi3tpPHwD42r7fDI2dGafhOmZ4K12RHKoNA&s'} fill className="object-cover"></Image>
+                        </div>
+                    </li>
                 </ul>
                 <AncoraContainer></AncoraContainer>
             </div>
