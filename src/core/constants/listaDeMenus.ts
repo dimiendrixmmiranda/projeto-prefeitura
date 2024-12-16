@@ -7,15 +7,15 @@ export const listaDeMenus: Menu[] = [
         item: 'Governo Atual',
         submenu: [
             {
-                link: '/',
+                link: '/governoAtual/conhecaNossoPrefeito',
                 nome: "Conheça o Prefeito"
             },
             {
-                link: '/',
+                link: '/governoAtual/galeriaDePrefeitos',
                 nome: "Galeria de Prefeitos"
             },
             {
-                link: '/',
+                link: '/governoAtual/composicaoDaCamara',
                 nome: "Composição da Câmara"
             },
         ]

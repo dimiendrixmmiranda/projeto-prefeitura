@@ -5,11 +5,11 @@ import styles from './styles.module.css'
 
 export default function MenuSuperior() {
     return (
-        <ul className="hidden gap-2 justify-center items-center text-center lg:flex w-full max-w-[870px] mx-auto">
+        <ul className="hidden gap-2 justify-center items-center text-center lg:flex w-full max-w-[870px] mx-auto z-20">
             {
                 listaDeMenus.map((menu, i) => {
                     return (
-                        <li className={`flex-1 flex justify-center items-center text-sm font-semibold relative xl:text-[1.05em] ${styles.menuSuperior}`} key={i}>
+                        <li className={`flex-1 z-20 flex justify-center items-center text-sm font-semibold relative xl:text-[1.05em] ${styles.menuSuperior}`} key={i}>
                             <p className="cursor-pointer w-full h-full flex justify-center items-center whitespace-nowrap py-1 xl:py-2 xl:px-1">
                                 {menu.item} <GoTriangleRight />
                             </p>

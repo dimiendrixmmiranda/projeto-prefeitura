@@ -11,7 +11,7 @@ export default function AspectosGeograficos() {
                     <li className="flex flex-col gap-1 lg:grid lg:grid-cols-2">
                         <p style={{ textIndent: '2em' }}>
                             O processo histórico que culminou na configuração atual do município pode ser traçado até suas raízes mais remotas, evidenciando uma sequência de desmembramentos ao longo do tempo. De acordo com Ferreira (1996, p. 384), tudo começou com a criação de Paranaguá, em 29 de março de 1648. Posteriormente, Curitiba emancipou-se de Paranaguá em 29 de março de 1693. Jaguariaíva surgiu em 24 de setembro de 1788, desmembrando-se de Curitiba, e, em 24 de março de 1876, foi a vez de São José da Boa Vista emancipar-se de Jaguariaíva. Em 6 de setembro de 1888, Tomazina se originou de São José da Boa Vista, enquanto Jacarezinho emancipou-se de Tomazina em 2 de abril de 1900. Em 31 de março de 1914, Santo Antônio da Platina foi desmembrado de Jacarezinho, e, finalmente, Joaquim Távora tornou-se independente de Santo Antônio da Platina em 10 de abril de 1929.</p>
-                        <div className="w-[400px] h-[400px] relative mx-auto lg:w-[400px] lg:h-[300px]">
+                        <div className="w-[300px] h-[300px] relative mx-auto lg:w-[400px] lg:h-[300px]">
                             <Image alt="Mapa do Paraná em 1929" src={'https://www.iat.pr.gov.br/sites/agua-terra/arquivos_restritos/files/styles/escala_1140_largura_/public/imagem/2020-04/mapa15g.webp?itok=Vp8TqUqQ'} fill className="object-cover"></Image>
                         </div>
                     </li>
@@ -29,7 +29,7 @@ export default function AspectosGeograficos() {
                     <li className="flex flex-col gap-1 lg:grid lg:grid-cols-2">
                         <p style={{ textIndent: '2em' }}>
                             A formação nuclear original de Joaquim Távora remonta ao ano de 1915, cuja área era integrante da Fazenda Jaboticabal da Barra Grande de propriedade dos irmãos João Ayres e Job Ayres Dias. Uma das maiores contribuições para o desenvolvimento do lugar se deu por Miguel Dias, o primeiro chefe político do Distrito de <b>Afonso Camargo</b>, nome primitivo do município. Em sua propriedade agrícola, às margens do povoamento, formada de uma grande porcentagem de terra roxa, em 1929 cultivava-se por volta de 30.000 pés de café.</p>
-                        <div className="w-[400px] h-[400px] relative mx-auto lg:w-[300px] lg:h-[200px]">
+                        <div className="w-[300px] h-[300px] relative mx-auto lg:w-[300px] lg:h-[200px]">
                             <Image alt="Irmãos João Ayres e Job Ayres Dias" src={'https://www.crmpr.org.br/dbimages/11387_img.jpg'} fill className="object-cover"></Image>
                         </div>
                     </li>
