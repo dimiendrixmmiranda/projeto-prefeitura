@@ -1,6 +1,7 @@
 import MenuSuperior from "@/components/menuSuperior/MenuSuperior";
-import RedesSociais from "@/components/redesSociais/RedesSociais";
+import RedeSocial from "@/components/redesSociais/RedeSocial";
 import SidebarComponent from "@/components/sidebar/Sidebar";
+import { listaDeRedesSociais } from "@/core/constants/listaDeRedesSociais";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +19,15 @@ export default function Cabecalho() {
             </Link>
             <SidebarComponent></SidebarComponent>
             <MenuSuperior></MenuSuperior>
-            <RedesSociais estilo="hidden justify-center items-center gap-2 text-xl xl:flex mr-2"></RedesSociais>
+            <ul className="items-center gap-[1px] hidden lg:flex xl:text-xl xl:gap-2">
+                {
+                    listaDeRedesSociais.map(((rede, i) => {
+                        return (
+                            <RedeSocial icone={rede.icone} key={i} link={rede.link} nome={rede.nome}></RedeSocial>
+                        )
+                    }))
+                }
+            </ul>
         </header>
     )
 }

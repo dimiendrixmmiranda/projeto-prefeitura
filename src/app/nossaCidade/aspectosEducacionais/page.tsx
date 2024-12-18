@@ -1,9 +1,10 @@
+'use client'
 import AncoraContainer from "@/components/ancora/AncoraContainer";
 import CardEscola from "@/components/cardEscola/CardEscola";
 import Template from "@/components/template/Template";
 import { listaDeEscolas } from "@/core/constants/listaDeEscolas";
 
-export default function AspectosGeograficos() {
+export default function AspectosEducacionais() {
     return (
         <Template>
             <div className="text-black p-2 max-w-[1200px] mx-auto">

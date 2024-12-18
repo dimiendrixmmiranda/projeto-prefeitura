@@ -2,7 +2,7 @@ import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import { dadosDemografia } from "@/core/constants/dadosDemografia";
 
-export default function AspectosGeograficos() {
+export default function Demografia() {
     return (
         <Template>
             <div className="text-black p-2 max-w-[1200px] mx-auto">

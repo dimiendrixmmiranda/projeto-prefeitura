@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { Accordion, AccordionTab } from 'primereact/accordion';
 import { listaDeMenus } from '@/core/constants/listaDeMenus';
 import { listaDeRedesSociais } from '@/core/constants/listaDeRedesSociais';
+import RedeSocial from '../redesSociais/RedeSocial';
 
 export default function SidebarComponent() {
     const [visibleRight, setVisibleRight] = useState(false);
@@ -20,7 +21,7 @@ export default function SidebarComponent() {
             <Sidebar visible={visibleRight} position="right" onHide={() => setVisibleRight(false)}>
                 <div className='h-full w-full flex flex-col gap-3'>
                     <h2 className='absolute top-4 left-4 font-bold text-[--verde] text-3xl'>Menu</h2>
-                    <div className='w-full h-full overflow-scroll text-[--verde]'>
+                    <div className='w-full h-full overflow-y-scroll text-[--verde]'>
                         <div className="card">
                             <Accordion>
                                 {
@@ -49,11 +50,7 @@ export default function SidebarComponent() {
                             {
                                 listaDeRedesSociais.map((item, i) => {
                                     return (
-                                        <li key={i} className='flex-1 flex justify-center items-center text-black'>
-                                            <Link href={'/'} className='text-3xl'>
-                                                {item.icone}
-                                            </Link>
-                                        </li>
+                                        <RedeSocial key={i} icone={item.icone} link={item.link} nome={item.nome}></RedeSocial>
                                     )
                                 })
                             }

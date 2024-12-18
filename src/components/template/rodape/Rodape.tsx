@@ -1,4 +1,3 @@
-import RedesSociais from "@/components/redesSociais/RedesSociais";
 import Image from "next/image";
 import Link from "next/link";
 import { IoLocation } from "react-icons/io5";
@@ -26,8 +25,6 @@ export default function Rodape() {
                 </Link>
                 <h2></h2>
             </div>
-
-            <RedesSociais estilo="flex justify-center items-center gap-3 text-3xl"></RedesSociais>
         </footer>
     )
 }

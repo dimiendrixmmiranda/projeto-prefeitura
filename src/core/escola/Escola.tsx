@@ -10,4 +10,5 @@ export interface Escola{
     telefone: string
     imagem: string
     redesSociais: RedesSociais[]
+    descricaoEscola: string[]
 }

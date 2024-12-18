@@ -1,16 +1,17 @@
 'use client'
+
 import Template from "@/components/template/Template";
-import { listaDeSecretarias } from "@/core/constants/listaDeSecretarias";
-import { Secretaria } from "@/core/secretaria/secretaria";
+import styles from './style.module.css'
+import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Image from "next/image";
 import Link from "next/link";
+import { listaDeSecretarias } from "@/core/constants/listaDeSecretarias";
+import { Secretaria } from "@/core/secretaria/secretaria";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BsTelephoneFill } from "react-icons/bs";
 import { IoLocation } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
-import styles from './style.module.css'
-import AncoraContainer from "@/components/ancora/AncoraContainer";
 import { FaClockRotateLeft } from "react-icons/fa6";
 
 export default function Page() {
@@ -49,10 +50,10 @@ export default function Page() {
                                 <b className="flex items-center gap-1"><FaClockRotateLeft />Atendimento:</b>
                                 das 7:30h ás 11:30h e 13:00h ás 17:00h
                             </h2>
-                            <Link href={'/'}>
+                            <Link href={`tel:+${secretaria.telefone}`}>
                                 <h2 className="whitespace-wrap flex gap-2"><b className="flex items-center gap-1"><BsTelephoneFill className='text-[14px]' />Telefone:</b> {secretaria.telefone}</h2>
                             </Link>
-                            <Link href={'/'}>
+                            <Link href={`mailto:${secretaria.email}`}>
                                 <h2 className="whitespace-wrap flex gap-2">
                                     <b className="flex items-center gap-1">
                                         <MdEmail />Email:
@@ -60,7 +61,7 @@ export default function Page() {
                                     {secretaria.email}
                                 </h2>
                             </Link>
-                            <Link href={'/'}>
+                            <Link href={'https://maps.app.goo.gl/YFbTksqNod8g61Cm7'}>
                                 <h2 className="whitespace-wrap flex gap-2">
                                     <b className="flex items-center gap-1">
                                         <IoLocation />Local:
