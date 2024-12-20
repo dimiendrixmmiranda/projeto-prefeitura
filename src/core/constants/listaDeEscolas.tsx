@@ -336,7 +336,7 @@ export const listaDeEscolas: Escola[] = [
         nome: 'Escola Municipal São Sebastião',
         tipo: 'Escola Pública',
         diretora: 'Marco Reus',
-        ensino: ['Fundametal', 'Médio'],
+        ensino: ['Fundametal'],
         endereco: 'Rua José Castanheira, 400',
         bairro: 'Centro',
         telefone: '(43) 3559-1122',

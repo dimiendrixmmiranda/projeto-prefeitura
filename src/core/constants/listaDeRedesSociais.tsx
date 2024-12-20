@@ -8,12 +8,12 @@ export const listaDeRedesSociais: RedesSociais[] = [
     {
         icone: <FaFacebookSquare />,
         nome: "Facebook",
-        link: '/'
+        link: 'https://www.facebook.com/prefeituraJT/?locale=sw_KE'
     },
     {
         icone: <FaInstagramSquare />,
         nome: "Instagram",
-        link: '/'
+        link: 'https://www.instagram.com/prefeituradejoaquimtavora/'
     },
     {
         icone: <MdEmail />,
@@ -23,16 +23,16 @@ export const listaDeRedesSociais: RedesSociais[] = [
     {
         icone: <FaHeadphones />,
         nome: "SAC",
-        link: '/'
+        link: 'tel:+08006432560/'
     },
     {
         icone: <FaPhone />,
         nome: "Telefone",
-        link: '/'
+        link: 'tel:+4335591122'
     },
     {
         icone: <IoLocation />,
         nome: "Endereço",
-        link: '/'
+        link: 'https://maps.app.goo.gl/Y6kJUGmzotebgNBY9'
     },
 ]

@@ -71,12 +71,18 @@ export default function AspectosGeograficos() {
                         <p style={{ textIndent: '2em' }}>Embora a transformação da paisagem tenha reduzido a cobertura vegetal original, Joaquim Távora ainda abriga uma diversidade considerável de espécies. Fauna como capivaras, jaguatiricas, tatus e diversas aves encontram refúgio nos remanescentes florestais e nas áreas de preservação.</p>
                         <p style={{ textIndent: '2em' }}>A biodiversidade é protegida, em parte, por programas de conservação e iniciativas locais, como a educação ambiental em escolas e ações de reflorestamento promovidas por organizações governamentais e não governamentais.</p>
                         <p style={{ textIndent: '2em' }}>O uso do solo predominantemente agrícola, associado ao manejo inadequado em algumas áreas, resultou em problemas como a compactação do solo, erosão e assoreamento dos cursos d’água. O monocultivo de grãos, embora economicamente relevante, exige práticas mais sustentáveis para mitigar impactos ambientais, como a rotação de culturas e o plantio direto.</p>
-                        <div className="grid w-full gap-5 lg:grid-cols-2 my-4">
-                            <div className="w-[300px] h-[300px] relative md:w-[500px]">
-                                <Image alt="Rio das Cinzas" src={'https://upload.wikimedia.org/wikipedia/commons/4/47/Rio_das_Cinzas_021206_REFON.jpg'} fill className="object-cover"></Image>
+                        <div className="flex flex-col gap-4 justify-center items-center mt-4 lg:grid lg:grid-cols-2">
+                            <div className="flex flex-col w-full justify-center items-center">
+                                <div className="w-full max-w-[500px] gap-4 h-[300px] relative md:w-[500px]">
+                                    <Image alt="Rio das Cinzas" src={'https://upload.wikimedia.org/wikipedia/commons/4/47/Rio_das_Cinzas_021206_REFON.jpg'} fill className="object-cover"></Image>
+                                </div>
+                                <h2 className="uppercase bg-[--verde] w-full text-center text-white font-bold py-1 text-lg max-w-[500px]">Rio das Cinzas</h2>
                             </div>
-                            <div className="w-[300px] h-[300px] relative md:w-[500px]">
-                                <Image alt="Rio das Itarare" src={'https://upload.wikimedia.org/wikipedia/commons/4/47/Rio_Itarar%C3%A9_-_Visto_da_Ponte_Divisa_PR-SP.jpg'} fill className="object-cover"></Image>
+                            <div className="flex flex-col w-full justify-center items-center">
+                                <div className="w-full max-w-[500px] gap-4 h-[300px] relative md:w-[500px]">
+                                    <Image alt="Rio das Itarare" src={'https://upload.wikimedia.org/wikipedia/commons/4/47/Rio_Itarar%C3%A9_-_Visto_da_Ponte_Divisa_PR-SP.jpg'} fill className="object-cover"></Image>
+                                </div>
+                                <h2 className="uppercase bg-[--verde] w-full text-center text-white font-bold py-1 text-lg max-w-[500px]">Rio Itararé</h2>
                             </div>
                         </div>
                     </li>

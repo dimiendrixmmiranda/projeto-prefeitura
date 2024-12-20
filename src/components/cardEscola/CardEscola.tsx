@@ -32,13 +32,11 @@ export default function CardEscola({ escola }: CardEscolaProps) {
                 <p className="flex items-center gap-1"><b className="flex items-center gap-1"><IoPersonSharp /> Diretora:</b> {escola.diretora}</p>
                 <div className="flex gap-1 items-start">
                     <b className="flex gap-1 items-center whitespace-nowrap"><FaBook />Ensinos Oferecidos:</b>
-                    <ul className="md:flex md:gap-2">
-                        {escola.ensino.map((ensino, i) => {
-                            return (
-                                <li key={i}>{ensino}</li>
-                            )
-                        })}
-                    </ul>
+                    <p>{escola.ensino.map((escolaItem, i) => {
+                        return (
+                            escola.ensino.length -1 <= i ? ` ${escolaItem}` : `${escolaItem} /`
+                        )
+                    })}</p>
                 </div>
                 <Link href={'/'}>
                     <p className="flex gap-1 items-center"><b className="flex gap-1 items-center"><IoLocationSharp />Endereço:</b> {escola.endereco}</p>

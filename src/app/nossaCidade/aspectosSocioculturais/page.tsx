@@ -17,11 +17,17 @@ export default function AspectosSocioCulturais() {
                             Além disso, há uma valorização da história e da educação, com esforços voltados para preservar a memória da cidade e incentivar o aprendizado nas escolas locais. Esse cuidado com o passado e o compromisso com o futuro demonstram o equilíbrio entre tradição e modernidade que caracteriza Joaquim Távora, tornando-a uma cidade que, mesmo pequena, é rica em aspectos socioculturais que refletem o coração de sua comunidade.</p>
                     </li>
                     <li className="flex flex-col gap-5 mx-auto lg:grid lg:grid-cols-2">
-                        <div className="relative w-[300px] h-[300px] md:w-[500px]">
-                            <Image alt="Santuario Santíssimo Nome de Jesus" src={'https://rotadorosario.org/wp-content/uploads/2019/07/ssnj003-1024x575.jpg'} fill className="object-cover"></Image>
+                        <div className="flex flex-col w-full justify-center items-center">
+                            <div className="w-full max-w-[500px] gap-4 h-[300px] relative md:w-[500px]">
+                                <Image alt="Santuario Santíssimo Nome de Jesus" src={'https://rotadorosario.org/wp-content/uploads/2019/07/ssnj003-1024x575.jpg'} fill className="object-cover"></Image>
+                            </div>
+                            <h2 className="uppercase bg-[--verde] w-full text-center text-white font-bold py-1 text-lg max-w-[500px]">Santuário Santíssimo Nome de Jesus</h2>
                         </div>
-                        <div className="relative w-[300px] h-[300px] md:w-[500px]">
-                            <Image alt="Rodeio Tavorense" src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzi3tpPHwD42r7fDI2dGafhOmZ4K12RHKoNA&s'} fill className="object-cover"></Image>
+                        <div className="flex flex-col w-full justify-center items-center">
+                            <div className="w-full max-w-[500px] gap-4 h-[300px] relative md:w-[500px]">
+                                <Image alt="Rodeio Tavorense" src={'/rodeio.png'} fill className="object-cover"></Image>
+                            </div>
+                            <h2 className="uppercase bg-[--verde] w-full text-center text-white font-bold py-1 text-lg max-w-[500px]">Festa do Rodeio</h2>
                         </div>
                     </li>
                 </ul>

@@ -24,7 +24,7 @@ export default function SimbolosMunicipais() {
                             </li>
                         </ul>
                         <p style={{ textIndent: '2em', gridColumn: '1/2' }}>A bandeira, em sua composição geral, transmite a mensagem: &quot;Unidos, temos um município próspero.&quot;</p>
-                        <div className="relative w-[300px] h-[300px] mx-auto lg:w-[400px]" style={{ gridColumn: '2/3', gridRow: '2/5' }}>
+                        <div className="relative w-full max-w-[500px] h-[300px] mx-auto lg:w-[400px]" style={{ gridColumn: '2/3', gridRow: '2/5' }}>
                             <Image alt="Bandeira do município de Joaquim Távora pr" src={'https://www.controlemunicipal.com.br/inga/sistema/imagens/123/gd_020921084542_1531923391bandeirajoaquimtavora_png.png'} fill className="object-cover"></Image>
                         </div>
                     </li>

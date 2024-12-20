@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Parkinsans:wght@300..800&display=swap');
+
 
 :root {
   --background: #ffffff;
@@ -14,6 +15,7 @@
   --marrom: #AC1B1B;
   --cinza: #F1F0E8;
   --fonte-primaria: "Parkinsans", sans-serif;
+  --fonteSlogan: "Playwrite NL Guides", serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -45,6 +47,10 @@ body {
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--verde) !important;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {
