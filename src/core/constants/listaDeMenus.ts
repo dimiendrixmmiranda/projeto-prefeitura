@@ -124,11 +124,11 @@ export const listaDeMenus: Menu[] = [
         item: 'Comércio',
         submenu: [
             {
-                link: '/',
+                link: '/comercio/comercioLocal',
                 nome: "Comércio Local"
             },
             {
-                link: '/',
+                link: '/comercio/adicionarComercio',
                 nome: "Cadastre seu Comércio"
             },
         ]
