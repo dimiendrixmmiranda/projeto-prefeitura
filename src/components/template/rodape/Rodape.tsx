@@ -17,7 +17,7 @@ export default function Rodape() {
                         <h2 className="font-semibold text-[.8em] leading-5 sm:leading-5 sm:text-lg">Prefeitura Municipal de</h2>
                         <h1 className="font-black text-lg leading-5 sm:leading-5 sm:text-2xl xl:text-3xl">Joaquim Távora - PR</h1>
                     </div>
-                    <div className="relative w-[60px] h-[60px] md:w-[40px] xl:w-[70px] xl:h-[70px]">
+                    <div className="relative w-[60px] h-[60px] ml-auto md:ml-0 md:w-[40px] xl:w-[70px] xl:h-[70px]">
                         <Image src={'/brasao-parana.png'} alt="Brasão do Estado do Paraná" className="object-contain" fill></Image>
                     </div>
                 </Link>
