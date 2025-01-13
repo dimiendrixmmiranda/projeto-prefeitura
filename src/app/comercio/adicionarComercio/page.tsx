@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <Template>
             <div className="max-w-[1000px] mx-auto">
-                <div className="text-black m-2 p-2 border-2 border-[--verde] rounded-lg flex flex-col gap-4 items-center max-w-[570px] w-[95%] mx-auto">
+                <div className="text-black m-2 p-2 border-2 border-[--verde] rounded-lg flex flex-col gap-4 items-center max-w-[570px] w-[95%] mx-auto lg:grid lg:grid-cols-2 lg:max-w-[1000px] lg:my-6">
                     <div className="relative w-[280px] h-[210px] sm:w-[360px] sm:h-[300px] md:w-[450px] md:h-[380px]">
                         <Image alt="comercio" src={'/comercio.svg'} fill className="object-cover"></Image>
                     </div>
@@ -54,7 +54,7 @@ export default function Page() {
                         </fieldset>
                     </form>
                 </div>
-                <div className="my-6">
+                <div className="my-6 max-w-[570px] mx-auto lg:max-w-[1000px] lg:mr-6">
                     <AncoraContainer></AncoraContainer>
                 </div>
             </div>
