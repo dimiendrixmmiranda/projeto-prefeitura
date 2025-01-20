@@ -46,7 +46,7 @@ export default function SidebarComponent() {
 
                     </div>
                     <div className='w-full h-12'>
-                        <ul className='flex h-full w-full'>
+                        <ul className='grid grid-cols-6 h-full w-full'>
                             {
                                 listaDeRedesSociais.map((item, i) => {
                                     return (

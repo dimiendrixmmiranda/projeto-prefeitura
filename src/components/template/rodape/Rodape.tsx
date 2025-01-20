@@ -21,7 +21,7 @@ export default function Rodape() {
                         <Image src={'/brasao-parana.png'} alt="Brasão do Estado do Paraná" className="object-contain" fill></Image>
                     </div>
                 </Link>
-                <ul className={`flex justify-around items-end pb-2 h-[60px] text-3xl gap-2 md:justify-end md:gap-4 lg:text-4xl ${style.redes}`}>
+                <ul className={`flex justify-around items-end pb-2 h-[60px] text-xl gap-2 md:justify-end md:gap-4 lg:text-2xl ${style.redes}`}>
                     {
                         listaDeRedesSociais.map((rede, i) => {
                             return (
