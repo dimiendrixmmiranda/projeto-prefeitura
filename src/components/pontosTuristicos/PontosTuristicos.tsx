@@ -68,7 +68,7 @@ export default function PontosTuristicos() {
                                     className='object-cover h-[90%] border-4 border-[--verde]'
                                 />
                             </div>
-                            <p className='bg-[--verde] w-full text-center font-bold p-1 leading-5 flex justify-center items-center lg:text-lg lg:leading-5 xl:text-2xl'>{pontoTuristico.titulo}</p>
+                            <p className='bg-[--verde] w-full text-center font-bold p-1 leading-5 flex justify-center items-center border border-zinc-700 lg:text-lg lg:leading-5 xl:text-2xl'>{pontoTuristico.titulo}</p>
                         </div>
                     </SwiperSlide>
                 ))}
@@ -77,7 +77,7 @@ export default function PontosTuristicos() {
             <Dialog
                 header={pontoTuristico?.titulo}
                 visible={visible}
-                className='w-[90%] h-[70%] sm:h-[85%] md:h-[75%] md:w-[60%] lg:w-[45%] xl:w-[35%]'
+                className='w-[90%] h-[75%] sm:h-[85%] md:h-[75%] md:w-[60%] lg:w-[45%] xl:w-[35%]'
                 onHide={() => setVisible(false)}
             >
                 {
@@ -89,7 +89,7 @@ export default function PontosTuristicos() {
                             <div className='w-full h-full'>
                                 <p>{pontoTuristico.descricao}</p>
                             </div>
-                            <div className='w-full h-full text-lg gap-2 md:grid md:grid-cols-2 md:justify-center md:items-center md:gap-8'>
+                            <div className='flex flex-col gap-2 md:grid md:grid-cols-2'>
                                 <div className='flex justify-center bg-[--verde] text-white py-2'>
                                     <Link href={'/'} className='flex items-center gap-1'><FaPhone />Tire Suas Dúvidas</Link>
                                 </div>

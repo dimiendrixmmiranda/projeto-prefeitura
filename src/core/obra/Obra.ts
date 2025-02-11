@@ -4,4 +4,5 @@ export default interface Obra{
     imagem: string,
     data: string,
     descricao: string
+    governo: string
 }

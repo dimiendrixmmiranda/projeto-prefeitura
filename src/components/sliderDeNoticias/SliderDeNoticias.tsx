@@ -21,11 +21,11 @@ export default function SliderDeNoticias() {
         >
             {noticias.map((noticia, i) => (
                 <SwiperSlide
-                    className="relative w-full h-full"
+                    className="relative w-full h-full border-2 border-black"
                     key={i}
                 >
-                    <Link href={`/noticias/${createSlugWithId(noticia.titulo, noticia.id)}`}>
-                        <div className='relative w-full h-full'>
+                    <Link href={`/noticias/${createSlugWithId(noticia.titulo, noticia.id)}`} >
+                        <div className='relative w-full h-full' >
                             <Image
                                 alt="recado da cidade"
                                 src={noticia.imagem}

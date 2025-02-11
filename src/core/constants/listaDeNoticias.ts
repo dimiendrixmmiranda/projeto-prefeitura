@@ -2,123 +2,127 @@ import Noticia from "../noticia/Noticia";
 
 export const listaDeNoticias: Noticia[] = [
     {
+        titulo: "REUNIÃO DEBATE AÇÕES E PROJETOS PARA JOAQUIM TÁVORA",
+        data: "10/02/2025",
+        descricao: "O prefeito Gelson Mansur Nassar e o vice-prefeito Jair Mazoti(PSDB) receberam representantes da SANEPAR para debater ações e projetos para o município nos próximos anos.",
+        imagem: "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/gd_100225111051_whatsapp_image_20250206_at_18_17_36_jpeg.jpeg",
         id: 1,
-        titulo: "Prefeitura lança programa de arborização urbana",
-        descricao: "O programa visa plantar 500 novas árvores em áreas urbanas de Joaquim Távora até o final do ano.",
-        imagem: "/wireframe.png",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
         ]
     },
     {
+        titulo: "COMUNICADO IMPORTANTE PREFEITURA DE JOAQUIM TÁVORA",
+        data: "07/02/2025",
+        descricao: "A prefeitura alerta a população sobre golpes por e-mail e telefone. Apenas e-mails institucionais são utilizados para comunicação.",
+        imagem: "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/gd_070225144306_whatsapp_image_20250207_at_14_38_01_jpeg.jpeg",
         id: 2,
-        titulo: "Feira de produtos locais acontece neste final de semana",
-        descricao: "A tradicional feira contará com expositores de artesanato, alimentos orgânicos e música ao vivo.",
-        imagem: "/wireframe.png",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
         ]
     },
     {
+        titulo: "PREFEITO RECEBE VISITA DO SEBRAE NORTE PIONEIRO PARA ALINHAMENTO DE AÇÕES NO MUNICÍPIO",
+        data: "05/02/2025",
+        descricao: "Prefeito recebe consultores do Sebrae para estreitar laços e discutir estratégias de fortalecimento do empreendedorismo local.",
+        imagem: "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/gd_050225181346_imagem_do_whatsapp_de_20250205_as_18_12_042862700d_jpg.jpg",
         id: 3,
-        titulo: "Escola Municipal promove campeonato de xadrez",
-        descricao: "O evento reuniu estudantes de diversas escolas da região para promover o aprendizado e a socialização.",
-        imagem: "/wireframe.png",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
         ]
     },
     {
+        titulo: "NOVOS TELEFONES PREFEITURA DE JOAQUIM TÁVORA",
+        data: "04/02/2025",
+        descricao: "Número (43) 3559-1122 não está funcionando. Novos contatos disponíveis para atendimento à população.",
+        imagem: "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/gd_040225112850_whatsapp_image_20250204_at_10_54_48_jpeg.jpeg",
         id: 4,
-        titulo: "Joaquim Távora comemora 95 anos de fundação",
-        descricao: "Com desfiles e apresentações culturais, a cidade celebrou seu aniversário com grande participação da população.",
-        imagem: "/wireframe.png",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
         ]
     },
     {
+        titulo: "ÔNIBUS GRATUITO SÃO ROQUE DO PINHAL",
+        data: "24/01/2025",
+        descricao: "A prefeitura disponibilizará horários de ônibus circular para São Roque do Pinhal às segundas e quartas-feiras.",
+        imagem: "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/gd_240125080524_47471342318104442919474444894434258452225303n_jpg.jpg",
         id: 5,
-        titulo: "Posto de saúde amplia horário de atendimento",
-        descricao: "A unidade agora funciona até às 20h para atender melhor a população trabalhadora.",
-        imagem: "/wireframe.png",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
         ]
     },
     {
+        titulo: "NOVA SERVENTE TOMA POSSE NA PREFEITURA DE JOAQUIM TÁVORA",
+        data: "23/01/2025",
+        descricao: "Daniele Pereira de Matos Vieira assume cargo de servente após aprovação em concurso público.",
+        imagem: "https://www.controlemunicipal.com.br/inga/sistema/imagens/123/gd_230125120342_474863048181044065924744443824186527001199768n_jpg.jpg",
         id: 6,
-        titulo: "Caminhada ecológica reúne voluntários no Parque Municipal",
-        descricao: "O evento contou com mais de 200 participantes para limpeza de trilhas e plantio de mudas.",
-        imagem: "https://example.com/caminhada-ecologica.jpg",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
         ]
     },
     {
+        data: "07/02/2025",
+        titulo: "COMUNICADO SANEPAR JOAQUIM TÁVORA",
+        descricao: "A Sanepar informa que, devido a serviços de higienização periódica de rotina na estação de tratamento de água em Joaquim Távora, programados para domingo (09), pode haver oscilação de pressão na rede e/ou...",
+        imagem: '/wireframe.png',
         id: 7,
-        titulo: "Nova iluminação pública é instalada na Avenida Central",
-        descricao: "Os novos postes de LED prometem maior eficiência energética e segurança para os moradores.",
-        imagem: "https://example.com/iluminacao-publica.jpg",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
+            '',
         ]
     },
     {
+        data: "05/02/2025",
+        titulo: "ALUNOS DA REDE MUNICIPAL DE ENSINO DE JOAQUIM TÁVORA VOLTAM ÀS AULAS HOJE",
+        descricao: "As escolas e CMEIS da rede municipal de ensino de Joaquim Távora estão preparadas para receber os alunos para o início do ano letivo de 2025. O prefeito Gelson Mansur Nassar (PSDB), destacou o compromisso da administração municipal com a educação...",
+        imagem: '/wireframe.png',
         id: 8,
-        titulo: "Time de futebol local vence campeonato regional",
-        descricao: "A equipe de Joaquim Távora conquistou o título após uma vitória emocionante nos pênaltis.",
-        imagem: "https://example.com/time-campeao.jpg",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
+            '',
         ]
     },
     {
+        data: "03/02/2025",
+        titulo: "BEM VINDOS PROFESSORES",
+        descricao: "A nossa saudação a todos os profissionais da educação que retornam ao trabalho nesta segunda-feira (03). Um bom ano letivo a todos os professores e profissionais da educação Tavorense.",
+        imagem: '/wireframe.png',
         id: 9,
-        titulo: "Biblioteca Municipal inaugura sala de leitura infantil",
-        descricao: "O espaço foi pensado para incentivar a leitura entre crianças com atividades lúdicas e contação de histórias.",
-        imagem: "https://example.com/sala-leitura.jpg",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
+            '',
         ]
     },
     {
+        data: "13/11/2024",
+        titulo: "QUALIFICA PARANÁ FORMA TURMA DE ELETRECISTAS PREDIAIS E INDUSTRIAIS EM JOAQUIM TÁVORA",
+        descricao: "Durante solenidade realizada na noite de ontem, terça-feira (12), na sede da Câmara Municipal de Vereadores de Joaquim Távora, aconteceu a Formatura dos Cursos Elétrica Predial e Elétrica Industrial. Na oportunidade foram entregues os certificados a 28...",
+        imagem: '/wireframe.png',
         id: 10,
-        titulo: "Evento cultural celebra diversidade musical da região",
-        descricao: "O festival contou com apresentações de bandas locais e danças típicas que encantaram o público.",
-        imagem: "https://example.com/evento-cultural.jpg",
         materia: [
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sagittis rhoncus iaculis. Proin a justo at magna efficitur sodales non ac metus. Quisque vitae augue diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla ultricies ex ipsum, ac sollicitudin tellus vestibulum sed. Mauris quis tortor tempus, bibendum turpis eget, egestas tellus. Etiam tempus luctus tellus, vitae commodo libero iaculis pellentesque. Aenean eget feugiat magna. Aliquam nec dolor lectus. Aenean dapibus sollicitudin neque, a accumsan massa malesuada vitae. Duis iaculis pretium dignissim. Nunc sed erat gravida, tempus nunc sit amet, vestibulum massa. Vivamus tempor leo in vehicula tempor. Duis tincidunt blandit massa a rutrum. Ut gravida dui elit, vitae tristique ex aliquet non. Fusce tortor augue, accumsan ac metus porttitor, varius convallis ante.',
-            'In a rutrum purus, vel vulputate mauris. Maecenas at porttitor purus. Quisque feugiat nibh et nisl ultrices ultricies. Cras imperdiet blandit nibh, id scelerisque mauris euismod sit amet. Donec consectetur fringilla scelerisque. Etiam sagittis elementum sapien, eget tempus risus ullamcorper vitae. Pellentesque eu egestas massa, vitae tempor tellus. In tincidunt, lectus non convallis blandit, diam ipsum elementum ex, vel porttitor nisl elit a dolor. Phasellus lacinia tortor eget bibendum elementum. Proin vestibulum elit quis ex molestie interdum. Curabitur sed tristique dui, at fringilla eros. Aenean dignissim, turpis vel condimentum volutpat, eros magna congue lectus, vel scelerisque nulla elit nec nunc. Duis ac tortor sit amet diam imperdiet mattis facilisis dapibus nibh. Nulla facilisi.',
-            'Mauris et iaculis ipsum, id fringilla ligula. Mauris consectetur pretium nulla, ut laoreet sem mollis sed. Nam eget orci nunc. Donec venenatis nec odio nec venenatis. Etiam elementum vel orci sit amet tempor. Nam elementum diam vel lectus faucibus, ultricies malesuada velit dapibus. Ut rutrum tortor id mi interdum posuere. Etiam porta iaculis odio. Nulla sed est id est pulvinar sodales at at risus.',
-            'Donec efficitur faucibus nisl, pharetra venenatis turpis molestie ut. Fusce risus justo, eleifend eget lacus eget, tempus auctor tellus. Integer at ultricies sapien, quis fringilla magna. Nulla facilisi. Sed at sagittis enim. Fusce in urna nisl. Quisque in ante felis. In sit amet augue non nulla dapibus auctor sit amet eu metus. Aenean vulputate cursus ligula id auctor.'
+            '',
+            '',
+            '',
+            '',
         ]
     }
 ];

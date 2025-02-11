@@ -4,4 +4,5 @@ export default interface Noticia{
     descricao: string
     imagem: string,
     materia: string []
+    data: string
 }

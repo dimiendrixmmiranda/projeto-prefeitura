@@ -23,35 +23,23 @@ export default function CardComercio({ comercio }: CardComercioProps) {
                         <h2 className="text-xl font-bold leading-5 text-center">{comercio.nome}</h2>
                     </div>
                     <div className="flex flex-col justify-start items-start gap-2 overflow-hidden lg:text-lg lg:gap-4">
-                        <div className="leading-5 flex overflow-x-auto max-w-full">
-                            <b className="flex gap-1">
-                                <FaClockRotateLeft /> Atendimento:
-                            </b>
-                            <p className="whitespace-nowrap">
-                                - Aberto - {comercio.atendimento}
+                        <div className="leading-5 max-w-full text-[.75em] sm:text-[.9em]">
+                            <p className="flex items-center leading-4">
+                                <FaClockRotateLeft className="mr-1" /> Atendimento: - Aberto - {comercio.atendimento}
                             </p>
                         </div>
                         <Link href={`tel:+${comercio.telefone}`}>
-                            <p className="leading-5 flex overflow-x-auto max-w-full">
-                                <b className="flex items-center gap-1">
-                                    <BsTelephoneFill className="text-[.9em]" />Telefone:
-                                </b>
-                                {comercio.telefone}
+                            <p className="leading-5 flex items-center gap-1">
+                                <BsTelephoneFill />Telefone: {comercio.telefone}
                             </p>
                         </Link>
                         <Link href={'/'} className="leading-5 flex overflow-x-auto max-w-full">
-                            <b className="flex gap-1">
-                                <IoLocation />Endereço:
-                            </b>
-                            <p className="whitespace-nowrap">
-                                {comercio.endereco}
+                            <p className="flex items-center gap-1">
+                                <IoLocation />Endereço: {comercio.endereco}
                             </p>
                         </Link>
-                        <p className="leading-5 flex flex-col sm:flex-row">
-                            <b className="flex gap-1">
-                                <FaBagShopping /> Tipo:
-                            </b>
-                            {comercio.tipo}
+                        <p className="leading-5 flex items-center gap-1">
+                            <FaBagShopping /> Tipo:{comercio.tipo}
                         </p>
                     </div>
                     <ul className="w-full flex text-2xl lg:max-w-[85%] lg:mx-auto ">

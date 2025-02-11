@@ -22,20 +22,30 @@ export default function ListaDeComercios() {
                     <h2 className='uppercase font-black text-2xl text-center xl:text-4xl'>Incentive o Comércio Local!</h2>
                     <p>Apoie o comércio local e fortaleça nossa comunidade! Encontre os melhores estabelecimentos próximos a você e descubra opções como supermercados, padarias, farmácias e muito mais! Filtre por tipo e faça suas compras de forma rápida e conveniente.</p>
                 </div>
-                <div className="mb-4">
-                    <label className="font-bold">Filtrar por tipo:</label>
-                    <select
-                        className="ml-2 border rounded p-1"
-                        value={tipoSelecionado}
-                        onChange={(e) => setTipoSelecionado(e.target.value)}
-                    >
-                        {tiposDeComercio.map((tipo, index) => (
-                            <option key={index} value={tipo}>{tipo}</option>
-                        ))}
-                    </select>
-                </div>
+                <ul className='flex flex-col gap-2 md:flex-row'>
+                    <li>
+                        <div className="mb-4">
+                            <label className="font-bold">Buscar por nome:</label>
+                            <input type="text" name="nome" id="nome" className='border rounded p-1'/>
+                        </div>
+                    </li>
+                    <li>
+                        <div className="mb-4">
+                            <label className="font-bold">Filtrar por tipo:</label>
+                            <select
+                                className="ml-2 border rounded p-2"
+                                value={tipoSelecionado}
+                                onChange={(e) => setTipoSelecionado(e.target.value)}
+                            >
+                                {tiposDeComercio.map((tipo, index) => (
+                                    <option key={index} value={tipo}>{tipo}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </li>
+                </ul>
 
-                <ul className="grid grid-cols-1 gap-2 pb-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4">
+                <ul className="grid grid-cols-1 gap-2 pb-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4">
                     {comerciosFiltrados.map((comercio, index) => (
                         <CardComercio comercio={comercio} key={index}></CardComercio>
                     ))}

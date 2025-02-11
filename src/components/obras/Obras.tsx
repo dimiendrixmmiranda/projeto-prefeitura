@@ -73,19 +73,20 @@ export default function Obras() {
             <Dialog
                 header={obra?.titulo}
                 visible={visible}
-                className='w-[90%] h-[70%] sm:h-[85%] md:h-[75%] md:w-[60%] lg:w-[45%] xl:w-[35%]'
+                className='w-[90%] h-[75%] sm:h-[85%] md:h-[75%] md:w-[60%] lg:w-[45%] xl:w-[35%]'
                 onHide={() => setVisible(false)}
             >
                 {
                     obra != undefined ?
-                    <div className='w-full h-full gap-2 md:gap-4 xl:gap-6' style={{ display: 'grid', gridTemplateRows: '1fr auto auto' }}>
+                        <div className='w-full h-full gap-2 md:gap-4 xl:gap-6' style={{ display: 'grid', gridTemplateRows: '1fr auto auto' }}>
                             <div className='relative w-full h-full'>
                                 <Image src={obra?.imagem} alt={obra?.titulo} fill className='object-cover'></Image>
                             </div>
                             <div className='w-full h-full'>
                                 <p>{obra.descricao}</p>
                             </div>
-                            <div className='w-full h-full flex justify-center items-end text-center leading-5'>
+                            <div className='w-full h-full flex items-end text-center leading-5 justify-around py-4 md:py-0'>
+                                <p>{obra.governo}</p>
                                 <p>{obra.data}</p>
                             </div>
                         </div>

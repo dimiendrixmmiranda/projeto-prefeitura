@@ -5,5 +5,6 @@ export interface Secretaria {
     encarregado: string
     email: string
     imagem: string
-    descricaoEncarregado?: string
+    descricaoEncarregado: string
+    descricaoAfazeresSecretaria: string
 }

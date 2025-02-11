@@ -9,13 +9,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MdEmail } from "react-icons/md";
 import { listaDeSecretarias } from '@/core/constants/listaDeSecretarias';
-import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
 import { IoPersonSharp } from "react-icons/io5";
 import { MdPhoneForwarded } from "react-icons/md";
 
 import style from './style.module.css'
 import { Dialog } from 'primereact/dialog';
 import { Secretaria } from '@/core/secretaria/secretaria';
+import { HiDocumentSearch } from 'react-icons/hi';
 export default function Secretarias() {
     const [secretaria, setSecretaria] = useState<null | Secretaria>(null)
     const [visible, setVisible] = useState(false)
@@ -62,7 +62,7 @@ export default function Secretarias() {
                                     setVisible(true)
                                     setSecretaria(secretaria)
                                 }}>
-                                <HiDocumentMagnifyingGlass />
+                                <HiDocumentSearch />
                             </div>
                         </div>
                     </SwiperSlide>
@@ -85,9 +85,21 @@ export default function Secretarias() {
                                     <Link href={`tel:${secretaria.telefone}`} className='flex justify-start items-center gap-1'><MdPhoneForwarded />Fone: {secretaria.telefone}</Link>
                                     <Link href={`mailto:${secretaria.email}`} className='flex justify-start items-center gap-1'> <MdEmail /> Email: {secretaria.email}</Link>
                                 </div>
-                                <div className='flex flex-col gap-1'>
-                                    <h2>Descrição do <b className='text-bold'>Encarregado</b> e dos seus <b className='text-bold'>Afazeres</b>:</h2>
-                                    <p>{secretaria.descricaoEncarregado}</p>
+                                <div>
+                                    <ul className='flex flex-col gap-5'>
+                                        <li className='flex flex-col gap-1'>
+                                            <h2 className='text-lg font-bold leading-6'>Descrição dos Afazeres da Secretaria:</h2>
+                                            <p>
+                                                {secretaria.descricaoAfazeresSecretaria}
+                                            </p>
+                                        </li>
+                                        <li className='flex flex-col gap-1'>
+                                            <h2 className='text-lg font-bold leading-6'>Descrição do Encarregado:</h2>
+                                            <p>
+                                                {secretaria.descricaoEncarregado}
+                                            </p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             : ''

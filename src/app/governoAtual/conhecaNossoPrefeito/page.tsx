@@ -15,10 +15,10 @@ export default function Page() {
                     </div>
                 </div>
                 <div className="-mt-6">
-                    <h2 className="font-black text-2xl text-center leading-7">Memphis Depay e Angel Romero</h2>
+                    <h2 className="font-black text-2xl text-center leading-7">Gelson Nassar e Jair Mazzoti</h2>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <h3 className="text-lg font-bold">Prefeito Memphis Depay</h3>
+                    <h3 className="text-lg font-bold">Prefeito Gelson Nassar</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tellus erat, interdum quis mollis volutpat, aliquet et diam. Ut in sodales eros. Suspendisse semper tempor neque. Phasellus semper nec sem vel mollis. Quisque id nibh mi. Vestibulum placerat quis orci non porta. Donec eu sagittis lorem. Integer posuere maximus mollis. Vestibulum hendrerit lacinia pellentesque. Fusce sed nisi venenatis, mattis turpis ut, mollis nisl. Sed accumsan nunc in ligula posuere molestie. Quisque porta mollis tortor, sed tincidunt libero mattis non.
                     </p>
@@ -28,7 +28,7 @@ export default function Page() {
                     </p>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <h3 className="text-lg font-bold">Vice Prefeito Angel Romero</h3>
+                    <h3 className="text-lg font-bold">Vice Prefeito Jair Mazzoti</h3>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tellus erat, interdum quis mollis volutpat, aliquet et diam. Ut in sodales eros. Suspendisse semper tempor neque. Phasellus semper nec sem vel mollis. Quisque id nibh mi. Vestibulum placerat quis orci non porta. Donec eu sagittis lorem. Integer posuere maximus mollis. Vestibulum hendrerit lacinia pellentesque. Fusce sed nisi venenatis, mattis turpis ut, mollis nisl. Sed accumsan nunc in ligula posuere molestie. Quisque porta mollis tortor, sed tincidunt libero mattis non.
                     </p>
