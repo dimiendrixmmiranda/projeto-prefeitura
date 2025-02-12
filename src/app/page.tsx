@@ -41,4 +41,6 @@ export default function App() {
  * 1 - pegar mais obras
  * 2 - refazer os banners
  * 3 - implementar paginas menu lateral
- * 4 - dar uma organizada geral */
+ * 4 - dar uma organizada geral 
+ * 5 - REFATORAÇÃO: pagina de aspectos educacionais n deve ter card de escolas mais um link para navegar para instituições de ensino
+ * 6 - Organizar as paginas*/

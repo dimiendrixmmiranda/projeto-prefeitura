@@ -3,78 +3,78 @@ import MenuAcessoRapido from "../menuAcessoRapido/MenuAcessoRapido";
 export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
     {
         nome: 'Legislação',
-        link: '/'
+        link: `/menuAcessoRapido/legislacao`
     },    
     {
         nome: 'Licitações',
-        link: '/'
+        link: `/menuAcessoRapido/licitacoes`
     },    
     {
         nome: 'Galeria de Obras',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Instituições de Ensino',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Hospitais e Postos',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Galeria de Prefeitos',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Eventos',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Corte e Poda de Árvores',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },  
     {
         nome: 'Focos de Dengue',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Concerto Iluminação Pública',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Pontos Turísticos',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Conselhos Municipais',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Informativo',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Assistência Social',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Coleta de Lixo',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Coleta de Lixo Reciclavel',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Agricultura',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Aspectos Educacionais',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
     {
         nome: 'Controladoria',
-        link: '/'
+        link: `/menuAcessoRapido/`
     },    
 ]
