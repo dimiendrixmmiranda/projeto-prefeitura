@@ -6,6 +6,7 @@
     border: solid 1px var(--verde);
     column-gap: .4em;
     color: var(--verde);
+    overflow: hidden;
 }
 
 .cardImagem{
@@ -13,13 +14,16 @@
     height: 100%;
     background-color: red;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cardTexto{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: .5em;
+    gap: .3em;
 }
 
 @media screen and (min-width: 425px){

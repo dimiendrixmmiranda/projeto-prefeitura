@@ -33,7 +33,7 @@ export default function SliderDeNoticias() {
                                 className="object-cover"
                             />
 
-                            <h2 className='absolute bottom-5 left-[50%] w-[90%] mx-auto text-center leading-5 text-lg text-white md:bottom-10 md:text-2xl lg:bottom-16 lg:text-3xl' style={{transform: 'translate(-50%)', textShadow: '1px 1px 2px black'}}>{noticia.titulo}</h2>
+                            <h2 className='absolute bottom-5 left-[50%] w-[90%] font-bold bg-white py-1 px-3 rounded-lg mx-auto text-center leading-5 text-lg text-[--verde] md:bottom-10 md:text-2xl lg:bottom-16 lg:text-3xl' style={{transform: 'translate(-50%)', boxShadow: '0 0 2px 1px black'}}>{noticia.titulo}</h2>
                         </div>
                     </Link>
                 </SwiperSlide>
