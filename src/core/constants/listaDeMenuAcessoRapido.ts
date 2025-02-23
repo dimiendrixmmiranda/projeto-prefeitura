@@ -50,8 +50,8 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
         link: `/menuAcessoRapido/`
     },    
     {
-        nome: 'Informativo',
-        link: `/menuAcessoRapido/`
+        nome: 'Pontos da Circular',
+        link: `/menuAcessoRapido/pontosCircular`
     },    
     {
         nome: 'Assistência Social',
