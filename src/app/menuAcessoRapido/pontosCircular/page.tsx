@@ -8,7 +8,7 @@ export default function Page() {
     return (
         <Template>
             <div className="text-black">
-                <h2>aqui</h2>
+                <h2>aqui2</h2>
                 <div className="w-[300px] h-[300px] bg-red-400 relative">
                     <Map latitude={-23.498468956489504} longitude={-49.9247063530446} texto="Centro" />
                 </div>
