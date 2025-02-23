@@ -12,6 +12,8 @@ import Slider from "@/components/slider/Slider"
 import SliderDeNoticias from "@/components/sliderDeNoticias/SliderDeNoticias"
 import Template from "@/components/template/Template"
 
+// olhar a versão do next instalada mais compativel
+
 export default function App() {
 	return (
 		<div>
