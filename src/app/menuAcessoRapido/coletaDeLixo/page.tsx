@@ -1,4 +1,5 @@
 'use client';
+import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import dynamic from "next/dynamic";
 
@@ -21,10 +22,31 @@ export default function Page() {
 
     return (
         <Template>
-            <div className="w-full h-[300px]">
-                <MapRoute latitude={-23.55052} longitude={-46.633308} arrayPontosGeral1={pontosCaminhao1} arrayPontosGeral2={pontosCaminhao2} />
+            <div className="text-black p-4 flex flex-col gap-4">
+                <h2 className="text-[--verde] uppercase font-bold text-2xl text-center leading-6 lg:text-3xl xl:text-4xl">Rotas da coleta do Caminhão de Lixo</h2>
+                <ul className="flex flex-col gap-2 md:grid md:grid-cols-2 xl:grid-cols-3">
+                    <li>
+                        <div>
+                            <h3 className="text-xl font-bold uppercase">Segunda-Feira</h3>
+                            <p>06h ás 11h:00 e das 13h:00 as 15h:00</p>
+                            <div>
+                                <div className="flex items-center gap-1 text-sm leading-5">
+                                    <p>Caminhao 1</p>
+                                    <span className="w-4 h-3 bg-green-500 border border-black"></span>
+                                </div>
+                                <div className="flex items-center gap-1 text-sm leading-5">
+                                    <p>Caminhao 2</p>
+                                    <span className="w-4 h-3 bg-red-500 border border-black"></span>
+                                </div>
+                            </div>
+                            <div className="w-full h-[300px] border-2 border-[--verde] mt-3 teste">
+                                <MapRoute latitude={-23.55052} longitude={-46.633308} arrayPontosGeral1={pontosCaminhao1} arrayPontosGeral2={pontosCaminhao2} />
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <AncoraContainer></AncoraContainer>
             </div>
-            <h2>Aqui</h2>
         </Template>
     )
 }

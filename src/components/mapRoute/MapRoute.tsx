@@ -1,3 +1,4 @@
+'use client'
 import { MapContainer, TileLayer, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
@@ -25,7 +26,8 @@ const RotaCaminhao = ({ waypoints, color = "green" }: RotaCaminhaoProps) => {
 
     const routingControl = L.Routing.control({
       waypoints: waypoints.map((p) => L.latLng(p.latitude, p.longitude)),
-      routeWhileDragging: true,
+      routeWhileDragging: false,
+      showAlternatives: false,
       lineOptions: {
         styles: [{ color: color, weight: 6 }],
         extendToWaypoints: true, // Adiciona essa propriedade
@@ -73,6 +75,9 @@ const MapRoute = ({
         className={styles.map}
         style={{ width: "100%", height: "100%" }}
         zoomControl={false}
+        doubleClickZoom={false}
+        touchZoom={false}
+        keyboard={false}
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
