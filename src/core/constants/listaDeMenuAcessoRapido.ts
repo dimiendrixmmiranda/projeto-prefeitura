@@ -59,7 +59,7 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
     },    
     {
         nome: 'Coleta de Lixo',
-        link: `/menuAcessoRapido/`
+        link: `/menuAcessoRapido/coletaDeLixo`
     },    
     {
         nome: 'Coleta de Lixo Reciclavel',

@@ -36,6 +36,7 @@ function Map({ latitude = -23.55052, longitude = -46.633308, texto = "Local", zo
                 zoom={zoom}
                 className={styles.map}
                 style={{ width: "100%", height: "100%" }}
+                zoomControl={false}
             >
                 <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
