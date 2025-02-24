@@ -10,7 +10,7 @@ const markerIcon = new L.Icon({
 });
 
 
-function Map({ latitude = -23.55052, longitude = -46.633308, texto = "Local", zoom = 17, arrayPontosGeral = [] }) {
+function Map({ latitude = -23.55052, longitude = -46.633308, texto = "Local", zoom = 17,  arrayPontosGeral = Array.isArray(arrayPontosGeral) ? arrayPontosGeral : []}) {
     return (
         <div className={styles.mapWrapper}>
             <MapContainer
