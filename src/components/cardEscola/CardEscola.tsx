@@ -10,6 +10,9 @@ import { BsFillHouseDoorFill } from "react-icons/bs";
 import { MdOutlinePermPhoneMsg } from "react-icons/md";
 import { useState } from "react";
 import { Dialog } from "primereact/dialog";
+
+import dynamic from "next/dynamic";
+const Map = dynamic(() => import("@/components/map"), { ssr: false });
 import Link from "next/link";
 
 interface CardEscolaProps {
@@ -20,7 +23,7 @@ export default function CardEscola({ escola }: CardEscolaProps) {
     const [escolaAtual, setEscolaAtual] = useState<Escola | null>(null)
     const [visible, setVisible] = useState(false)
     return (
-        <div className="w-[95%] max-w-[380px] flex flex-col p-3 gap-4 border-2 border-[--verde] relative text-[--verde]">
+        <div className="max-w-[380px] flex flex-col p-3 gap-4 border-2 border-[--verde] relative text-[--verde]">
             <div className="w-[140px] h-[140px] rounded-full overflow-hidden relative mx-auto" style={{ boxShadow: '0px 0px 2px 3px var(--verde)' }}>
                 <Image alt="escola" src={escola.imagem} fill className="object-cover"></Image>
             </div>
@@ -34,7 +37,7 @@ export default function CardEscola({ escola }: CardEscolaProps) {
                     <b className="flex gap-1 items-center whitespace-nowrap"><FaBook />Ensinos Oferecidos:</b>
                     <p>{escola.ensino.map((escolaItem, i) => {
                         return (
-                            escola.ensino.length -1 <= i ? ` ${escolaItem}` : `${escolaItem} /`
+                            escola.ensino.length - 1 <= i ? ` ${escolaItem}` : `${escolaItem} /`
                         )
                     })}</p>
                 </div>
@@ -45,9 +48,13 @@ export default function CardEscola({ escola }: CardEscolaProps) {
                 <Link href={`tel:+${escola.telefone}`}>
                     <p className="flex gap-1 items-center"><b className="flex gap-1 items-center"><MdOutlinePermPhoneMsg />Telefone:</b> {escola.telefone}</p>
                 </Link>
+                me leve até la
             </div>
             <div className="flex-1"></div>
-            <ul className="flex gap-2 justify-center items-end text-3xl h-[50px] -mt-4">
+            <div className="w-full h-[200px] bg-black border-2 border-[--verde] z-10">
+                <Map latitude={escola.latitude} longitude={escola.longitude} texto={escola.nome} iconUrl="/icones/escola.png"/>
+            </div>
+            <ul className="flex gap-2 justify-center items-end text-3xl h-[50px] -mt-4 z-20">
                 {
                     escola.redesSociais.map((escola, i) => {
                         return (

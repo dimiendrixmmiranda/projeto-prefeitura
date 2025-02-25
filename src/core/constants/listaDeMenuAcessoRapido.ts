@@ -6,19 +6,31 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
         link: `/menuAcessoRapido/legislacao`
     },    
     {
+        nome: 'Coleta de Lixo',
+        link: `/menuAcessoRapido/coletaDeLixo`
+    },    
+    {
+        nome: 'Coleta de Lixo Reciclavel',
+        link: `/menuAcessoRapido/coletaDeLixoReciclavel`
+    },    
+    {
+        nome: 'Pontos da Circular',
+        link: `/menuAcessoRapido/pontosCircular`
+    },    
+    {
+        nome: 'Instituições de Ensino',
+        link: `/menuAcessoRapido/instituicoesDeEnsino`
+    },    
+    {
+        nome: 'Hospitais e Postos',
+        link: `/menuAcessoRapido/hospitaisEPostos`
+    },
+    {
         nome: 'Licitações',
         link: `/menuAcessoRapido/licitacoes`
     },    
     {
         nome: 'Galeria de Obras',
-        link: `/menuAcessoRapido/`
-    },    
-    {
-        nome: 'Instituições de Ensino',
-        link: `/menuAcessoRapido/`
-    },    
-    {
-        nome: 'Hospitais e Postos',
         link: `/menuAcessoRapido/`
     },    
     {
@@ -50,19 +62,7 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
         link: `/menuAcessoRapido/`
     },    
     {
-        nome: 'Pontos da Circular',
-        link: `/menuAcessoRapido/pontosCircular`
-    },    
-    {
         nome: 'Assistência Social',
-        link: `/menuAcessoRapido/`
-    },    
-    {
-        nome: 'Coleta de Lixo',
-        link: `/menuAcessoRapido/coletaDeLixo`
-    },    
-    {
-        nome: 'Coleta de Lixo Reciclavel',
         link: `/menuAcessoRapido/`
     },    
     {

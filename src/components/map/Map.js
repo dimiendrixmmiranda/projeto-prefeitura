@@ -3,13 +3,6 @@ import "leaflet/dist/leaflet.css";
 import styles from "./styles.module.css";
 import L from "leaflet"; // Certifique-se de importar o Leaflet
 
-const markerIcon = new L.Icon({
-    iconUrl: "/onibus.png",
-    iconSize: [25, 25],
-    iconAnchor: [12.5, 25],
-    popupAnchor: [0, -12.5],
-})
-
 /**
  * @typedef {Object} Ponto
  * @property {number} id
@@ -26,9 +19,18 @@ const markerIcon = new L.Icon({
  * @param {number} [props.longitude]
  * @param {string} [props.texto]
  * @param {number} [props.zoom]
+ * @param {string} [props.iconUrl]
  * @param {Ponto[]} [props.arrayPontosGeral] 
  */
-function Map({ latitude = -23.55052, longitude = -46.633308, texto = "Local", zoom = 17, arrayPontosGeral = [] }) {
+function Map({ latitude = -23.55052, longitude = -46.633308, texto = "Local", zoom = 17, arrayPontosGeral = [], iconUrl = '/icones/onibus.png' }) {
+    
+    const markerIcon = new L.Icon({
+        iconUrl: iconUrl,
+        iconSize: [25, 25],
+        iconAnchor: [12.5, 25],
+        popupAnchor: [0, -12.5],
+    })
+
     return (
         <div className={styles.mapWrapper}>
             <MapContainer

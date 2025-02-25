@@ -9,6 +9,8 @@ export interface Escola{
     bairro: string
     telefone: string
     imagem: string
+    latitude: number
+    longitude: number
     redesSociais: RedesSociais[]
     descricaoEscola: string[]
 }

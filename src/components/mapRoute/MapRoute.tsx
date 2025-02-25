@@ -6,12 +6,7 @@ import styles from "./styles.module.css";
 import L from "leaflet";
 import "leaflet-routing-machine";
 import { useEffect } from "react";
-
-interface Ponto {
-  latitude: number;
-  longitude: number;
-  texto: string;
-}
+import Ponto from "@/core/ponto/Ponto";
 
 interface RotaCaminhaoProps {
   waypoints: Ponto[];
