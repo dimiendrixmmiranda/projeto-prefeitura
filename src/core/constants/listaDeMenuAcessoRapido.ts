@@ -26,6 +26,10 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
         link: `/menuAcessoRapido/hospitaisEPostos`
     },
     {
+        nome: 'Concerto Iluminação Pública',
+        link: `/menuAcessoRapido/concertoIluminacaoPublica`
+    },    
+    {
         nome: 'Licitações',
         link: `/menuAcessoRapido/licitacoes`
     },    
@@ -47,10 +51,6 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
     },  
     {
         nome: 'Focos de Dengue',
-        link: `/menuAcessoRapido/`
-    },    
-    {
-        nome: 'Concerto Iluminação Pública',
         link: `/menuAcessoRapido/`
     },    
     {
