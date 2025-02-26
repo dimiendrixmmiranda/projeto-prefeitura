@@ -42,6 +42,7 @@ export default function Page() {
                     })
                         .then(() => {
                             console.log("Relato salvo com sucesso!");
+                            window.location.href = "https://www.google.com"
                         })
                         .catch((error) => {
                             console.error("Erro ao salvar relato:", error);
@@ -52,7 +53,6 @@ export default function Page() {
         } else {
             console.error("Geolocalização não suportada pelo navegador.");
         }
-        window.location.href = "https://www.google.com"
     };
 
     return (
