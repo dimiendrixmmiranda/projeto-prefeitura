@@ -30,6 +30,14 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
         link: `/menuAcessoRapido/concertoIluminacaoPublica`
     },    
     {
+        nome: 'Corte e Poda de Árvores',
+        link: `/menuAcessoRapido/corteEPodaDeArvores`
+    },  
+    {
+        nome: 'Pedido de Manutenção de Estradas e Serviços de Maquinário',
+        link: `/menuAcessoRapido/infraestruturaEMaquinario`
+    },    
+    {
         nome: 'Licitações',
         link: `/menuAcessoRapido/licitacoes`
     },    
@@ -45,10 +53,6 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
         nome: 'Eventos',
         link: `/menuAcessoRapido/`
     },    
-    {
-        nome: 'Corte e Poda de Árvores',
-        link: `/menuAcessoRapido/`
-    },  
     {
         nome: 'Focos de Dengue',
         link: `/menuAcessoRapido/`
@@ -67,10 +71,6 @@ export const listaDeMenuAcessoRapido: MenuAcessoRapido[] = [
     },    
     {
         nome: 'Agricultura',
-        link: `/menuAcessoRapido/`
-    },    
-    {
-        nome: 'Aspectos Educacionais',
         link: `/menuAcessoRapido/`
     },    
     {

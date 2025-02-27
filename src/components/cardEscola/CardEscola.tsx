@@ -23,38 +23,68 @@ export default function CardEscola({ escola }: CardEscolaProps) {
     const [escolaAtual, setEscolaAtual] = useState<Escola | null>(null)
     const [visible, setVisible] = useState(false)
     return (
-        <div className="max-w-[380px] flex flex-col p-3 gap-4 border-2 border-[--verde] relative text-[--verde]">
+        <div className="max-w-[380px] w-full p-3 gap-4 border-2 border-[--verde] relative text-[--verde]" style={{display: 'grid', gridTemplateRows: '140px 100px 125px 40px 200px auto'}}>
             <div className="w-[140px] h-[140px] rounded-full overflow-hidden relative mx-auto" style={{ boxShadow: '0px 0px 2px 3px var(--verde)' }}>
                 <Image alt="escola" src={escola.imagem} fill className="object-cover"></Image>
             </div>
             <div className="text-center flex flex-col gap-1">
-                <h2 className="font-bold text-2xl leading-7">{escola.nome}</h2>
+                <h2 className="font-bold text-2xl leading-7">{escola.texto}</h2>
                 <p>{escola.tipo}</p>
             </div>
             <div>
-                <p className="flex items-center gap-1"><b className="flex items-center gap-1"><IoPersonSharp /> Diretora:</b> {escola.diretora}</p>
-                <div className="flex gap-1 items-start">
-                    <b className="flex gap-1 items-center whitespace-nowrap"><FaBook />Ensinos Oferecidos:</b>
-                    <p>{escola.ensino.map((escolaItem, i) => {
-                        return (
-                            escola.ensino.length - 1 <= i ? ` ${escolaItem}` : `${escolaItem} /`
-                        )
-                    })}</p>
+                <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr' }}>
+                    <div className="w-full h-full flex justify-center items-center">
+                        <IoPersonSharp />
+                    </div>
+                    <div className="flex gap-1 items-center overflow-hidden whitespace-nowrap text-ellipsis max-w-[95%]">
+                        <span className="truncate">Diretora: {escola.diretora}</span>
+                    </div>
                 </div>
-                <Link href={'/'}>
-                    <p className="flex gap-1 items-center"><b className="flex gap-1 items-center"><IoLocationSharp />Endereço:</b> {escola.endereco}</p>
+                <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr' }}>
+                    <div className="w-full h-full flex justify-center items-center">
+                        <FaBook />
+                    </div>
+                    <div className="flex gap-1 items-center overflow-hidden whitespace-nowrap text-ellipsis max-w-[95%]">
+                        <span className="truncate">Ensinos Oferecidos: {
+                            escola.ensino.map((escolaItem, i) => {
+                                return (
+                                    escola.ensino.length - 1 <= i ? ` ${escolaItem}` : `${escolaItem} /`
+                                )
+                            })}</span>
+                    </div>
+                </div>
+                <Link href={`https://www.google.com/maps?q=${escola.latitude},${escola.longitude}`} style={{ display: 'grid', gridTemplateColumns: '20px 1fr' }}>
+                    <div className="w-full h-full flex justify-center items-center">
+                        <IoLocationSharp />
+                    </div>
+                    <div className="flex gap-1 items-center overflow-hidden whitespace-nowrap text-ellipsis max-w-[95%]">
+                        <span className="truncate">Endereço: {escola.endereco}</span>
+                    </div>
                 </Link>
-                <p className="flex gap-1 items-center"><b className="flex gap-1 items-center"><BsFillHouseDoorFill />Bairro:</b> {escola.bairro}</p>
-                <Link href={`tel:+${escola.telefone}`}>
-                    <p className="flex gap-1 items-center"><b className="flex gap-1 items-center"><MdOutlinePermPhoneMsg />Telefone:</b> {escola.telefone}</p>
+                <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr' }}>
+                    <div className="w-full h-full flex justify-center items-center">
+                        <BsFillHouseDoorFill />
+                    </div>
+                    <div className="flex gap-1 items-center overflow-hidden whitespace-nowrap text-ellipsis max-w-[95%]">
+                        <span className="truncate">Bairro: {escola.bairro}</span>
+                    </div>
+                </div>
+                <Link href={`tel:+${escola.telefone}`} style={{ display: 'grid', gridTemplateColumns: '20px 1fr' }}>
+                    <div className="w-full h-full flex justify-center items-center">
+                        <MdOutlinePermPhoneMsg />
+                    </div>
+                    <div className="flex gap-1 items-center overflow-hidden whitespace-nowrap text-ellipsis max-w-[95%]">
+                        <span className="truncate">Telefone: {escola.telefone}</span>
+                    </div>
                 </Link>
-                me leve até la
             </div>
-            <div className="flex-1"></div>
+            <button className="w-full flex justify-center items-center bg-[--verde] text-white uppercase font-bold text-2xl py-1">
+                <Link href={`https://www.google.com/maps?q=${escola.latitude},${escola.longitude}`}>Me leve Até lá!</Link>
+            </button>
             <div className="w-full h-[200px] bg-black border-2 border-[--verde] z-10">
-                <Map latitude={escola.latitude} longitude={escola.longitude} texto={escola.nome} iconUrl="/icones/escola.png"/>
+                <Map latitude={escola.latitude} longitude={escola.longitude} texto={escola.texto} iconUrl="/icones/escola.png" />
             </div>
-            <ul className="flex gap-2 justify-center items-end text-3xl h-[50px] -mt-4 z-20">
+            <ul className="grid grid-cols-5 gap-2 justify-center items-end text-3xl h-[50px] z-20 w-full">
                 {
                     escola.redesSociais.map((escola, i) => {
                         return (
@@ -80,10 +110,10 @@ export default function CardEscola({ escola }: CardEscolaProps) {
                     >
                         <div className="flex flex-col gap-4 items-center text-[--verde]">
                             <div className="relative w-[180px] h-[180px] overflow-hidden rounded-full border-2 border-[--verde]">
-                                <Image alt={escola.nome} src={escola.imagem} fill className="object-cover"></Image>
+                                <Image alt={escola.texto} src={escola.imagem} fill className="object-cover"></Image>
                             </div>
                             <div className="text-center">
-                                <h1 className="font-black text-2xl">{escola.nome}</h1>
+                                <h1 className="font-black text-2xl">{escola.texto}</h1>
                                 <h3 className="text-lg">{escola.bairro}</h3>
                             </div>
                             <div className="flex flex-col gap-2">

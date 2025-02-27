@@ -8,7 +8,7 @@ export default function MenuAcessoRapidoWeb() {
             {listaDeMenuAcessoRapido.map((menu, i) => {
                 return (
                     <li key={i}>
-                        <Link href={menu.link} className='text-lg font-bold my-1 flex items-center gap-1 leading-5 p-1 rounded-md hover:bg-white hover:text-[--verde] xl:py-2'>
+                        <Link href={menu.link} className='text-lg font-bold my-1 items-center gap-1 leading-5 p-1 rounded-md hover:bg-white hover:text-[--verde] xl:py-2' style={{display: 'grid', gridTemplateColumns: '20px 1fr'}}>
                             <BsCircleFill className='text-[.7em]' />
                             <p>{menu.nome}</p>
                         </Link>

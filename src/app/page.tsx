@@ -20,7 +20,7 @@ export default function App() {
 			<Template>
 				<Slider estilo="h-56 sm:h-60 md:h-[400px] lg:h-[480px] xl:h-[600px]"></Slider>
 				<MenuServico></MenuServico>
-				<div className="caixa">
+				<div className="box">
 					<div className="flex flex-col items-center gap-2">
 						<MenuAcessoRapido></MenuAcessoRapido>
 						<MenuAcessoRapidoWeb></MenuAcessoRapidoWeb>

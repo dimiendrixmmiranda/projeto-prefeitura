@@ -1,7 +1,7 @@
 import RedesSociais from "../redesSociais/RedesSociais"
 
 export default interface HospitalEPosto{
-    nome:string
+    texto:string
     imagem: string
     endereco: string
     bairro: string

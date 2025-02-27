@@ -1,5 +1,6 @@
 export default interface Ponto {
-    latitude: number;
-    longitude: number;
-    texto: string;
-  }
+  latitude: number;
+  longitude: number;
+  texto: string;
+  icone?: string
+}

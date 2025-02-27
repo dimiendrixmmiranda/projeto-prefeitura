@@ -31,7 +31,7 @@ body {
   font-family: var(--fonte-primaria);
 }
 
-.caixa {
+.box {
   display: flex;
   position: relative;
   max-width: 95%;
@@ -71,31 +71,38 @@ body {
   background: #999;
 }
 
-.teste .leaflet-map-pane .leaflet-shadow-pane > img{
+.teste .leaflet-map-pane .leaflet-shadow-pane>img {
   background-color: red;
   display: none;
 }
-.teste .leaflet-map-pane .leaflet-marker-pane > img{
+
+.teste .leaflet-map-pane .leaflet-marker-pane>img {
   background-color: red;
   display: none;
 }
 
 @media screen and (min-width: 425px) {
-  .caixa {
+  .box {
     max-width: 95%;
     margin: 0 auto;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .caixa {
+  .box {
+    display: grid;
     grid-template-columns: 190px 1fr;
     gap: 1em;
   }
 }
-
+@media screen and (min-width: 1024px) {
+  .box {
+    grid-template-columns: 250px 1fr;
+    gap: 1em;
+  }
+}
 @media screen and (min-width: 1280px) {
-  .caixa {
+  .box {
     grid-template-columns: 300px 1fr;
     gap: 1em;
   }

@@ -8,7 +8,7 @@ const listaDeHospitaisEPostos: HospitalEPosto[] =[
         bairro:'Centro',
         endereco: 'Rua Tenente Ubirajara de Souza, 633',
         imagem: '/wireframe.png',
-        nome: 'Hospital Comunitário Doutor Linconl Graça',
+        texto: 'Hospital Comunitário Doutor Linconl Graça',
         latitude: -23.501693954902528,
         longitude: -49.9245195553529,
         telefone: '(43)3559-1421',

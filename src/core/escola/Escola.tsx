@@ -1,7 +1,7 @@
 import RedesSociais from "../redesSociais/RedesSociais"
 
 export interface Escola{
-    nome: string
+    texto: string
     tipo: string
     diretora: string
     ensino: string[]
@@ -13,4 +13,5 @@ export interface Escola{
     longitude: number
     redesSociais: RedesSociais[]
     descricaoEscola: string[]
+    icone?: string
 }
