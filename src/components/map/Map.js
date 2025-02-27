@@ -1,7 +1,7 @@
 import { MapContainer, TileLayer, Popup, Marker } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import styles from "./styles.module.css";
-import L from "leaflet"; // Certifique-se de importar o Leaflet
+import L from "leaflet";
 
 /**
  * @typedef {Object} Ponto

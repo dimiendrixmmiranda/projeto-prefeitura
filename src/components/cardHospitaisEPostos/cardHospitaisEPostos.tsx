@@ -31,20 +31,39 @@ export default function CardHospitaisEPostos({ hospitalEPosto }: CardHospitaisEP
                 <h2 className="font-bold text-2xl leading-7">{hospitalEPosto.nome}</h2>
             </div>
             <div>
-                <Link href={'/'}>
-                    <p className="flex gap-1 items-center"><b className="flex gap-1 items-center"><IoLocationSharp />Endereço:</b> {hospitalEPosto.endereco}</p>
+                <Link href={'/'} style={{ display: 'grid', gridTemplateColumns: '20px 1fr' }}>
+                    <div className="w-full h-full flex justify-center items-center">
+                        <IoLocationSharp />
+                    </div>
+                    <div className="flex gap-1 items-center overflow-hidden whitespace-nowrap text-ellipsis max-w-[95%]">
+                        <span className="truncate">Endereço: {hospitalEPosto.endereco}</span>
+                    </div>
                 </Link>
-                <p className="flex gap-1 items-center"><b className="flex gap-1 items-center"><BsFillHouseDoorFill />Bairro:</b> {hospitalEPosto.bairro}</p>
-                <Link href={`tel:+${hospitalEPosto.telefone}`}>
-                    <p className="flex gap-1 items-center"><b className="flex gap-1 items-center"><MdOutlinePermPhoneMsg />Telefone:</b> {hospitalEPosto.telefone}</p>
+                <div style={{ display: 'grid', gridTemplateColumns: '20px 1fr' }}>
+                    <div className="w-full h-full flex justify-center items-center">
+                        <BsFillHouseDoorFill />
+                    </div>
+                    <div className="flex gap-1 items-center overflow-hidden whitespace-nowrap text-ellipsis max-w-[95%]">
+                        <span className="truncate">Bairro: {hospitalEPosto.bairro}</span>
+                    </div>
+                </div>
+                <Link href={`tel:+${hospitalEPosto.telefone}`} style={{ display: 'grid', gridTemplateColumns: '20px 1fr' }}>
+                    <div className="w-full h-full flex justify-center items-center">
+                    <MdOutlinePermPhoneMsg />
+                    </div>
+                    <div className="flex gap-1 items-center overflow-hidden whitespace-nowrap text-ellipsis max-w-[95%]">
+                        <span className="truncate">Telefone: {hospitalEPosto.telefone}</span>
+                    </div>
                 </Link>
             </div>
-            <div className="flex-1"></div>
+
             <div className="w-full h-[200px] bg-black border-2 border-[--verde] z-10">
-                <Map latitude={hospitalEPosto.latitude} longitude={hospitalEPosto.longitude} texto={hospitalEPosto.nome} iconUrl={hospitalEPosto.icone}/>
+                <Map latitude={hospitalEPosto.latitude} longitude={hospitalEPosto.longitude} texto={hospitalEPosto.nome} iconUrl={hospitalEPosto.icone} />
             </div>
-            me leve até la
-            <ul className="flex gap-2 justify-center items-end text-3xl h-[50px] -mt-4 z-20">
+            <button className="w-full flex justify-center items-center bg-[--verde] text-white uppercase font-bold text-2xl py-1">
+                <Link href={`https://www.google.com/maps?q=${hospitalEPosto.latitude},${hospitalEPosto.longitude}`}>Me leve Até lá!</Link>
+            </button>
+            <ul className="grid grid-cols-5 gap-2 justify-center items-end text-3xl h-[50px] z-20 w-full">
                 {
                     hospitalEPosto.redesSociais.map((hospitalEPosto, i) => {
                         return (

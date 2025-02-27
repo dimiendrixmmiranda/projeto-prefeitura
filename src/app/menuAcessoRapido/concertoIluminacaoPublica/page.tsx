@@ -48,12 +48,9 @@ export default function Page() {
                             console.error("Erro ao salvar relato:", error);
                         });
                 },
-                (error) => console.error("Erro ao obter localização:", error)
-            );
-        } else {
-            console.error("Geolocalização não suportada pelo navegador.");
+            )
         }
-    };
+    }
 
     return (
         <Template>
