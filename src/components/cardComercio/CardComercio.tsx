@@ -13,14 +13,14 @@ interface CardComercioProps {
 
 export default function CardComercio({ comercio }: CardComercioProps) {
     return (
-        <li className="flex justify-center items-center text-black">
+        <li className="flex justify-center items-center text-black" id={`${comercio.id}`}>
             <div className="w-full h-full border-2 border-[--verde] rounded-lg p-2 flex flex-col gap-3 max-w-[340px]">
                 <div className="relative w-full h-[180px]">
-                    <Image alt="image" src={comercio.imagem} fill className="object-cover"></Image>
+                    <Image alt="image" src={comercio.imagem || '/wireframe.png'} fill className="object-cover"></Image>
                 </div>
                 <div className="flex flex-col gap-5">
                     <div>
-                        <h2 className="text-xl font-bold leading-5 text-center">{comercio.nome}</h2>
+                        <h2 className="text-xl font-bold leading-5 text-center">{comercio.texto}</h2>
                     </div>
                     <div className="flex flex-col justify-start items-start gap-2 overflow-hidden lg:text-lg lg:gap-4">
                         <div className="leading-5 max-w-full text-[.75em] sm:text-[.9em]">
@@ -44,7 +44,7 @@ export default function CardComercio({ comercio }: CardComercioProps) {
                     </div>
                     <ul className="w-full flex text-2xl lg:max-w-[85%] lg:mx-auto ">
                         {
-                            comercio.redesSociais.map((rede, i) => {
+                            comercio.redesSociais != undefined && comercio.redesSociais.map((rede, i) => {
                                 return (
                                     <li key={i} className="flex-1 flex justify-center">
                                         <Link href={rede.link}>

@@ -6,14 +6,16 @@ import { FC } from "react";
 import HospitalEPosto from "@/core/hospitalEPosto/HospitalEPosto";
 import { Escola } from "@/core/escola/Escola";
 import Ponto from "@/core/ponto/Ponto";
+import Comercio from "@/core/comercio/Comercio";
 
 interface MapProps {
     latitude?: number;
     longitude?: number;
+    id?: number
     texto?: string;
     zoom?: number;
     iconUrl?: string;
-    arrayPontosGeral?: Ponto[] | HospitalEPosto[] | Escola[];
+    arrayPontosGeral?: Ponto[] | HospitalEPosto[] | Escola[] | Comercio[];
 }
 
 const Map: FC<MapProps> = ({

@@ -4,13 +4,13 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { EventInput } from "@fullcalendar/core";
-import ptBr from "@fullcalendar/core/locales/pt-br"; // Importando o idioma
-
+import ptBr from "@fullcalendar/core/locales/pt-br";
 import { MdEvent } from "react-icons/md";
 import Image from "next/image";
 import { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { CgMathPlus } from "react-icons/cg";
+
 export default function Eventos() {
     const [eventoAtual, setEventoAtual] = useState<EventInput | null>(null)
     const [visible, setVisible] = useState(false)
@@ -27,7 +27,7 @@ export default function Eventos() {
                 Eventos
             </h2>
             <div className="flex flex-col p-4 gap-4 lg:grid lg:grid-cols-2 xl:grid-cols-3 xl:gap-10">
-                <div className='max-w-[500px] text-black'>
+                <div className='max-w-[500px] mx-auto w-full text-black'>
                     <FullCalendar
                         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                         initialView="dayGridMonth"
