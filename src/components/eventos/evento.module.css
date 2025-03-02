@@ -1,0 +1,14 @@
+:global(.fc-header-toolbar) {
+    background-color: red !important;
+}
+
+:global(.fc-daygrid-day) {
+    background-color: #f4f4f4 !important;
+}
+
+:global(.fc-event) {
+    background-color: blue !important;
+    color: white !important;
+    border-radius: 4px;
+    padding: 5px;
+}

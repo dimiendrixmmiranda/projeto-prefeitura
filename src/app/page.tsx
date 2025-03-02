@@ -1,6 +1,7 @@
 'use client'
 
 import Banners from "@/components/banners/Banners"
+import Eventos from "@/components/eventos/Eventos"
 import ListaDeNoticias from "@/components/listaDeNoticias/ListaDeNoticias"
 import MenuAcessoRapido from "@/components/menuAcessoRapido/MenuAcessoRapido"
 import MenuAcessoRapidoWeb from "@/components/menuAcessoRapido/MenuAcessoRapidoWeb"
@@ -32,6 +33,7 @@ export default function App() {
 					</div>
 				</div>
 				<Obras></Obras>
+				<Eventos></Eventos>
 				<Secretarias></Secretarias>
 				<PontosTuristicos></PontosTuristicos>
 			</Template>

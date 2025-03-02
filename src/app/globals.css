@@ -81,11 +81,70 @@ body {
   display: none;
 }
 
+
+/* Calendario */
+.fc-header-toolbar {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.fc-header-toolbar div:nth-child(1) {
+  grid-column: 1/3;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.fc-header-toolbar div:nth-child(3) {
+  grid-column: 1/3;
+  display: grid !important;
+  grid-template-columns: auto 1fr;
+  width: 100% !important;
+}
+
+.fc-daygrid-day {
+  background-color: #f4f4f4 !important;
+}
+
+.fc-event {
+  background-color: blue !important;
+  color: white !important;
+  border-radius: 4px;
+  padding: 5px;
+}
+/* Fim Calendario */
+
+
 @media screen and (min-width: 425px) {
   .box {
     max-width: 95%;
     margin: 0 auto;
   }
+
+  .fc-header-toolbar {
+    grid-template-columns: 1fr 100px !important;
+  }
+
+  .fc-header-toolbar div:nth-child(1) {
+    grid-row: 1/3;
+    grid-column: 1/2;
+  }
+
+  .fc-header-toolbar div:nth-child(1) .fc-toolbar-title {
+    text-align: start !important;
+  }
+
+  .fc-header-toolbar div:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 1/3;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: .5em !important;
+  }
+
+  .fc-header-toolbar div:nth-child(3) .fc-button-group {
+    margin: 0;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -94,13 +153,23 @@ body {
     grid-template-columns: 190px 1fr;
     gap: 1em;
   }
+
+  .fc-header-toolbar {
+    grid-template-columns: 1fr 160px !important;
+  }
+
+  .fc-header-toolbar div:nth-child(3) {
+    display: flex !important;
+  }
 }
+
 @media screen and (min-width: 1024px) {
   .box {
     grid-template-columns: 250px 1fr;
     gap: 1em;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .box {
     grid-template-columns: 300px 1fr;

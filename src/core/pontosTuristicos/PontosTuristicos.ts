@@ -1,7 +1,9 @@
 export default interface PontoTuristico{
     id:number,
     titulo: string,
-    thumbnail: string,
-    arrayDeImagens: string [],
+    imagem: string,
     descricao: string
+    data?: string,
+    governo?: string
+    arrayDeImagens?: string[]
 }
