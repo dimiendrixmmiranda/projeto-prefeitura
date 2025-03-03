@@ -56,8 +56,8 @@ interface MapRouteProps {
 }
 
 const MapRoute = ({
-  latitude = -23.55052,
-  longitude = -46.633308,
+  latitude = -23.500366004823462,
+  longitude = -49.923436069202914,
   zoom = 17,
   arrayPontosGeral1 = [],
   arrayPontosGeral2 = [],

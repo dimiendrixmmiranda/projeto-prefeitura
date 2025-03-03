@@ -9,7 +9,7 @@ const MapRoute = dynamic(() => import("@/components/mapRoute"), { ssr: false });
 export default function Page() {
     return (
         <Template>
-            <div className="text-black p-4 flex flex-col gap-4 lg:gap-10">
+            <div className="text-black p-4 flex flex-col gap-4 z-10 lg:gap-10">
                 <h2 className="text-[--verde] uppercase font-bold text-3xl text-center leading-8 lg:text-4xl">Rotas da coleta do Caminhão de Lixo Reciclável</h2>
                 <ul className="flex flex-col gap-2 md:grid md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
                     {

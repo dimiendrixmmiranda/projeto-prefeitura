@@ -37,7 +37,7 @@ export default function ListaDeComercios() {
 
                 {/* Mapa dos comercios */}
                 <div className="w-full mx-auto h-[300px] bg-black border-2 border-[--verde] overflow-hidden md:h-[400px] xl:h-[600px]">
-                    <Map latitude={comerciosFiltrados[0].latitude} longitude={comerciosFiltrados[0].longitude} zoom={15} arrayPontosGeral={comerciosFiltrados} />
+                    <Map latitude={comerciosFiltrados[0].latitude} longitude={comerciosFiltrados[0].longitude} zoom={15} arrayPontosGeral={comerciosFiltrados}/>
                 </div>
 
                 {/* Filtros */}

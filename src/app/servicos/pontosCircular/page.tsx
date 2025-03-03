@@ -9,6 +9,7 @@ export default function Page() {
     const listaDePontos = [
         {
             id: 1,
+            icone: '/icones/onibus.png',
             texto: 'Ponto 1',
             latitude: -23.503220216808884,
             longitude: -49.924274284449446,
@@ -17,6 +18,7 @@ export default function Page() {
         },
         {
             id: 2,
+            icone: '/icones/onibus.png',
             texto: 'Ponto 2',
             latitude: -23.50087678307749,
             longitude: -49.92511955789726,
@@ -25,6 +27,7 @@ export default function Page() {
         },
         {
             id: 3,
+            icone: '/icones/onibus.png',
             texto: 'Ponto 3',
             latitude: -23.497880797364324,
             longitude: -49.92280212931018,
@@ -33,9 +36,10 @@ export default function Page() {
         },
         {
             id: 4,
+            icone: '/icones/onibus.png',
             texto: 'Ponto 4',
             latitude: -23.496670378331714,
-            longitude:  -49.918623290016626,
+            longitude: -49.918623290016626,
             horarios: '06h:20 - 11h:15 - 17h:20',
             referencia: 'Próximo ao Posto Maranata'
         },
@@ -63,7 +67,8 @@ export default function Page() {
                 <div className="flex flex-col gap-4 lg:gap-8 lg:my-4">
                     <h2 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center md:text-3xl lg:text-4xl">Visão Geral de todos os pontos</h2>
                     <div className="w-full max-w-[1100px] mx-auto h-[300px] bg-black border-2 border-[--verde] overflow-hidden md:h-[400px] xl:h-[500px]">
-                        <Map latitude={-23.497880797364324} longitude={-49.92280212931018} zoom={15} arrayPontosGeral={listaDePontos} />
+                        <Map latitude={listaDePontos[0].latitude} longitude={listaDePontos[0].longitude} zoom={15} arrayPontosGeral={listaDePontos} />
+
                     </div>
                 </div>
                 <AncoraContainer></AncoraContainer>

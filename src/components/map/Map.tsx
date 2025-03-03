@@ -7,6 +7,7 @@ import HospitalEPosto from "@/core/hospitalEPosto/HospitalEPosto";
 import { Escola } from "@/core/escola/Escola";
 import Ponto from "@/core/ponto/Ponto";
 import Comercio from "@/core/comercio/Comercio";
+import Link from "next/link";
 
 interface MapProps {
     latitude?: number;
@@ -60,7 +61,11 @@ const Map: FC<MapProps> = ({
                         });
                         return (
                             <Marker key={index} position={[ponto.latitude, ponto.longitude]} icon={newMarkerIcon}>
-                                <Popup>{ponto.texto || "Ponto adicional"}</Popup>
+                                <Popup>
+                                    <Link href={`#${ponto.longitude ? ponto.longitude : ''}`} onClick={() => console.log('clicado')}>
+                                        {ponto.texto || "Ponto adicional"}
+                                    </Link>
+                                </Popup>
                             </Marker>
                         )
                     })

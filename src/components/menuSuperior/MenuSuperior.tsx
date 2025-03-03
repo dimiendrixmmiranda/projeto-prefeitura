@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 
 export default function MenuSuperior() {
     return (
-        <ul className="hidden gap-2 justify-center items-center text-center lg:flex w-full max-w-[870px] mx-auto z-40">
+        <ul className="hidden gap-2 justify-center items-center text-center lg:flex w-full max-w-[870px] mx-auto" style={{zIndex: 50}}>
             {
                 listaDeMenus.map((menu, i) => {
                     return (

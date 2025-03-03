@@ -3,6 +3,7 @@
     height: 100%;
     overflow: hidden; /* Garante que o mapa não estoure os limites */
     position: relative;
+    z-index: 10;
 }
 
 .map {

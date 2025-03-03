@@ -13,7 +13,7 @@ interface CardComercioProps {
 
 export default function CardComercio({ comercio }: CardComercioProps) {
     return (
-        <li className="flex justify-center items-center text-black" id={`${comercio.id}`}>
+        <li className="flex justify-center items-center text-black" id={`${comercio.longitude}`}>
             <div className="w-full h-full border-2 border-[--verde] rounded-lg p-2 flex flex-col gap-3 max-w-[340px]">
                 <div className="relative w-full h-[180px]">
                     <Image alt="image" src={comercio.imagem || '/wireframe.png'} fill className="object-cover"></Image>
