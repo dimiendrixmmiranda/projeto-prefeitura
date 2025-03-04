@@ -1,10 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
-import { listaDeRedesSociais } from "@/core/constants/listaDeRedesSociais";
 import RedeSocial from "@/components/redesSociais/RedeSocial";
 import style from './style.module.css'
+import RedesSociais from "@/core/redesSociais/RedesSociais";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from "react-icons/fa";
 
 export default function Rodape() {
+    const listaDeRedesSociais: RedesSociais[] = [
+        {
+            icone: <AiFillInstagram />,
+            link: 'https://www.instagram.com/eudimimartins/',
+            nome: 'Instagram'
+        },
+        {
+            icone: <FaFacebookSquare />,
+            link: 'https://www.facebook.com/dimi.martins.376',
+            nome: 'Facebook'
+        },
+        {
+            icone: <FaGithubSquare />,
+            link: 'https://github.com/dimiendrixmmiranda/dimiendrixmmiranda',
+            nome: 'Github'
+        },
+        {
+            icone: <FaLinkedin />,
+            link: 'https://www.linkedin.com/in/dimi-endrix-martins-miranda-86a017341/',
+            nome: 'Github'
+        },
+    ]
     return (
         <footer className="flex flex-col">
             <h2 className="bg-green-950 uppercase leading-5 font-bold text-center text-lg self-center p-2 w-full lg:text-2xl lg:p-4">Atendimento: Segunda a Sexta, das 7h30 as 11h30 e das 13h as 17h</h2>
@@ -33,6 +57,24 @@ export default function Rodape() {
                 <div className={style.fonteSlogan}>
                     <h2>Joaquim Távora: O coração do Norte Pioneiro!</h2>
                 </div>
+            </div>
+            <div className="flex flex-col px-2 py-1 bg-black text-white md:flex-row">
+                <div className="flex justify-center items-center w-full">
+                    <p className="w-full font-bold uppercase text-center md:text-start">Produzido por dimi endrix martins miranda</p>
+                </div>
+                <ul className="grid grid-cols-4 md:gap-4">
+                    {
+                        listaDeRedesSociais.map((rede, i) => {
+                            return (
+                                <li key={i} className="flex justify-center items-center text-3xl">
+                                    <Link href={rede.link}>
+                                        {rede.icone}
+                                    </Link>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
             </div>
         </footer>
     )
