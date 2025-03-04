@@ -4,6 +4,7 @@ import SidebarComponent from "@/components/sidebar/Sidebar";
 import { listaDeRedesSociais } from "@/core/constants/listaDeRedesSociais";
 import Image from "next/image";
 import Link from "next/link";
+import { IoLogInSharp } from "react-icons/io5";
 
 export default function Cabecalho() {
     return (
@@ -19,7 +20,7 @@ export default function Cabecalho() {
             </Link>
             <SidebarComponent></SidebarComponent>
             <MenuSuperior></MenuSuperior>
-            <ul className="items-center gap-[1px] hidden lg:flex xl:text-xl xl:gap-2">
+            <ul className="hidden items-center gap-[1px] lg:grid lg:grid-cols-3 lg:w-full lg:gap-x-2 xl:flex xl:text-xl xl:w-fit xl:mx-auto">
                 {
                     listaDeRedesSociais.map(((rede, i) => {
                         return (
@@ -28,6 +29,11 @@ export default function Cabecalho() {
                     }))
                 }
             </ul>
+            <div className="hidden w-full justify-center items-center text-2xl lg:flex xl:w-fit xl:-ml-3 2xl:-ml-0">
+                <Link href={'/login'} className="cursor-pointer">
+                    <IoLogInSharp />
+                </Link>
+            </div>
         </header>
     )
 }
