@@ -1,7 +1,7 @@
 'use client'
 
 import Banners from "@/components/banners/Banners"
-import Clima from "@/components/clima/Clima"
+// import Clima from "@/components/clima/Clima"
 import Eventos from "@/components/eventos/Eventos"
 import ListaDeNoticias from "@/components/listaDeNoticias/ListaDeNoticias"
 import MenuAcessoRapido from "@/components/menuAcessoRapido/MenuAcessoRapido"
@@ -13,8 +13,6 @@ import Secretarias from "@/components/secretarias/Secretarias"
 import Slider from "@/components/slider/Slider"
 import SliderDeNoticias from "@/components/sliderDeNoticias/SliderDeNoticias"
 import Template from "@/components/template/Template"
-
-// olhar a versão do next instalada mais compativel
 
 export default function App() {
 	return (
@@ -36,7 +34,7 @@ export default function App() {
 				<Obras></Obras>
 				<Eventos></Eventos>
 				<Secretarias></Secretarias>
-				<Clima></Clima>
+				{/* <Clima></Clima> */}
 				<PontosTuristicos></PontosTuristicos>
 			</Template>
 		</div>

@@ -1,3 +1,5 @@
+// AJUSTAR O COMPONENTE CLIMA
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -33,83 +35,83 @@ export default function Weather() {
         return ((max + min) / 2).toFixed(1)
     }
 
-    function getWeatherDescription(code: number): { texto: string, imagem: string } {
-        const descriptions: { [key: number]: { texto: string, imagem: string } } = {
-            0: {
-                texto: "Céu limpo",
-                imagem: '/clima/ceu-limpo.png'
-            },
-            1: {
-                texto: "Predomínio de sol",
-                imagem: '/clima/predominante-sol.png'
-            },
-            2: {
-                texto: "Parcialmente nublado",
-                imagem: '/clima/parcialmente-nublado.png'
-            },
-            3: {
-                texto: "Nublado",
-                imagem: '/clima/nublado.png'
-            },
-            45: {
-                texto: "Névoa",
-                imagem: '/clima/nevoa.png'
-            },
-            48: {
-                texto: "Névoa com geada",
-                imagem: '/clima/nevoa-com-geada.png'
-            },
-            51: {
-                texto: "Chuvisco fraco",
-                imagem: '/clima/chuvisco-fraco.png'
-            },
-            53: {
-                texto: "Chuvisco moderado",
-                imagem: '/clima/chuvisco-moderado.png'
-            },
-            55: {
-                texto: "Chuvisco intenso",
-                imagem: '/clima/chuvisco-intenso.png'
-            },
-            61: {
-                texto: "Chuva fraca",
-                imagem: '/clima/chuvisco-fraco.png'
-            },
-            63: {
-                texto: "Chuva moderada",
-                imagem: '/clima/chuvisco-moderado.png'
-            },
-            65: {
-                texto: "Chuva forte",
-                imagem: '/clima/chuvisco-forte.png'
-            },
-            80: {
-                texto: "Pancadas de chuva fraca",
-                imagem: '/clima/chuvisco-fraco.png'
-            },
-            81: {
-                texto: "Pancadas de chuva moderada",
-                imagem: '/clima/chuvisco-moderado.png'
-            },
-            82: {
-                texto: "Pancadas de chuva forte",
-                imagem: '/clima/chuvisco-forte.png'
-            },
-            95: {
-                texto: "Tempestade",
-                imagem: '/clima/tempestade.png'
-            },
-            96: {
-                texto: "Tempestade com granizo fraco",
-                imagem: '/clima/tempestade-com-granizo.png'
-            },
-            99: {
-                texto: "Tempestade com granizo forte",
-                imagem: '/clima/tempestade-com-granizo.png'
-            },
-        };
-        return descriptions[code] || "Desconhecido";
-    }
+    // function getWeatherDescription(code: number): { texto: string, imagem: string } {
+    //     const descriptions: { [key: number]: { texto: string, imagem: string } } = {
+    //         0: {
+    //             texto: "Céu limpo",
+    //             imagem: '/clima/ceu-limpo.png'
+    //         },
+    //         1: {
+    //             texto: "Predomínio de sol",
+    //             imagem: '/clima/predominante-sol.png'
+    //         },
+    //         2: {
+    //             texto: "Parcialmente nublado",
+    //             imagem: '/clima/parcialmente-nublado.png'
+    //         },
+    //         3: {
+    //             texto: "Nublado",
+    //             imagem: '/clima/nublado.png'
+    //         },
+    //         45: {
+    //             texto: "Névoa",
+    //             imagem: '/clima/nevoa.png'
+    //         },
+    //         48: {
+    //             texto: "Névoa com geada",
+    //             imagem: '/clima/nevoa-com-geada.png'
+    //         },
+    //         51: {
+    //             texto: "Chuvisco fraco",
+    //             imagem: '/clima/chuvisco-fraco.png'
+    //         },
+    //         53: {
+    //             texto: "Chuvisco moderado",
+    //             imagem: '/clima/chuvisco-moderado.png'
+    //         },
+    //         55: {
+    //             texto: "Chuvisco intenso",
+    //             imagem: '/clima/chuvisco-intenso.png'
+    //         },
+    //         61: {
+    //             texto: "Chuva fraca",
+    //             imagem: '/clima/chuvisco-fraco.png'
+    //         },
+    //         63: {
+    //             texto: "Chuva moderada",
+    //             imagem: '/clima/chuvisco-moderado.png'
+    //         },
+    //         65: {
+    //             texto: "Chuva forte",
+    //             imagem: '/clima/chuvisco-forte.png'
+    //         },
+    //         80: {
+    //             texto: "Pancadas de chuva fraca",
+    //             imagem: '/clima/chuvisco-fraco.png'
+    //         },
+    //         81: {
+    //             texto: "Pancadas de chuva moderada",
+    //             imagem: '/clima/chuvisco-moderado.png'
+    //         },
+    //         82: {
+    //             texto: "Pancadas de chuva forte",
+    //             imagem: '/clima/chuvisco-forte.png'
+    //         },
+    //         95: {
+    //             texto: "Tempestade",
+    //             imagem: '/clima/tempestade.png'
+    //         },
+    //         96: {
+    //             texto: "Tempestade com granizo fraco",
+    //             imagem: '/clima/tempestade-com-granizo.png'
+    //         },
+    //         99: {
+    //             texto: "Tempestade com granizo forte",
+    //             imagem: '/clima/tempestade-com-granizo.png'
+    //         },
+    //     };
+    //     return descriptions[code] || "Desconhecido";
+    // }
 
     function getWindDirection(degrees: number): string {
         if (degrees >= 337.5 || degrees < 22.5) return "Norte (N)";
@@ -142,12 +144,13 @@ export default function Weather() {
 
     return (
         <div className="p-2">
+            {/* style={{ backgroundImage: `url(${getWeatherDescription(weather.current_weather.weathercode).imagem})` }} */}
             <div className="bg-cover bg-center p-2 flex flex-col gap-4 xl:gap-7 xl:px-10 xl:py-6"
-                style={{ backgroundImage: `url(${getWeatherDescription(weather.current_weather.weathercode).imagem})` }}>
+                >
                 <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
                     <div className="text-blue-950" style={{ textShadow: '1px 1px 2px white' }}>
                         <h2 className="font-black text-6xl text-center">{weather.current_weather.temperature}ºC</h2>
-                        <h3 className="text-center text-xl font-bold">{getWeatherDescription(weather.current_weather.weathercode).texto}</h3>
+                        {/* <h3 className="text-center text-xl font-bold">{getWeatherDescription(weather.current_weather.weathercode).texto}</h3> */}
                     </div>
                     <div className="grid grid-cols-2 gap-2 md:col-start-1 md:col-end-2 lg:col-start-2 lg:col-end-3" style={{ textShadow: '1px 1px 2px black' }}>
                         <div className="text-xl self-center justify-self-center leading-6 font-bold">
