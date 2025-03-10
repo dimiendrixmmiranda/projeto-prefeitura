@@ -8,8 +8,9 @@ export async function GET(req: Request) {
 
         // Fazendo a requisição para obter clima atual e previsão para os próximos 7 dias
         const response = await fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&daily=temperature_2m_max,precipitation_probability_mean,temperature_2m_min,precipitation_sum&hourly=temperature_2m,wind_speed_10m&timezone=America/Sao_Paulo`
+            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_mean,precipitation_sum&hourly=temperature_2m,wind_speed_10m&timezone=America/Sao_Paulo`
         );
+        
 
         if (!response.ok) throw new Error("Erro ao buscar previsão do tempo");
 
