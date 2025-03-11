@@ -1,7 +1,7 @@
 'use client'
 
 import Banners from "@/components/banners/Banners"
-// import Clima from "@/components/clima/Clima"
+import Clima from "@/components/clima/Clima"
 import Eventos from "@/components/eventos/Eventos"
 import ListaDeNoticias from "@/components/listaDeNoticias/ListaDeNoticias"
 import MenuAcessoRapido from "@/components/menuAcessoRapido/MenuAcessoRapido"
@@ -34,7 +34,7 @@ export default function App() {
 				<Obras></Obras>
 				<Eventos></Eventos>
 				<Secretarias></Secretarias>
-				{/* <Clima></Clima> */}
+				<Clima></Clima>
 				<PontosTuristicos></PontosTuristicos>
 			</Template>
 		</div>
