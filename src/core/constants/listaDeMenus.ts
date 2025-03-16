@@ -81,7 +81,7 @@ export const listaDeMenus: Menu[] = [
         submenu: listaDeSecretarias.map((secretaria, i) => {
             return {
                 id: i + 1,
-                link: `/secretarias/${createSlugWithId(secretaria.nome, secretaria.id)}`,
+                link: `/secretarias/${createSlugWithId(secretaria.nome, `${secretaria.id}`)}`,
                 nome: secretaria.nome
             }
         })

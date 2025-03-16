@@ -1,8 +1,9 @@
 export default interface Noticia{
-    id: number
     titulo: string
+    autor: string
     descricao: string
     imagem: string,
-    materia: string []
+    materia: string
     data: string
+    id?: string | null
 }
