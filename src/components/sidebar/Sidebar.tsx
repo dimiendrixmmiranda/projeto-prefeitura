@@ -9,6 +9,7 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 import { listaDeMenus } from '@/core/constants/listaDeMenus';
 import { listaDeRedesSociais } from '@/core/constants/listaDeRedesSociais';
 import RedeSocial from '../redesSociais/RedeSocial';
+import { IoLogInSharp } from 'react-icons/io5';
 
 export default function SidebarComponent() {
     const [visibleRight, setVisibleRight] = useState(false);
@@ -43,7 +44,12 @@ export default function SidebarComponent() {
                                 }
                             </Accordion>
                         </div>
-
+                        <div className="w-full justify-center items-center text-4xl">
+                            <Link href={'/login'} className="cursor-pointer flex items-center gap-1">
+                                <IoLogInSharp />
+                                <p className='uppercase font-bold text-xl'>Login</p>
+                            </Link>
+                        </div>
                     </div>
                     <div className='w-full h-12'>
                         <ul className='grid grid-cols-6 h-full w-full'>

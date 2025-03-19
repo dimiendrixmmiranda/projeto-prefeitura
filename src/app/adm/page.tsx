@@ -18,6 +18,11 @@ export default function Page() {
                             </Link>
                         </li>
                         <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
+                            <Link href={'/adm/adicionarObra'}>
+                                <p>Adicionar Nova Obra Concluída</p>
+                            </Link>
+                        </li>
+                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
                             <p>Adicionar Novo Evento</p>
                         </li>
                         <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">

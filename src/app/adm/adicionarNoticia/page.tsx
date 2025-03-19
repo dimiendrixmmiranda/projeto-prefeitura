@@ -1,4 +1,5 @@
 'use client'
+import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import Noticia from "@/core/noticia/Noticia";
 import { db } from "@/lib/firebase";
@@ -18,7 +19,7 @@ export default function AdicionarNoticia() {
             console.error("Usuário não autenticado!");
             return;
         }
-    
+
         try {
             const docRef = await addDoc(collection(db, "noticias"), noticia);
             await setDoc(doc(db, "noticias", docRef.id), { ...noticia, id: docRef.id });
@@ -41,18 +42,18 @@ export default function AdicionarNoticia() {
         await salvar(noticia);
         window.location.reload()
     }
-    
+
     return (
         <Template>
-            <div className="p-4">
-                <form className="bg-green-400 text-black p-2 font-semibold flex flex-col gap-2">
+            <div className="p-4 flex flex-col">
+                <form className="bg-green-400 text-black p-4 font-semibold flex flex-col gap-2 max-w-[500px] w-full self-center">
                     <fieldset className="flex flex-col">
                         <label htmlFor="titulo">Titulo da matéria</label>
-                        <input type="text" id="titulo" className="h-[30px] p-2" value={titulo} onChange={(e) => setTitulo(e.target.value)}/>
+                        <input type="text" id="titulo" className="h-[30px] p-2" value={titulo} onChange={(e) => setTitulo(e.target.value)} />
                     </fieldset>
                     <fieldset className="flex flex-col">
                         <label htmlFor="descricao">Descricao da matéria</label>
-                        <input type="text" id="descricao" className="h-[30px] p-2" value={descricao} onChange={(e) => setDescricao(e.target.value)}/>
+                        <input type="text" id="descricao" className="h-[30px] p-2" value={descricao} onChange={(e) => setDescricao(e.target.value)} />
                     </fieldset>
                     <fieldset className="flex flex-col">
                         <label htmlFor="materia">Materia</label>
@@ -60,12 +61,13 @@ export default function AdicionarNoticia() {
                     </fieldset>
                     <fieldset className="flex flex-col">
                         <label htmlFor="Autor">Autor</label>
-                        <input type="text" id="autor" className="h-[30px] p-2" value={autor} onChange={(e) => setAutor(e.target.value)}/>
+                        <input type="text" id="autor" className="h-[30px] p-2" value={autor} onChange={(e) => setAutor(e.target.value)} />
                     </fieldset>
                     <button className="bg-green-900 text-white py-1 text-xl" onClick={(e) => salvarNoticia(e)}>Enviar Notícia</button>
                 </form>
+                {/* ##BUG: Esta voltando para a pagina inicial, sujeito a refatoração */}
+                <AncoraContainer></AncoraContainer>
             </div>
-            <h2>Adicionar uma nova noticia</h2>
         </Template>
     )
 }
