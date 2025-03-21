@@ -2,10 +2,11 @@
 
 import { createContext, useEffect, useState } from "react";
 import { useRouter } from 'next/navigation'; // Usando o useRouter corretamente
-import { auth } from "@/lib/firebase"; // Importando a instância do Firebase auth
+import { auth, db } from "@/lib/firebase"; // Importando a instância do Firebase auth
 import { User, signInWithEmailAndPassword } from "firebase/auth"; // Importando funções de autenticação
 import Cookies from 'js-cookie';
 import Usuario from "@/core/usuario/Usuario";
+import { doc, getDoc } from "firebase/firestore";
 
 interface AuthContextProps {
     usuario?: Usuario | null;
@@ -20,6 +21,13 @@ const AuthContext = createContext<AuthContextProps>({});
 
 async function usuarioNormalizado(usuarioFirebase: User): Promise<Usuario> {
     const token = await usuarioFirebase.getIdToken();
+    const userDoc = await getDoc(doc(db, "usuarios", usuarioFirebase.uid));
+    let tipo: string | undefined;
+
+    if (userDoc.exists()) {
+        tipo = userDoc.data().tipo;
+    }
+
     return {
         uid: usuarioFirebase.uid,
         nome: usuarioFirebase.displayName || "",
@@ -27,6 +35,7 @@ async function usuarioNormalizado(usuarioFirebase: User): Promise<Usuario> {
         token,
         provedor: usuarioFirebase.providerData[0]?.providerId || "",
         imagemURL: usuarioFirebase.photoURL || "",
+        tipo,
     };
 }
 
@@ -66,16 +75,39 @@ export function AuthProvider({ children }: AuthContextProps) {
         try {
             setCarregando(true);
             const result = await signInWithEmailAndPassword(auth, email, senha);
-            configurarSessao(result.user);
-            router.push('/adm');
-            console.log("Usuário logado:", result.user);
+            const user = result.user;
+    
+            // Buscar o tipo de usuário no Firestore
+            const userDoc = await getDoc(doc(db, "usuarios", user.uid));
+            if (userDoc.exists()) {
+                const userData = userDoc.data();
+                const tipo = userData.tipo;
+    
+                // Redirecionar para a área correta com base no tipo de usuário
+                if (tipo === "adm") {
+                    router.push('/adm');
+                } else if (tipo === "servidor") {
+                    router.push('/servidores');
+                } else {
+                    console.error("Tipo de usuário desconhecido:", tipo);
+                    // Redirecionar para uma página de erro ou página inicial padrão
+                    router.push('/');
+                }
+            } else {
+                console.error("Usuário não encontrado no Firestore");
+                // Redirecionar para uma página de erro ou página inicial padrão
+                router.push('/');
+            }
+    
+            configurarSessao(user);
+            console.log("Usuário logado:", user);
         } catch (error) {
             console.error("Erro ao autenticar:", error);
-            throw error; // Lança o erro para ser capturado pelo `submeter`
+            throw error;
         } finally {
             setCarregando(false);
         }
-    }    
+    }   
 
     function gerenciarCookie(logado: boolean) {
         if (logado) {
