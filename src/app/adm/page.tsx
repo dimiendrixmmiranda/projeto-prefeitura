@@ -1,4 +1,5 @@
 'use client'
+import AncoraContainer from "@/components/ancora/AncoraContainer";
 import ForcarAutenticacao from "@/components/auth/Auth";
 import Template from "@/components/template/Template";
 import useAuth from "@/data/hook/useAuth";
@@ -10,40 +11,45 @@ export default function Page() {
     return (
         <ForcarAutenticacao>
             <Template>
-                <div className="text-black min-h-[80vh] p-4">
-                    <ul className="grid grid-cols-2 gap-2">
-                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                            <Link href={'/adm/adicionarNoticia'}>
-                                <p>Adicionar Noticia</p>
-                            </Link>
-                        </li>
-                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                            <Link href={'/adm/adicionarObra'}>
-                                <p>Adicionar Nova Obra Concluída</p>
-                            </Link>
-                        </li>
-                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                            <p>Adicionar Novo Evento</p>
-                        </li>
-                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                            <p>Relatos de Concerto de iluminação pública</p>
-                        </li>
-                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                            <p>Solicitação de Corte e Poda de Árvore</p>
-                        </li>
-                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                            <p>Solicitação de Serviços de Infraestrutura e Maquinário</p>
-                        </li>
-                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                            <p>Solicitação de Cadastro de Comércio</p>
-                        </li>
-                    </ul>
-                    <button className="text-red-600 flex flex-col justify-center items-center" onClick={logout}>
-                        <div className="text-2xl">
-                            <IoLogOutSharp />
-                        </div>
-                        <p className="leading-4 font-bold">Logaut</p>
-                    </button>
+                <div className="p-4 flex flex-col gap-4 max-w-[1200px] w-full mx-auto xl:gap-10">
+                    <div className="grid" style={{ gridTemplateColumns: '1fr 60px' }}>
+                        <h1 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center self-center justify-self-center md:text-3xl lg:text-4xl">Painel de serviço dos servidores</h1>
+                        <button className="text-red-600 flex flex-col justify-center items-center" onClick={logout}>
+                            <div className="text-2xl">
+                                <IoLogOutSharp />
+                            </div>
+                            <p className="leading-4 font-bold">Logaut</p>
+                        </button>
+                    </div>
+                    <div className="text-black p-4">
+                        <ul className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
+                            <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
+                                <Link href={'/adm/adicionarNoticia'} className="w-full h-full flex justify-center items-center cursor-pointer p-2 font-bold text-xl leading-6 text-white">
+                                    <p>Adicionar Noticia</p>
+                                </Link>
+                            </li>
+                            <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
+                                <Link href={'/adm/adicionarObra'} className="w-full h-full flex justify-center items-center cursor-pointer p-2 font-bold text-xl leading-6 text-white">
+                                    <p>Adicionar Nova Obra Concluída</p>
+                                </Link>
+                            </li>
+                            <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
+                                <Link href={''} className="w-full h-full flex justify-center items-center cursor-pointer p-2 font-bold text-xl leading-6 text-white">
+                                    <p>Adicionar Novo Ponto Turístico</p>
+                                </Link>
+                            </li>
+                            <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
+                                <p>Adicionar Novo Evento</p>
+                            </li>
+                            <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
+                                <p>Relatos de Concerto de iluminação pública</p>
+                            </li>
+                            <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
+                                <p>Solicitação de Cadastro de Comércio</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <AncoraContainer></AncoraContainer>
                 </div>
             </Template>
         </ForcarAutenticacao>

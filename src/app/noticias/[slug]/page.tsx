@@ -8,6 +8,7 @@ import style from './style.module.css'
 import AncoraContainer from "@/components/ancora/AncoraContainer";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import formatarData from "@/utils/formatarData";
 
 interface GalleriaItem {
     itemImageSrc: string; // URL da imagem principal
@@ -125,8 +126,17 @@ export default function Page() {
                             item={itemTemplate} thumbnail={thumbnailTemplate} />
                     </div>
                     <ul className="flex flex-col gap-4 lg:max-h-[440px] lg:overflow-y-scroll xl:max-h-[550px] 2xl:max-h-[580px]">
+                        <li className="flex flex-col gap-6">
+                            {
+                                noticia.materia.map((p, i) => {
+                                    return (
+                                        <p key={i} style={{ textIndent: '2em' }}>{p}</p>
+                                    )
+                                })
+                            }
+                        </li>
                         <li>
-                            <p className="" style={{ textIndent: '2em' }}>{noticia.materia}</p>
+                            {noticia.autor} - {formatarData(noticia.data)}
                         </li>
                     </ul>
                     <AncoraContainer></AncoraContainer>

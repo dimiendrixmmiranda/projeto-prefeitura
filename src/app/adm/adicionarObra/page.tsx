@@ -70,7 +70,7 @@ export default function Page() {
                     <button className="bg-green-900 text-white py-1 text-xl" onClick={(e) => salvaObra(e)}>Enviar Obra</button>
                 </form>
                 {/* ##BUG: Esta voltando para a pagina inicial, sujeito a refatoração */}
-                <AncoraContainer></AncoraContainer>
+                <AncoraContainer linkVoltar="/adm"></AncoraContainer>
             </div>
         </Template>
     )

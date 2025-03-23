@@ -17,6 +17,7 @@ interface Slider3dProps {
 export default function Slider3d({ array }: Slider3dProps) {
     const [visible, setVisible] = useState(false);
     const [elemento, setElemento] = useState<null | Obra | PontoTuristico>(null)
+
     return (
         <div>
             <Swiper

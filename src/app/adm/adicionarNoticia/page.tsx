@@ -12,6 +12,7 @@ export default function AdicionarNoticia() {
     const [descricao, setDescricao] = useState('')
     const [materia, setMateria] = useState('')
     const [autor, setAutor] = useState('')
+    const materiaArray = materia.split('\n').map(paragraph => paragraph.trim()).filter(paragraph => paragraph !== '');
 
     async function salvar(noticia: Noticia) {
         const auth = getAuth();
@@ -34,7 +35,7 @@ export default function AdicionarNoticia() {
         const noticia: Noticia = {
             imagem: '/wireframe.png',
             titulo: titulo,
-            materia: materia,
+            materia: materiaArray,
             descricao: descricao,
             autor: autor,
             data: new Date().toISOString(),
@@ -66,7 +67,7 @@ export default function AdicionarNoticia() {
                     <button className="bg-green-900 text-white py-1 text-xl" onClick={(e) => salvarNoticia(e)}>Enviar Notícia</button>
                 </form>
                 {/* ##BUG: Esta voltando para a pagina inicial, sujeito a refatoração */}
-                <AncoraContainer></AncoraContainer>
+                <AncoraContainer linkVoltar="/adm"></AncoraContainer>
             </div>
         </Template>
     )

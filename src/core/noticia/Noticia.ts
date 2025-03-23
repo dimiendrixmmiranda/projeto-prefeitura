@@ -3,7 +3,7 @@ export default interface Noticia{
     autor: string
     descricao: string
     imagem: string,
-    materia: string
+    materia: string []
     data: string
     id?: string | null
 }

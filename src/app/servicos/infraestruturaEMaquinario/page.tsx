@@ -2,7 +2,8 @@
 import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import { db } from "@/lib/firebase";
-import { addDoc, collection} from "firebase/firestore";
+import pegarLocalizacao from "@/utils/pegarLocalizacao";
+import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 
 export default function Page() {
@@ -42,7 +43,9 @@ export default function Page() {
             longitude,
             servicoSolicitado,
             condicaoAtual,
-            descricao
+            descricao,
+            concluido: false,
+            data: new Date()
         }
         try {
             const docRef = await addDoc(collection(db, "pedidosInfraestruturaEMaquinario"), pedido);
@@ -81,7 +84,21 @@ export default function Page() {
                         <label htmlFor="localizacao" className="col-start-1 col-end-3">Informe a localição (Opcional):</label>
                         <input type="text" name="latitude" id="latitude" className="w-full h-[30px] rounded-lg p-2 text-sm" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
                         <input type="text" name="longitude" id="longitude" className="w-full h-[30px] rounded-lg p-2 text-sm" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
-                        <button className="col-start-1 col-end-3 bg-[--verde] text-white font-bold py-1">Pegar Localização</button>
+                        <button
+                            className="col-start-1 col-end-3 bg-[--verde] text-white font-bold py-1"
+                            onClick={async (e) => {
+                                e.preventDefault();
+                                try {
+                                    const [lat, long] = await pegarLocalizacao();
+                                    setLatitude(lat.toString());
+                                    setLongitude(long.toString());
+                                } catch (error) {
+                                    console.error("Erro ao obter localização:", error);
+                                }
+                            }}
+                        >
+                            Pegar Localização
+                        </button>
                     </fieldset>
                     <fieldset className="flex flex-col">
                         <label htmlFor="servicoSolicitado">Serviço Solicitado</label>

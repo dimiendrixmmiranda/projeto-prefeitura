@@ -68,7 +68,6 @@ export default function Page() {
                     <h2 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center md:text-3xl lg:text-4xl">Visão Geral de todos os pontos</h2>
                     <div className="w-full max-w-[1100px] mx-auto h-[300px] bg-black border-2 border-[--verde] overflow-hidden md:h-[400px] xl:h-[500px]">
                         <Map latitude={listaDePontos[0].latitude} longitude={listaDePontos[0].longitude} zoom={15} arrayPontosGeral={listaDePontos} />
-
                     </div>
                 </div>
                 <AncoraContainer></AncoraContainer>
