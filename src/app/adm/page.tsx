@@ -13,7 +13,7 @@ export default function Page() {
             <Template>
                 <div className="p-4 flex flex-col gap-4 max-w-[1200px] w-full mx-auto xl:gap-10">
                     <div className="grid" style={{ gridTemplateColumns: '1fr 60px' }}>
-                        <h1 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center self-center justify-self-center md:text-3xl lg:text-4xl">Painel de serviço dos servidores</h1>
+                        <h1 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center self-center justify-self-center md:text-3xl lg:text-4xl">Painel de serviço dos administradores</h1>
                         <button className="text-red-600 flex flex-col justify-center items-center" onClick={logout}>
                             <div className="text-2xl">
                                 <IoLogOutSharp />
@@ -34,12 +34,14 @@ export default function Page() {
                                 </Link>
                             </li>
                             <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                                <Link href={''} className="w-full h-full flex justify-center items-center cursor-pointer p-2 font-bold text-xl leading-6 text-white">
-                                    <p>Adicionar Novo Ponto Turístico</p>
+                                <Link href={'/adm/adicionarEvento'} className="w-full h-full flex justify-center items-center cursor-pointer p-2 font-bold text-xl leading-6 text-white">
+                                    <p>Adicionar Novo Evento</p>
                                 </Link>
                             </li>
                             <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                                <p>Adicionar Novo Evento</p>
+                                <Link href={'/adm/adicionarPontoTuristico'} className="w-full h-full flex justify-center items-center cursor-pointer p-2 font-bold text-xl leading-6 text-white">
+                                    <p>Adicionar Novo Ponto Turístico</p>
+                                </Link>
                             </li>
                             <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
                                 <p>Relatos de Concerto de iluminação pública</p>

@@ -7,19 +7,55 @@ import { EventInput } from "@fullcalendar/core";
 import ptBr from "@fullcalendar/core/locales/pt-br";
 import { MdEvent } from "react-icons/md";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { CgMathPlus } from "react-icons/cg";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+import Evento from "@/core/evento/Evento";
 
 export default function Eventos() {
     const [eventoAtual, setEventoAtual] = useState<EventInput | null>(null)
     const [visible, setVisible] = useState(false)
+    const [eventos, setEventos] = useState<Evento[]>([]);
 
-    const eventos: EventInput[] = [
-        { id: "1", title: "Feira da Lua - Especial de Carnaval", start: "2025-03-10T10:00:00", imagem: '/wireframe.png' },
-        { id: "2", title: "Evento 2", start: "2025-03-12T12:00:00", imagem: '/wireframe.png' },
-        { id: "3", title: "Evento 3", start: "2025-03-15T14:00:00", imagem: '/wireframe.png' }
-    ];
+    useEffect(() => {
+        const fetchEventos = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, "eventos"));
+                const eventosArray: Evento[] = querySnapshot.docs.map((doc) => {
+                    const data = doc.data();
+                    return {
+                        id: doc.id || null,
+                        descricao: data.descricao,
+                        localDoEvento: data.localizacao, // Alterando para 'localDoEvento'
+                        titulo: data.titulo,
+                        local: data.local,
+                        localizao: data.localizacao,
+                        data: data.data,
+                        hora: data.hora,
+                        imagem: '/wireframe.png'
+                    };
+                })
+
+                setEventos(eventosArray)
+            } catch (error) {
+                console.error("Erro ao buscar notícias:", error);
+            }
+        }
+
+        fetchEventos();
+    }, []);
+
+    const eventosFormatados: EventInput[] = eventos.map((evento) => {
+        const dataHora = `${evento.data}T${evento.hora}`
+        return {
+            id: evento.id || "",
+            title: evento.titulo,
+            start: dataHora,
+            image: 'wireframe.png',
+        };
+    });
     return (
         <div className='bg-red'>
             <h2 className='bg-[--verde] mt-4 text-white w-full py-3 text-2xl font-black uppercase flex justify-center gap-1 items-center leading-4 mb-3 lg:mb-5 lg:p-3 lg:text-3xl xl:mb-6'>
@@ -31,7 +67,7 @@ export default function Eventos() {
                     <FullCalendar
                         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                         initialView="dayGridMonth"
-                        events={eventos}
+                        events={eventosFormatados}
                         editable={true}
                         selectable={true}
                         locale={ptBr}
@@ -39,11 +75,11 @@ export default function Eventos() {
                 </div>
                 <ul className="text-black flex flex-col gap-2 xl:col-start-2 lg:h-[430px] lg:overflow-y-auto xl:col-end-4 xl:h-[400px] xl:pr-3">
                     {
-                        eventos.map((evento) => {
+                        eventosFormatados.map((evento) => {
                             return (
                                 <li key={evento.id} className="relative grid grid-cols-3 gap-2 border-2 border-[--verde] p-1 cursor-pointer lg:border-0 lg:pb-4 lg:border-b-2 lg:border-b-[--verde] xl:gap-4">
                                     <div className="relative w-full max-w-[150px] mx-auto h-[100px] overflow-hidden md:h-[170px] md:max-w-[400px] lg:h-[140px] xl:h-[170px]">
-                                        <Image src={evento.imagem} alt="evn" fill className="object-cover"></Image>
+                                        <Image src={'/wireframe.png'} alt="evn" fill className="object-cover"></Image>
                                     </div>
                                     <div className="col-start-2 col-end-4 flex flex-col">
                                         <h2 className="uppercase font-bold leading-5 md:text-xl xl:text-2xl">{evento.title}</h2>

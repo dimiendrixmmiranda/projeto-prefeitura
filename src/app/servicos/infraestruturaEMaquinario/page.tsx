@@ -17,7 +17,7 @@ export default function Page() {
     const [servicoSolicitado, setServicoSolicitado] = useState('')
     const [condicaoAtual, setCondicaoAtual] = useState('')
     const [descricao, setDescricao] = useState('')
-
+    
     const limparCampos = () => {
         setNome('')
         setCpf('')
@@ -32,27 +32,34 @@ export default function Page() {
     }
 
     async function salvarPedidoInfraestruturaEMaquinario(e: React.MouseEvent<HTMLButtonElement>) {
-        e.preventDefault()
-        const pedido = {
-            nome,
-            cpf,
-            telefone,
-            endereco,
-            bairro,
-            latitude,
-            longitude,
-            servicoSolicitado,
-            condicaoAtual,
-            descricao,
-            concluido: false,
-            data: new Date()
-        }
+        e.preventDefault();
+
         try {
+            const pedido = {
+                nome,
+                cpf,
+                telefone,
+                endereco,
+                bairro,
+                latitude,
+                longitude,
+                servicoSolicitado,
+                condicaoAtual,
+                descricao,
+                concluido: false,
+                data: new Date()
+            };
+
+            // 3. Salvar no Firestore
             const docRef = await addDoc(collection(db, "pedidosInfraestruturaEMaquinario"), pedido);
-            console.log("Infra salva com id", docRef.id);
-            limparCampos()
+            console.log("Pedido salvo com ID:", docRef.id);
+
+            console.log(pedido)
+
+            // 4. Limpar campos após salvar
+            limparCampos();
         } catch (error) {
-            console.error("Erro ao salvar Infra:", error);
+            console.error("Erro ao salvar pedido:", error);
         }
     }
 
@@ -131,9 +138,10 @@ export default function Page() {
                         <label htmlFor="descricao">Descricao do serviço desejado (Opcional)</label>
                         <textarea name="descricao" id="descricao" className="w-full h-[200px] p-2" value={descricao} onChange={(e) => setDescricao(e.target.value)}></textarea>
                     </fieldset>
+                    {/* Area da foto */}
                     <fieldset>
-                        <label htmlFor="area">Foto da área (Opcional):</label>
-                        <div className="w-20 h-20 bg-black mx-auto"></div>
+                        <label htmlFor="imagens">Fotos da área (Opcional):</label>
+                        <input type="file" id="imagens" accept="image/*"/>
                     </fieldset>
                     <button className="bg-[--verde] py-1 text-2xl uppercase font-bold text-white" onClick={(e) => salvarPedidoInfraestruturaEMaquinario(e)}>Enviar</button>
                 </form>
