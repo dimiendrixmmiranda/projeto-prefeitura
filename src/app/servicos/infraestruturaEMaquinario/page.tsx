@@ -1,38 +1,55 @@
-'use client'
+'use client';
 import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import { db } from "@/lib/firebase";
+import handleImagemChange from "@/utils/handleImageChange";
 import pegarLocalizacao from "@/utils/pegarLocalizacao";
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 
 export default function Page() {
-    const [nome, setNome] = useState('')
-    const [cpf, setCpf] = useState('')
-    const [telefone, setTelefone] = useState('')
-    const [endereco, setEndereco] = useState('')
-    const [bairro, setBairro] = useState('')
-    const [latitude, setLatitude] = useState('')
-    const [longitude, setLongitude] = useState('')
-    const [servicoSolicitado, setServicoSolicitado] = useState('')
-    const [condicaoAtual, setCondicaoAtual] = useState('')
-    const [descricao, setDescricao] = useState('')
-    
+    const [nome, setNome] = useState('');
+    const [cpf, setCpf] = useState('');
+    const [telefone, setTelefone] = useState('');
+    const [endereco, setEndereco] = useState('');
+    const [bairro, setBairro] = useState('');
+    const [latitude, setLatitude] = useState('');
+    const [longitude, setLongitude] = useState('');
+    const [servicoSolicitado, setServicoSolicitado] = useState('');
+    const [condicaoAtual, setCondicaoAtual] = useState('');
+    const [descricao, setDescricao] = useState('');
+    const [imagemBase64, setImagemBase64] = useState('');
+    const [imagemPreview, setImagemPreview] = useState('');
+    const [erroImagemTamanho, setErroImagemTamanho] = useState<string | null>(null);
+
     const limparCampos = () => {
-        setNome('')
-        setCpf('')
-        setTelefone('')
-        setEndereco('')
-        setBairro('')
-        setLatitude('')
-        setLongitude('')
-        setServicoSolicitado('')
-        setCondicaoAtual('')
-        setDescricao('')
-    }
+        setNome('');
+        setCpf('');
+        setTelefone('');
+        setEndereco('');
+        setBairro('');
+        setLatitude('');
+        setLongitude('');
+        setServicoSolicitado('');
+        setCondicaoAtual('');
+        setDescricao('');
+        setImagemBase64('');
+        setImagemPreview('');
+        setErroImagemTamanho(null); // Limpar a mensagem de erro ao limpar os campos
+        // Limpar o valor do input de arquivo também (opcional)
+        const inputImagem = document.getElementById('imagens') as HTMLInputElement | null;
+        if (inputImagem) {
+            inputImagem.value = '';
+        }
+    };
 
     async function salvarPedidoInfraestruturaEMaquinario(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
+
+        if (erroImagemTamanho) {
+            alert(erroImagemTamanho)
+            return
+        }
 
         try {
             const pedido = {
@@ -47,14 +64,14 @@ export default function Page() {
                 condicaoAtual,
                 descricao,
                 concluido: false,
-                data: new Date()
+                data: new Date(),
+                imagem: imagemBase64
             };
 
             // 3. Salvar no Firestore
             const docRef = await addDoc(collection(db, "pedidosInfraestruturaEMaquinario"), pedido);
             console.log("Pedido salvo com ID:", docRef.id);
-
-            console.log(pedido)
+            console.log(pedido);
 
             // 4. Limpar campos após salvar
             limparCampos();
@@ -66,7 +83,7 @@ export default function Page() {
     return (
         <Template>
             <div className="text-black p-4">
-                <form className="p-6 border-2 border-[--verde] relative flex flex-col gap-3 max-w-[500px] mx-auto sm:p-8">
+                <form className="p-6 border-2 border-[--verde] relative flex flex-col gap-3 max-w-[500px] mx-auto  overflow-hidden sm:p-8">
                     <fieldset>
                         <label htmlFor="nome">Informe seu nome completo:</label>
                         <input type="text" name="nome" id="nome" className="w-full h-[30px] rounded-lg p-2 text-sm" value={nome} onChange={(e) => setNome(e.target.value)} />
@@ -119,7 +136,7 @@ export default function Page() {
                     </fieldset>
                     <fieldset className="flex flex-col">
                         <label htmlFor="condicaoAtual">Condição Atual da Estrada</label>
-                        <select name="condicaoAtual" id="condicaoAtual" className="h-[30px] px-2" value={condicaoAtual} onChange={(e) => setCondicaoAtual(e.target.value)}>
+                        <select name="condicaoAtual" id="condicaoAtual" className="h-[30px] px-2 w-full" value={condicaoAtual} onChange={(e) => setCondicaoAtual(e.target.value)}>
                             <option value="">Selecione</option>
                             <option value="estrada-esburacada">Estrada emburacada</option>
                             <option value="trecho-intransferivel">Trecho Intransferivel</option>
@@ -141,12 +158,18 @@ export default function Page() {
                     {/* Area da foto */}
                     <fieldset>
                         <label htmlFor="imagens">Fotos da área (Opcional):</label>
-                        <input type="file" id="imagens" accept="image/*"/>
+                        <input className="flex flex-col" type="file" id="imagens" accept="image/*" onChange={(e) => handleImagemChange(e, setErroImagemTamanho, setImagemBase64, setImagemPreview)} />
+                        {imagemPreview && (
+                            <div className="mt-2">
+                                <label>Prévia da Imagem:</label>
+                                <img src={imagemPreview} alt="Prévia" className="max-w-[100px] max-h-[100px]" />
+                            </div>
+                        )}
                     </fieldset>
                     <button className="bg-[--verde] py-1 text-2xl uppercase font-bold text-white" onClick={(e) => salvarPedidoInfraestruturaEMaquinario(e)}>Enviar</button>
                 </form>
                 <AncoraContainer></AncoraContainer>
             </div>
         </Template>
-    )
+    );
 }

@@ -131,29 +131,34 @@ export const listaDeMenus: Menu[] = [
                 id: 8
             },
             {
-                link: '/servicos/galeriaDeObras',
-                nome: "Galeria de Obras",
+                nome: 'Solicitar Coleta de Entulho',
+                link: `/servicos/solicitarColetaDeEntulho`,
                 id: 9
             },
             {
-                link: '/servicos/',
-                nome: "Transparência",
+                link: '/servicos/galeriaDeObras',
+                nome: "Galeria de Obras",
                 id: 10
             },
             {
                 link: '/servicos/',
-                nome: "Licitações",
+                nome: "Transparência",
                 id: 11
             },
             {
                 link: '/servicos/',
-                nome: "Legislação",
+                nome: "Licitações",
                 id: 12
             },
             {
                 link: '/servicos/',
-                nome: "Concursos",
+                nome: "Legislação",
                 id: 13
+            },
+            {
+                link: '/servicos/',
+                nome: "Concursos",
+                id: 14
             },
         ]
     },

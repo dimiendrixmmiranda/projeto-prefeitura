@@ -10,20 +10,17 @@ import { useState } from "react";
 
 export default function Page() {
     const [nome, setNome] = useState('')
-    const [cpf, setCpf] = useState('')
-    const [telefone, setTelefone] = useState('')
     const [endereco, setEndereco] = useState('')
     const [bairro, setBairro] = useState('')
     const [latitude, setLatitude] = useState('')
     const [longitude, setLongitude] = useState('')
-    const [motivoDaSolicitacao, setMotivoDaSolicitacao] = useState('')
-    const [tipoDeServico, setTipoDeServico] = useState('')
-    const [alturaArvore, setAlturaArvore] = useState('')
-    const [erroImagemTamanho, setErroImagemTamanho] = useState<string | null>()
-    const [imagemBase64, setImagemBase64] = useState<string | null>()
-    const [imagemPreview, setImagemPreview] = useState<string | null>()
+    const [servicoSolicitado, setServicoSolicitado] = useState('')
+    const [erroImagemTamanho, setErroImagemTamanho] = useState<string | null>('')
+    const [imagemBase64, setImagemBase64] = useState('')
+    const [imagemPreview, setImagemPreview] = useState('')
+    const [informacaoAdicional, setInformacaoAdicional] = useState('')
 
-    async function salvarSolicitacaoCortePodaDeArvore(e: React.MouseEvent<HTMLButtonElement>) {
+    async function salvarSolicitacaoDeColetaDeEntulho(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
 
         if (erroImagemTamanho) {
@@ -34,26 +31,22 @@ export default function Page() {
         try {
             const solicitacao = {
                 nome,
-                cpf,
-                telefone,
                 endereco,
                 bairro,
                 localizacao: [latitude, longitude],
-                motivoDaSolicitacao,
-                tipoDeServico,
-                alturaArvore,                
+                servicoSolicitado,
                 imagem: imagemBase64,
                 data: new Date(),
-                situacao: false
+                recolhido: false
             };
 
             // 3. Salvar no Firestore
-            const docRef = await addDoc(collection(db, "solicitacaoCortePodaDeArvore"), solicitacao);
+            const docRef = await addDoc(collection(db, "solicitacaoColetaDeEntulho"), solicitacao);
             console.log("Pedido salvo com ID:", docRef.id);
             console.log(solicitacao);
 
             // 4. Limpar campos após salvar
-            limparCampos([setNome,setCpf, setTelefone, setEndereco, setBairro, setLatitude, setLongitude, setMotivoDaSolicitacao, setTipoDeServico, setAlturaArvore, setImagemBase64, setImagemPreview]);
+            limparCampos([setNome, setEndereco, setBairro, setLatitude, setLongitude, setServicoSolicitado, setImagemBase64, setImagemPreview, setInformacaoAdicional]);
             const inputImagem = document.getElementById('imagens') as HTMLInputElement | null;
             if (inputImagem) {
                 inputImagem.value = '';
@@ -65,29 +58,22 @@ export default function Page() {
         }
     }
 
+
     return (
         <Template>
             <div className="text-black p-4">
-                <form className="p-6 border-2 border-[--verde] relative flex flex-col gap-3 max-w-[500px] mx-auto sm:p-8">
+                <form className="p-6 border-2 border-[--verde] relative flex flex-col gap-3 max-w-[500px] mx-auto  overflow-hidden sm:p-8">
                     <fieldset>
                         <label htmlFor="nome">Informe seu nome completo:</label>
-                        <input type="text" name="nome" id="nome" className="w-full h-[30px] rounded-lg p-2 text-sm" value={nome} onChange={(e) => setNome(e.target.value)}/>
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="cpf">Informe seu nome CPF:</label>
-                        <input type="text" name="cpf" id="cpf" className="w-full h-[30px] rounded-lg p-2 text-sm" value={cpf} onChange={(e) => setCpf(e.target.value)}/>
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="telefone">Informe seu nome Telefone:</label>
-                        <input type="text" name="telefone" id="telefone" className="w-full h-[30px] rounded-lg p-2 text-sm" value={telefone} onChange={(e) => setTelefone(e.target.value)}/>
+                        <input type="text" name="nome" id="nome" className="w-full h-[30px] rounded-lg p-2 text-sm" value={nome} onChange={(e) => setNome(e.target.value)} />
                     </fieldset>
                     <fieldset>
                         <label htmlFor="endereco">Informe seu Endereço:</label>
-                        <input type="text" name="endereco" id="endereco" className="w-full h-[30px] rounded-lg p-2 text-sm" value={endereco} onChange={(e) => setEndereco(e.target.value)}/>
+                        <input type="text" name="endereco" id="endereco" className="w-full h-[30px] rounded-lg p-2 text-sm" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
                     </fieldset>
                     <fieldset>
                         <label htmlFor="bairro">Informe seu Bairro:</label>
-                        <input type="text" name="bairro" id="bairro" className="w-full h-[30px] rounded-lg p-2 text-sm" value={bairro} onChange={(e) => setBairro(e.target.value)}/>
+                        <input type="text" name="bairro" id="bairro" className="w-full h-[30px] rounded-lg p-2 text-sm" value={bairro} onChange={(e) => setBairro(e.target.value)} />
                     </fieldset>
                     <fieldset className="grid grid-cols-2 gap-2">
                         <label htmlFor="localizacao" className="col-start-1 col-end-3">Informe a localição (Opcional):</label>
@@ -110,25 +96,12 @@ export default function Page() {
                         </button>
                     </fieldset>
                     <fieldset className="flex flex-col">
-                        <label htmlFor="motivoSolicitacao">Motivo da solicitação:</label>
-                        <select name="motivoSolicitacao" id="motivoSolicitacao" className="h-[30px] px-2" value={motivoDaSolicitacao} onChange={(e) => setMotivoDaSolicitacao(e.target.value)}>
+                        <label htmlFor="tipoDeEntulho">Tipo de Entulho</label>
+                        <select name="tipoDeEntulho" id="tipoDeEntulho" className="h-[30px] px-2" value={servicoSolicitado} onChange={(e) => setServicoSolicitado(e.target.value)}>
                             <option value="">Selecione</option>
-                            <option value="riscoDeQueda">Risco de Queda</option>
-                            <option value="galhosAtingindoFiacao">Galhos Atingindo Fiação</option>
-                            <option value="raizesDanificandoCalcada">Raízes Danificando Calçada</option>
+                            <option value="entulho-organico">Entulho Organico</option>
+                            <option value="entulho-de-obra">Entulho De Obra</option>
                         </select>
-                    </fieldset>
-                    <fieldset className="flex flex-col">
-                        <label htmlFor="tipoServico">Tipo do serviço:</label>
-                        <select name="tipoServico" id="tipoServico" className="h-[30px] px-2" value={tipoDeServico} onChange={(e) => setTipoDeServico(e.target.value)}>
-                            <option value="">Selecione</option>
-                            <option value="corteTotal">Corte Total</option>
-                            <option value="poda">Poda</option>
-                        </select>
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="altura">Altura da Árvore (Opcional):</label>
-                        <input type="text" name="altura" id="altura" className="w-full h-[30px] rounded-lg p-2 text-sm" value={alturaArvore} onChange={(e) => setAlturaArvore(e.target.value)}/>
                     </fieldset>
                     {/* Area da foto */}
                     <fieldset>
@@ -141,7 +114,12 @@ export default function Page() {
                             </div>
                         )}
                     </fieldset>
-                    <button className="bg-[--verde] py-1 text-2xl uppercase font-bold text-white" onClick={(e) => salvarSolicitacaoCortePodaDeArvore(e)}>Enviar</button>
+
+                    <fieldset className="flex flex-col">
+                        <label htmlFor="informacaoAdicional">Informação Adicional:</label>
+                        <textarea name="informacaoAdicional" id="informacaoAdicional" className="h-[200px]" value={informacaoAdicional} onChange={(e) => setInformacaoAdicional(e.target.value)}></textarea>
+                    </fieldset>
+                    <button className="bg-[--verde] py-1 text-2xl uppercase font-bold text-white" onClick={(e) => salvarSolicitacaoDeColetaDeEntulho(e)}>Enviar</button>
                 </form>
                 <AncoraContainer></AncoraContainer>
             </div>

@@ -3,6 +3,7 @@ import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import { db } from "@/lib/firebase";
 import { collection, getDocs } from "firebase/firestore";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface SolicitacaoMaquinarioInfraestrutura {
@@ -18,11 +19,12 @@ interface SolicitacaoMaquinarioInfraestrutura {
     nome: string
     servicoSolicitado: string
     telefone: string
+    imagem?: string
 }
 
 export default function Page() {
     const [solicitacoes, setSolicitacoes] = useState<SolicitacaoMaquinarioInfraestrutura[]>([]);
-
+    console.log(solicitacoes)
     useEffect(() => {
         const fetchSolicitacoes = async () => {
             try {
@@ -71,6 +73,9 @@ export default function Page() {
                                     <td>{solicitacao.condicaoAtual}</td>
                                     <td>{solicitacao.telefone}</td>
                                     <td>{solicitacao.concluido ? 'Concluído' : 'Não concluído'}</td>
+                                    <td>
+                                        <Image alt="Imagem do pedido" src={solicitacao.imagem? solicitacao.imagem : ''}width={100} height={100}></Image>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
