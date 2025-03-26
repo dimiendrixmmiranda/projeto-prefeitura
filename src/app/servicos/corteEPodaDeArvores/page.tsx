@@ -68,6 +68,7 @@ export default function Page() {
     return (
         <Template>
             <div className="text-black p-4">
+            <h2 className="text-2xl leading-6 text-center text-[--verde] font-bold mb-4 lg:text-3xl">Formulário de Solicitação de Corte ou Poda de Árvores</h2>
                 <form className="p-6 border-2 border-[--verde] relative flex flex-col gap-3 max-w-[500px] mx-auto sm:p-8">
                     <fieldset>
                         <label htmlFor="nome">Informe seu nome completo:</label>

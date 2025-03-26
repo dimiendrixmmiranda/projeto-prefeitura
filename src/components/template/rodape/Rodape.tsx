@@ -60,7 +60,7 @@ export default function Rodape() {
             </div>
             <div className="flex flex-col px-2 py-1 bg-black text-white md:flex-row">
                 <div className="flex justify-center items-center w-full">
-                    <p className="w-full font-bold uppercase text-center md:text-start">Produzido por dimi endrix martins miranda</p>
+                    <p className="w-full font-bold uppercase text-center text-sm py-1 md:text-start">Produzido por dimi endrix martins miranda</p>
                 </div>
                 <ul className="grid grid-cols-4 md:gap-4">
                     {

@@ -17,11 +17,11 @@ export default function CardNoticia({ noticia }: CardNoticiaProps) {
                     <Image alt="img" src={'/wireframe.png'} fill className="object-cover"></Image>
                 </div>
                 <div className={styles.cardTexto}>
-                    <h1 className="font-bold leading-3 text-[.7em] sm:text-[.9em] sm:leading-4 md:text-lg md:leading-5 lg:text-xl lg:leading-5">{noticia.titulo}</h1>
-                    <p className="font-medium text-[.6em] flex-1 sm:text-[.7em] md:text-[.8em] md:mt-2 lg:text-lg overflow-hidden text-ellipsis break-words max-h-[4.5em]" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
+                    <h1 className="font-bold text-lg leading-5 line-clamp-3 lg:text-2xl">{noticia.titulo}</h1>
+                    <p className="text-xs line-clamp-1 sm:line-clamp-2 md:text-sm xl:text-[1em] xl:line-clamp-3">
                         {noticia.descricao}
                     </p>
-                    <span className="text-[.5em] text-center flex justify-center mt-auto sm:text-[.65em] md:justify-end lg:text-lg">Por {noticia.autor}, {formatarData(noticia.data)}</span>
+                    <span className="text-[.5em] text-center flex justify-center mt-auto md:text-xs xl:justify-start">Por {noticia.autor}, {formatarData(noticia.data)}</span>
                 </div>
             </Link>
         </li>

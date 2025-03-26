@@ -2,6 +2,7 @@
 
 "use client";
 
+import formatarDataClima from "@/utils/formatarDataClima";
 import { useEffect, useState } from "react";
 import { FaCloudRain, FaCompass } from "react-icons/fa";
 import { FiWind } from "react-icons/fi";
@@ -32,11 +33,6 @@ interface Tempo {
 
 export default function Clima() {
     const [clima, setClima] = useState<Tempo | null>(null);
-
-    function formatarData(d: string) {
-        const data = d.split('-')
-        return `${data[2]}/${data[1]}`
-    }
 
     function mediaTempo(max: number, min: number) {
         return ((max + min) / 2).toFixed(1)
@@ -150,20 +146,20 @@ export default function Clima() {
     return (
         <div className="p-2">
             <div className="bg-cover bg-center p-2 flex flex-col gap-4 xl:gap-7 xl:px-10 xl:py-6"
-                style={{ backgroundImage: `url(${getWeatherDescription(clima.current_weather.weathercode).imagem})`, boxShadow: '2px 2px 3px black' }}>
+                style={{ backgroundImage: `url(${getWeatherDescription(clima.current_weather.weathercode).imagem})`, boxShadow: '0 0 2px 1px black' }}>
                 <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
-                    <div className="text-blue-950" style={{ textShadow: '1px 1px 2px white' }}>
+                    <div className="text-white" style={{ textShadow: '2px 2px 2px black' }}>
                         <h2 className="font-black text-6xl text-center">{clima.current_weather.temperature}ºC</h2>
                         <h3 className="text-center text-xl font-bold">{getWeatherDescription(clima.current_weather.weathercode).texto}</h3>
                     </div>
-                    <div className="grid grid-cols-2 gap-2 md:col-start-1 md:col-end-2 lg:col-start-2 lg:col-end-3" style={{ textShadow: '1px 1px 2px black' }}>
-                        <div className="text-xl self-center justify-self-center leading-6 font-bold">
+                    <div className="grid grid-cols-2 gap-2 md:col-start-1 md:col-end-2 lg:col-start-2 lg:col-end-3" style={{ textShadow: '2px 2px 2px black' }}>
+                        <div className="self-center justify-self-center leading-6 font-bold flex justify-center items-center flex-col">
                             <p>Máxima:</p>
-                            <p className="font-medium text-center">{clima.daily.temperature_2m_max[0]}ºC</p>
+                            <p className="font-black text-center text-3xl">{clima.daily.temperature_2m_max[0]}ºC</p>
                         </div>
-                        <div className="text-xl self-center justify-self-center leading-6 font-bold">
+                        <div className="self-center justify-self-center leading-6 font-bold flex justify-center items-center flex-col">
                             <p>Mínima:</p>
-                            <p className="font-medium text-center">{clima.daily.temperature_2m_min[0]}ºC</p>
+                            <p className="font-black text-center text-3xl">{clima.daily.temperature_2m_min[0]}ºC</p>
                         </div>
                     </div>
                     <div className="w-full grid grid-cols-4 gap-1 items-center justify-center md:row-start-1 md:row-end-3 md:col-start-2 md:h-fit md:my-auto lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-4">
@@ -189,17 +185,21 @@ export default function Clima() {
                     <h2 className="text-2xl self-center font-bold text-center leading-6 sm:text-start md:text-4xl" style={{ textShadow: '1px 1px 2px black' }}>Previsão para os próximos 7 dias:</h2>
                     <ul className="overflow-auto whitespace-nowrap lg:flex lg:justify-center">
                         {clima.daily.time.map((date, index) => (
-                            <li key={date} className="w-24 h-32 bg-blue-950 inline-block mx-2 rounded-lg p-2 overflow-hidden lg:w-32 lg:h-36">
+                            <li key={date} className="w-28 h-32 bg-blue-950 inline-block mx-2 rounded-lg p-2 overflow-hidden lg:w-32 lg:h-36">
                                 <div className="flex flex-col relative">
                                     <p className="text-center text-xl font-black leading-6" >{mediaTempo(clima.daily.temperature_2m_max[index], clima.daily.temperature_2m_min[index])}ºC</p>
-                                    <div className="items-center overflow-hidden text-sm gap-1" style={{ display: 'grid', gridTemplateColumns: '35px 1fr' }}>
-                                        <p className="leading-5 uppercase font-bold">Max:</p>
-                                        <p>{clima.daily.temperature_2m_max[index]}ºC</p>
+
+                                    <div className="flex justify-between lg:mt-1">
+                                        <div className="overflow-hidden text-sm gap-1 flex flex-col justify-center items-center">
+                                            <p className="leading-5 uppercase font-bold">Max:</p>
+                                            <p className="-mt-2">{clima.daily.temperature_2m_max[index]}ºC</p>
+                                        </div>
+                                        <div className="overflow-hidden text-sm gap-1 flex flex-col justify-center items-center" >
+                                            <p className="leading-5 uppercase font-bold">Min:</p>
+                                            <p className="-mt-2">{clima.daily.temperature_2m_min[index]}ºC</p>
+                                        </div>
                                     </div>
-                                    <div className="items-center overflow-hidden text-sm gap-1" style={{ display: 'grid', gridTemplateColumns: '35px 1fr' }}>
-                                        <p className="leading-5 uppercase font-bold">Min:</p>
-                                        <p>{clima.daily.temperature_2m_min[index]}ºC</p>
-                                    </div>
+                                    
                                     <div className="grid grid-cols-2 gap-2">
                                         <div className="flex flex-col justify-center items-center">
                                             <WiRaindrops className="text-2xl -mt-1 -mb-2" />
@@ -210,7 +210,7 @@ export default function Clima() {
                                             <p className="text-sm">{clima.daily.precipitation_probability_mean[index]}%</p>
                                         </div>
                                     </div>
-                                    <p className="text-center font-bold text-lg -mt-1">{formatarData(date)}</p>
+                                    <p className="text-center font-bold text-sm lg:text-[1em] lg:mt-2">{formatarDataClima(date)}</p>
                                 </div>
                             </li>
                         ))}

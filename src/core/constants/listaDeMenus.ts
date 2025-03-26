@@ -91,6 +91,26 @@ export const listaDeMenus: Menu[] = [
         item: 'Serviços',
         submenu: [
             {
+                nome: 'Corte e Poda de Árvores',
+                link: `/servicos/corteEPodaDeArvores`,
+                id: 7
+            },
+            {
+                nome: 'Solicitar Coleta de Entulho',
+                link: `/servicos/solicitarColetaDeEntulho`,
+                id: 8
+            },
+            {
+                nome: 'Pedido de Manutenção de Estradas e Serviços de Maquinário',
+                link: `/servicos/infraestruturaEMaquinario`,
+                id: 9
+            },
+            {
+                nome: 'Concerto Iluminação Pública',
+                link: `/servicos/concertoIluminacaoPublica`,
+                id: 6
+            },
+            {
                 nome: 'Coleta de Lixo',
                 link: `/servicos/coletaDeLixo`,
                 id: 1
@@ -114,26 +134,6 @@ export const listaDeMenus: Menu[] = [
                 nome: 'Hospitais e Postos',
                 link: `/servicos/hospitaisEPostos`,
                 id: 5
-            },
-            {
-                nome: 'Concerto Iluminação Pública',
-                link: `/servicos/concertoIluminacaoPublica`,
-                id: 6
-            },
-            {
-                nome: 'Corte e Poda de Árvores',
-                link: `/servicos/corteEPodaDeArvores`,
-                id: 7
-            },
-            {
-                nome: 'Pedido de Manutenção de Estradas e Serviços de Maquinário',
-                link: `/servicos/infraestruturaEMaquinario`,
-                id: 8
-            },
-            {
-                nome: 'Solicitar Coleta de Entulho',
-                link: `/servicos/solicitarColetaDeEntulho`,
-                id: 9
             },
             {
                 link: '/servicos/galeriaDeObras',

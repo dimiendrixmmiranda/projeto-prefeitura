@@ -64,7 +64,7 @@ export default function Slider3d({ array }: Slider3dProps) {
                                     className='object-cover h-[90%] border-4 border-[--verde]'
                                 />
                             </div>
-                            <p className='bg-[--verde] w-full text-center font-bold p-1 leading-5 flex justify-center items-center lg:text-lg lg:leading-5'>{item.titulo}</p>
+                            <p className='bg-[--verde] w-full text-center font-bold p-1 leading-5 flex justify-center items-center line-clamp-2 lg:text-lg lg:leading-5'>{item.titulo}</p>
                         </div>
                     </SwiperSlide>
                 ))}
@@ -79,7 +79,7 @@ export default function Slider3d({ array }: Slider3dProps) {
                 {
                     elemento != undefined ?
                         <div className='w-full h-full gap-2 md:gap-4 xl:gap-6' style={{ display: 'grid', gridTemplateRows: '1fr auto auto' }}>
-                            <div className='relative w-full h-full'>
+                            <div className='relative w-full h-[200px] sm:h-[250px]'>
                                 <Image src={elemento?.imagem} alt={elemento?.titulo} fill className='object-cover'></Image>
                             </div>
                             <div className='w-full h-full'>

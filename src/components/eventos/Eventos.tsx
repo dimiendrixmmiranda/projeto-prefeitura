@@ -75,9 +75,9 @@ export default function Eventos() {
                 </div>
                 <ul className="text-black flex flex-col gap-2 xl:col-start-2 lg:h-[430px] lg:overflow-y-auto xl:col-end-4 xl:h-[400px] xl:pr-3">
                     {
-                        eventosFormatados.map((evento) => {
+                        eventosFormatados.map((evento, i) => {
                             return (
-                                <li key={evento.id} className="relative grid grid-cols-3 gap-2 border-2 border-[--verde] p-1 cursor-pointer lg:border-0 lg:pb-4 lg:border-b-2 lg:border-b-[--verde] xl:gap-4">
+                                <li key={evento.id} className={`relative grid grid-cols-3 gap-2 border-2 border-[--verde] p-1 cursor-pointer max-w-[750px] mx-auto lg:border-0 lg:pb-4 lg:border-b-[--verde] xl:gap-4 ${eventosFormatados.length - 1 === i ? 'lg:border-b-0': 'lg:border-b-2'}`}>
                                     <div className="relative w-full max-w-[150px] mx-auto h-[100px] overflow-hidden md:h-[170px] md:max-w-[400px] lg:h-[140px] xl:h-[170px]">
                                         <Image src={'/wireframe.png'} alt="evn" fill className="object-cover"></Image>
                                     </div>
@@ -88,7 +88,7 @@ export default function Eventos() {
                                             <p className="line-clamp-1 text-sm bg-[--verde] text-white text-center md:text-xl md:line-clamp-2">15/03, as 18:00 Próximo ao Ginásio de esportes</p>
                                         </div>
                                     </div>
-                                    <button className="w-6 h-6 flex bg-[--verde] text-white justify-center items-center absolute top-1 right-1" onClick={() => {
+                                    <button className="w-4 h-4 flex bg-[--verde] text-white justify-center items-center absolute top-1 right-1" onClick={() => {
                                         setEventoAtual(evento)
                                         setVisible(true)
                                     }}><CgMathPlus /></button>
@@ -107,7 +107,7 @@ export default function Eventos() {
                         onHide={() => setVisible(false)}
                     >
                         <div className="flex flex-col gap-4 items-center text-[--verde]">
-                            <h2>Um evento bem legal</h2>
+                            <h2 className="text-2xl uppercase font-bold text-center">{eventoAtual.title}</h2>
                         </div>
                     </Dialog>
                 ) : ''
