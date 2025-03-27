@@ -14,7 +14,7 @@ export default function Page() {
     const [bairro, setBairro] = useState('')
     const [latitude, setLatitude] = useState('')
     const [longitude, setLongitude] = useState('')
-    const [servicoSolicitado, setServicoSolicitado] = useState('')
+    const [tipoDeEntulho, setTipoDeEntulho] = useState('')
     const [erroImagemTamanho, setErroImagemTamanho] = useState<string | null>('')
     const [imagemBase64, setImagemBase64] = useState('')
     const [imagemPreview, setImagemPreview] = useState('')
@@ -34,10 +34,11 @@ export default function Page() {
                 endereco,
                 bairro,
                 localizacao: [latitude, longitude],
-                servicoSolicitado,
+                tipoDeEntulho,
                 imagem: imagemBase64,
+                informacaoAdicional,
                 data: new Date(),
-                recolhido: false
+                situacao: false
             };
 
             // 3. Salvar no Firestore
@@ -46,7 +47,7 @@ export default function Page() {
             console.log(solicitacao);
 
             // 4. Limpar campos após salvar
-            limparCampos([setNome, setEndereco, setBairro, setLatitude, setLongitude, setServicoSolicitado, setImagemBase64, setImagemPreview, setInformacaoAdicional]);
+            limparCampos([setNome, setEndereco, setBairro, setLatitude, setLongitude, setTipoDeEntulho, setImagemBase64, setImagemPreview, setInformacaoAdicional]);
             const inputImagem = document.getElementById('imagens') as HTMLInputElement | null;
             if (inputImagem) {
                 inputImagem.value = '';
@@ -98,7 +99,7 @@ export default function Page() {
                     </fieldset>
                     <fieldset className="flex flex-col">
                         <label htmlFor="tipoDeEntulho">Tipo de Entulho</label>
-                        <select name="tipoDeEntulho" id="tipoDeEntulho" className="h-[30px] px-2" value={servicoSolicitado} onChange={(e) => setServicoSolicitado(e.target.value)}>
+                        <select name="tipoDeEntulho" id="tipoDeEntulho" className="h-[30px] px-2" value={tipoDeEntulho} onChange={(e) => setTipoDeEntulho(e.target.value)}>
                             <option value="">Selecione</option>
                             <option value="entulho-organico">Entulho Organico</option>
                             <option value="entulho-de-obra">Entulho De Obra</option>

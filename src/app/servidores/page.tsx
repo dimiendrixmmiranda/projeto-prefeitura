@@ -25,13 +25,23 @@ export default function Page() {
                     </div>
                     <ul className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-4">
                         <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px] p-2">
-                            <Link href={''}>
-                                <p>Solicitações de corte e poda de árvores</p>
+                            <Link href={'/servidores/infraestruturaEMaquinario'}>
+                                <p>Solicitações de Serviços de Maquinarios e Infraestrutura</p>
                             </Link>
                         </li>
                         <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px] p-2">
-                            <Link href={'/servidores/infraestruturaEMaquinario'}>
-                                <p>Solicitações de serviços de maquinarios e infraestrutura</p>
+                            <Link href={'/servidores/solicitacaoCorteEPodaDeArvores'}>
+                                <p>Solicitações de Corte e Poda de Árvores</p>
+                            </Link>
+                        </li>
+                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px] p-2">
+                            <Link href={'/servidores/solicitarColetaDeEntulho'}>
+                                <p>Solicitações de Coleta de Entulho</p>
+                            </Link>
+                        </li>
+                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px] p-2">
+                            <Link href={'/servidores/solicitarConcertoIluminacaoPublica'}>
+                                <p>Solicitações de Cencerto de Iluminação Pública</p>
                             </Link>
                         </li>
                     </ul>
