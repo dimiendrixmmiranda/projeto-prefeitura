@@ -1,9 +1,9 @@
-export default interface Noticia{
+export default interface Noticia {
     titulo: string
     autor: string
     descricao: string
-    imagem: string,
-    materia: string []
+    imagem: string | undefined | null
+    materia: string[]
     data: string
     id?: string | null
 }

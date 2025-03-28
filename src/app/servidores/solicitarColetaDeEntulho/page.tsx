@@ -5,6 +5,9 @@ import { db } from "@/lib/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import Item from "@/core/ItemMapa/ItemMapa";
+const Mapa = dynamic(() => import("@/components/mapaSolicitacao"), { ssr: false });
 
 interface SolicitacaoColetaDeEntulho {
     nome: string
@@ -15,11 +18,13 @@ interface SolicitacaoColetaDeEntulho {
     data: string
     situacao: boolean
     informacaoAdicional: string
+    id: string
     imagem?: string
 }
 
 export default function Page() {
     const [solicitacoes, setSolicitacoes] = useState<SolicitacaoColetaDeEntulho[]>([])
+    const [solicitacoesMapa, setSolicitacoesMapa] = useState<Item[]>([]);
 
     useEffect(() => {
         const fetchSolicitacoes = async () => {
@@ -27,10 +32,25 @@ export default function Page() {
                 const querySnapshot = await getDocs(collection(db, "solicitacaoColetaDeEntulho"));
                 const solicitacoesArray: SolicitacaoColetaDeEntulho[] = querySnapshot.docs.map((doc) => ({
                     ...doc.data(),
+                    id: doc.id,
                     data: doc.data().data.toDate(),
                 })) as SolicitacaoColetaDeEntulho[]
 
                 setSolicitacoes(solicitacoesArray)
+
+                const solicitacoesFormatadas = solicitacoesArray
+                    .filter(s => s.localizacao?.length === 2) // Filtra somente as que têm coordenadas
+                    .map((s, index) => ({
+                        nome: s.nome,
+                        latitude: parseFloat(s.localizacao[0]),
+                        longitude: parseFloat(s.localizacao[1]),
+                        id: String(index + 1), // Gera um ID sequencial
+                        icone: '/icones/onibus.png', // Defina um ícone padrão
+                        tipoDeEntulho: s.tipoDeEntulho,
+                        imagem: s.imagem
+                    }));
+
+                setSolicitacoesMapa(solicitacoesFormatadas);
 
             } catch (error) {
                 console.error("Erro ao buscar solicitações:", error)
@@ -80,8 +100,13 @@ export default function Page() {
                         </tbody>
                     </table>
                 </div>
+                <div className="flex flex-col gap-4 lg:gap-8 lg:my-4">
+                    <h2 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center md:text-3xl lg:text-4xl">Visão Geral de todos os pontos</h2>
+                    <div className="w-full max-w-[1100px] mx-auto h-[300px] bg-black border-2 border-[--verde] overflow-hidden md:h-[400px] xl:h-[500px]">
+                        <Mapa latitude={-23.49783040582745} longitude={-49.92295585808861} zoom={15} arrayPontosGeral={solicitacoesMapa} />
+                    </div>
+                </div>
                 <AncoraContainer linkVoltar="/servidores"></AncoraContainer>
-                {/* NECESSÁRIO REFATORAÇÃO NO COMPONENTE MAPA */}
             </div>
         </Template>
     )

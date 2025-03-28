@@ -3,6 +3,7 @@ import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import Noticia from "@/core/noticia/Noticia";
 import { db } from "@/lib/firebase";
+import handleImagemChange from "@/utils/handleImageChange";
 import { getAuth } from "firebase/auth";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 import { MouseEvent, useState } from "react";
@@ -12,6 +13,9 @@ export default function AdicionarNoticia() {
     const [descricao, setDescricao] = useState('')
     const [materia, setMateria] = useState('')
     const [autor, setAutor] = useState('')
+    const [, setErroImagemTamanho] = useState<string | null>()
+    const [imagemBase64, setImagemBase64] = useState<string | null>()
+    const [imagemPreview, setImagemPreview] = useState<string | null>()
     const materiaArray = materia.split('\n').map(paragraph => paragraph.trim()).filter(paragraph => paragraph !== '');
 
     async function salvar(noticia: Noticia) {
@@ -33,7 +37,7 @@ export default function AdicionarNoticia() {
     async function salvarNoticia(e: MouseEvent) {
         e.preventDefault();
         const noticia: Noticia = {
-            imagem: '/wireframe.png',
+            imagem: imagemBase64 || '/wireframe.png',
             titulo: titulo,
             materia: materiaArray,
             descricao: descricao,
@@ -63,6 +67,17 @@ export default function AdicionarNoticia() {
                     <fieldset className="flex flex-col">
                         <label htmlFor="Autor">Autor</label>
                         <input type="text" id="autor" className="h-[30px] p-2" value={autor} onChange={(e) => setAutor(e.target.value)} />
+                    </fieldset>
+                    {/* Area da foto */}
+                    <fieldset>
+                        <label htmlFor="imagens">Fotos da área (Opcional):</label>
+                        <input className="flex flex-col" type="file" id="imagens" accept="image/*" onChange={(e) => handleImagemChange(e, setErroImagemTamanho, setImagemBase64, setImagemPreview)} />
+                        {imagemPreview && (
+                            <div className="mt-2">
+                                <label>Prévia da Imagem:</label>
+                                <img src={imagemPreview} alt="Prévia" className="max-w-[100px] max-h-[100px]" />
+                            </div>
+                        )}
                     </fieldset>
                     <button className="bg-green-900 text-white py-1 text-xl" onClick={(e) => salvarNoticia(e)}>Enviar Notícia</button>
                 </form>

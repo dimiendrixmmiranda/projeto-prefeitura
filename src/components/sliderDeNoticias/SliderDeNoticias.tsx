@@ -63,7 +63,7 @@ export default function SliderDeNoticias() {
                         <div className='relative w-full h-full' >
                             <Image
                                 alt="recado da cidade"
-                                src={noticia.imagem}
+                                src={noticia.imagem ? noticia.imagem : '/wireframe.png'}
                                 fill
                                 className="object-cover"
                             />

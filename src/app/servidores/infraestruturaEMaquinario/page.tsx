@@ -5,8 +5,12 @@ import { db } from "@/lib/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import Item from "@/core/ItemMapa/ItemMapa";
+
 
 interface SolicitacaoMaquinarioInfraestrutura {
+    id: string
     bairro: string
     concluido: boolean
     condicaoAtual: string
@@ -21,18 +25,39 @@ interface SolicitacaoMaquinarioInfraestrutura {
     imagem?: string
 }
 
+const Mapa = dynamic(() => import("@/components/mapaSolicitacao"), { ssr: false });
+
 export default function Page() {
     const [solicitacoes, setSolicitacoes] = useState<SolicitacaoMaquinarioInfraestrutura[]>([]);
+    const [solicitacoesMapa, setSolicitacoesMapa] = useState<Item[]>([]);
+
     useEffect(() => {
         const fetchSolicitacoes = async () => {
             try {
                 const querySnapshot = await getDocs(collection(db, "pedidosInfraestruturaEMaquinario"));
                 const solicitacoesArray: SolicitacaoMaquinarioInfraestrutura[] = querySnapshot.docs.map((doc) => ({
                     ...doc.data(),
+                    id: doc.id, // Adiciona o ID do documento do Firestore
                     data: doc.data().data.toDate(),
-                })) as SolicitacaoMaquinarioInfraestrutura[]
+                })) as SolicitacaoMaquinarioInfraestrutura[];
 
                 setSolicitacoes(solicitacoesArray)
+
+                const solicitacoesFormatadas = solicitacoesArray
+                    .filter(s => s.localizacao?.length === 2) // Filtra somente as que têm coordenadas
+                    .map((s) => ({
+                        nome: s.nome,
+                        latitude: parseFloat(s.localizacao[0]),
+                        longitude: parseFloat(s.localizacao[1]),
+                        servicoSolicitado: s.servicoSolicitado ? s.servicoSolicitado : '',
+                        id: s.id,
+                        icone: '/icones/icone-infraestrutura-maquinario.png', // Defina um ícone padrão
+                        telefone: s.telefone,
+                        condicaoAtual: s.condicaoAtual,
+                        imagem: s.imagem
+                    }));
+
+                setSolicitacoesMapa(solicitacoesFormatadas);
 
             } catch (error) {
                 console.error("Erro ao buscar solicitações:", error)
@@ -86,8 +111,13 @@ export default function Page() {
                         </tbody>
                     </table>
                 </div>
+                <div className="flex flex-col gap-4 lg:gap-8 lg:my-4">
+                    <h2 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center md:text-3xl lg:text-4xl">Visão Geral de todos os pontos</h2>
+                    <div className="w-full max-w-[1100px] mx-auto h-[300px] bg-black border-2 border-[--verde] overflow-hidden md:h-[400px] xl:h-[500px]">
+                        <Mapa latitude={-23.49783040582745} longitude={-49.92295585808861} zoom={15} arrayPontosGeral={solicitacoesMapa} />
+                    </div>
+                </div>
                 <AncoraContainer linkVoltar="/servidores"></AncoraContainer>
-                {/* NECESSÁRIO REFATORAÇÃO NO COMPONENTE MAPA */}
             </div>
         </Template>
     )
