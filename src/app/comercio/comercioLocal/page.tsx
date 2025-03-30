@@ -1,30 +1,27 @@
 'use client'
 
-import { useState } from 'react';
-import { listaDeComercio } from '@/core/constants/listaDeComercios';
 import Template from '@/components/template/Template';
-import CardComercio from '@/components/cardComercio/CardComercio';
 import AncoraContainer from '@/components/ancora/AncoraContainer';
 
-import dynamic from "next/dynamic";
-const Map = dynamic(() => import("@/components/map"), { ssr: false });
+// import dynamic from "next/dynamic";
+// const Map = dynamic(() => import("@/components/map"), { ssr: false });
 
 export default function ListaDeComercios() {
-    const [tipoSelecionado, setTipoSelecionado] = useState<string>('geral');
+    // const [tipoSelecionado, setTipoSelecionado] = useState<string>('geral');
 
-    const tiposDeComercio = ['geral', ... new Set(listaDeComercio.map(comercio => {
-        if (comercio.tipo != undefined) {
-            return comercio.tipo.toLowerCase()
-        }
-    }))]
+    // const tiposDeComercio = ['geral', ... new Set(listaDeComercio.map(comercio => {
+    //     if (comercio.categoriaComercio != undefined) {
+    //         return comercio.categoriaComercio.toLowerCase()
+    //     }
+    // }))]
 
-    const comerciosFiltrados = tipoSelecionado === 'geral'
-        ? listaDeComercio
-        : listaDeComercio.filter(comercio => {
-            if (comercio.tipo != null && comercio.tipo != undefined) {
-                return comercio.tipo.toLowerCase() === tipoSelecionado.toLowerCase()
-            }
-        });
+    // const comerciosFiltrados = tipoSelecionado === 'geral'
+    //     ? listaDeComercio
+    //     : listaDeComercio.filter(comercio => {
+    //         if (comercio.categoriaComercio != null && comercio.categoriaComercio != undefined) {
+    //             return comercio.categoriaComercio.toLowerCase() === tipoSelecionado.toLowerCase()
+    //         }
+    //     });
 
     return (
         <Template>
@@ -35,10 +32,10 @@ export default function ListaDeComercios() {
                     <p>Apoie o comércio local e fortaleça nossa comunidade! Encontre os melhores estabelecimentos próximos a você e descubra opções como supermercados, padarias, farmácias e muito mais! Filtre por tipo e faça suas compras de forma rápida e conveniente.</p>
                 </div>
 
-                {/* Mapa dos comercios */}
+                {/* Mapa dos comercios
                 <div className="w-full mx-auto h-[300px] bg-black border-2 border-[--verde] overflow-hidden md:h-[400px] xl:h-[600px]">
                     <Map latitude={comerciosFiltrados[0].latitude} longitude={comerciosFiltrados[0].longitude} zoom={15} arrayPontosGeral={comerciosFiltrados}/>
-                </div>
+                </div> */}
 
                 {/* Filtros */}
                 <ul className='flex flex-col gap-2 md:flex-row'>
@@ -48,7 +45,7 @@ export default function ListaDeComercios() {
                             <input type="text" name="nome" id="nome" className='h-[30px] px-2' />
                         </div>
                     </li>
-                    <li>
+                    {/* <li>
                         <div className='flex flex-col'>
                             <label className="font-bold">Filtrar por tipo:</label>
                             <select
@@ -63,15 +60,15 @@ export default function ListaDeComercios() {
                                 ))}
                             </select>
                         </div>
-                    </li>
+                    </li> */}
                 </ul>
 
                 {/* Cards */}
-                <ul className="grid grid-cols-1 gap-2 pb-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4">
+                {/* <ul className="grid grid-cols-1 gap-2 pb-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5 xl:grid-cols-4">
                     {comerciosFiltrados.map((comercio, index) => (
                         <CardComercio comercio={comercio} key={index}></CardComercio>
                     ))}
-                </ul>
+                </ul> */}
 
                 <AncoraContainer></AncoraContainer>
             </div>

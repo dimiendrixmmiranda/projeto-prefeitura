@@ -62,7 +62,7 @@ export default function Page() {
                 servicoSolicitado,
                 condicaoAtual,
                 descricao,
-                concluido: false,
+                situacao: false,
                 data: new Date(),
                 imagem: imagemBase64
             };

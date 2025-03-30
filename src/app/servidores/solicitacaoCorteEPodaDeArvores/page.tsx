@@ -2,7 +2,7 @@
 import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import { db } from "@/lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDocs, updateDoc } from "firebase/firestore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
@@ -29,6 +29,32 @@ export default function Page() {
     const [solicitacoes, setSolicitacoes] = useState<SolicitacaoCortePodaDeArvore[]>([])
     const [solicitacoesMapa, setSolicitacoesMapa] = useState<Item[]>([]);
 
+    function concluido(id: string) {
+        const solicitacaoRef = doc(db, "solicitacaoCortePodaDeArvore", id);
+
+        updateDoc(solicitacaoRef, { situacao: true })
+            .then(() => {
+                console.log(`Solicitação ${id} marcada como concluída.`);
+
+                // Atualizar o estado local para refletir a mudança
+                setSolicitacoes((prevSolicitacoes) =>
+                    prevSolicitacoes.map((sol) =>
+                        sol.id === id ? { ...sol, situacao: true } : sol
+                    )
+                );
+            })
+            .then(() => {
+                setTimeout(() => {
+                    window.location.reload()
+                }, 2000);
+            })
+            .catch((error) => {
+                console.error("Erro ao atualizar a solicitação:", error);
+            });
+
+        console.log(solicitacoes, solicitacoesMapa)
+    }
+
     useEffect(() => {
         const fetchSolicitacoes = async () => {
             try {
@@ -39,15 +65,23 @@ export default function Page() {
                     data: doc.data().data.toDate(),
                 })) as SolicitacaoCortePodaDeArvore[]
 
+                solicitacoesArray.sort((a, b) => {
+                    const dateA = new Date(a.data).getTime()
+                    const dateB = new Date(b.data).getTime()
+                    return dateB - dateA
+                })
+
                 setSolicitacoes(solicitacoesArray)
+
                 const solicitacoesFormatadas = solicitacoesArray
                     .filter(s => s.localizacao?.length === 2) // Filtra somente as que têm coordenadas
+                    .filter(s => s.situacao === false)
                     .map((s) => ({
                         nome: s.nome,
                         latitude: parseFloat(s.localizacao[0]),
                         longitude: parseFloat(s.localizacao[1]),
                         id: s.id,
-                        icone: '/icones/onibus.png', // Defina um ícone padrão
+                        icone: '/icones/icone-corte-poda-arvore.png',
                         telefone: s.telefone,
                         motivoDaSolicitacao: s.motivoDaSolicitacao,
                         tipoDeServico: s.tipoDeServico,
@@ -101,7 +135,9 @@ export default function Page() {
                                         <Image alt="imagem da solicitação" src={solicitacao.imagem ? solicitacao.imagem : ''} width={100} height={100}></Image>
                                     </td>
                                     <td className="px-4 py-1">{solicitacao.situacao ? 'Atendida' : 'Não foi Atendida'}</td>
-                                    <td className="px-4 py-1"><button>Solicitação Atendida</button></td>
+                                    <td className="px-4 py-1 bg-blue-400">
+                                        <button onClick={() => concluido(solicitacao.id)}>Solicitação Atendida</button>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
@@ -110,7 +146,7 @@ export default function Page() {
                 <div className="flex flex-col gap-4 lg:gap-8 lg:my-4">
                     <h2 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center md:text-3xl lg:text-4xl">Visão Geral de todos os pontos</h2>
                     <div className="w-full max-w-[1100px] mx-auto h-[300px] bg-black border-2 border-[--verde] overflow-hidden md:h-[400px] xl:h-[500px]">
-                        <Mapa latitude={-23.49783040582745} longitude={-49.92295585808861} zoom={15} arrayPontosGeral={solicitacoesMapa} />
+                        <Mapa latitude={-23.49783040582745} longitude={-49.92295585808861} zoom={15} arrayPontosGeral={solicitacoesMapa} concluido={concluido} />
                     </div>
                 </div>
                 <AncoraContainer linkVoltar="/servidores"></AncoraContainer>

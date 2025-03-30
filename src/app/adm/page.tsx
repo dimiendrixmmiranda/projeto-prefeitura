@@ -44,7 +44,7 @@ export default function Page() {
                                 </Link>
                             </li>
                             <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px]">
-                                <Link href={''} className="w-full h-full flex justify-center items-center cursor-pointer p-2 font-bold text-xl leading-6 text-white">
+                                <Link href={'/adm/adicionarNovoComercio'} className="w-full h-full flex justify-center items-center cursor-pointer p-2 font-bold text-xl leading-6 text-white">
                                     <p>Solicitação de Cadastro de Comércio</p>
                                 </Link>
                             </li>

@@ -11,6 +11,7 @@ interface MapProps {
     longitude?: number;
     zoom?: number;
     arrayPontosGeral?: Item[];
+    concluido?: (id: string) => void
 }
 
 const MapaSolicitacao: FC<MapProps> = ({
@@ -18,9 +19,8 @@ const MapaSolicitacao: FC<MapProps> = ({
     longitude = -46.633308,
     zoom = 17,
     arrayPontosGeral = [],
+    concluido
 }) => {
-
-
     return (
         <div className={styles.mapWrapper}>
             <MapContainer
@@ -85,7 +85,12 @@ const MapaSolicitacao: FC<MapProps> = ({
                                                 </div>
                                             ) : ('')
                                         }
-                                        <button className="bg-blue-500 text-white px-2 py-1 rounded-md w-full">Concluir</button>
+                                        <button
+                                            className="mt-2 px-4 py-2 bg-green-500 text-white rounded"
+                                            onClick={() => concluido && ponto.id && concluido(ponto.id)}
+                                        >
+                                            Marcar como Concluído
+                                        </button>
                                     </div>
                                 </Popup>
                             </Marker>

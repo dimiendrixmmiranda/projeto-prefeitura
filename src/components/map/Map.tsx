@@ -6,7 +6,6 @@ import { FC } from "react";
 import HospitalEPosto from "@/core/hospitalEPosto/HospitalEPosto";
 import { Escola } from "@/core/escola/Escola";
 import Ponto from "@/core/ponto/Ponto";
-import Comercio from "@/core/comercio/Comercio";
 import Link from "next/link";
 
 interface MapProps {
@@ -16,7 +15,7 @@ interface MapProps {
     texto?: string;
     zoom?: number;
     iconUrl?: string;
-    arrayPontosGeral?: Ponto[] | HospitalEPosto[] | Escola[] | Comercio[];
+    arrayPontosGeral?: Ponto[] | HospitalEPosto[] | Escola[];
 }
 
 const Map: FC<MapProps> = ({
