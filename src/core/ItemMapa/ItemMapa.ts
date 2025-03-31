@@ -12,4 +12,6 @@ export default interface Item {
     motivoDaSolicitacao?:string
     tipoDeServico?: string
     imagem?: string
+    horarioDeAtendimento?: string
+    endereco?: string
 }

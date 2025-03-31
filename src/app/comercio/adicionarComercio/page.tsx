@@ -25,7 +25,7 @@ export default function Page() {
     const [erroImagemTamanho, setErroImagemTamanho] = useState<string | null>()
     const [imagemBase64, setImagemBase64] = useState<string | null>()
     const [imagemPreview, setImagemPreview] = useState<string | null>()
-
+    const [bairro, setBairro] = useState('')
 
     async function salvarNovoComercio(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
@@ -41,6 +41,7 @@ export default function Page() {
                 horarioDeAtendimento,
                 telefone,
                 endereco,
+                bairro,
                 localizacao: [latitude, longitude],
                 categoriaComercio,
                 redesSociais: {
@@ -51,7 +52,7 @@ export default function Page() {
                 },
                 imagem: imagemBase64,
                 situacao: false, 
-                data: new Date().toISOString(),
+                data: new Date(),
             };
             
             const docRef = await addDoc(collection(db, "solicitacacaoDeCadastroDeComercio"), solicitacao);
@@ -97,6 +98,10 @@ export default function Page() {
                             <label htmlFor="endereco">Endereço:</label>
                             <input type="text" name="endereco" id="endereco" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
                         </fieldset>
+                        <fieldset>
+                            <label htmlFor="bairro">Bairro:</label>
+                            <input type="text" name="bairro" id="bairro" value={bairro} onChange={(e) => setBairro(e.target.value)} />
+                        </fieldset>
                         <fieldset className="grid grid-cols-2 gap-x-4 gap-y-2">
                             <label className="col-start-1 col-end-3">Informe a localização do seu comércio:</label>
                             <input type="text" placeholder="Latitude..." name="latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
@@ -120,6 +125,7 @@ export default function Page() {
                         <fieldset className="flex gap-4">
                             <label htmlFor="categoria">Categoria:</label>
                             <select name="categoria" id="categoria" className="w-full" value={categoriaComercio} onChange={(e) => setCategoriaComercio(e.target.value)} >
+                                <option value="">Selecione</option>
                                 <option value="padaria">Padaria</option>
                                 <option value="mercado">Mercado</option>
                                 <option value="farmacia">Farmácia</option>
