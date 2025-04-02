@@ -1,5 +1,6 @@
 'use client';
 
+import AncoraContainer from "@/components/ancora/AncoraContainer";
 import Template from "@/components/template/Template";
 import Comercio from "@/core/comercio/Comercio";
 import { db } from "@/lib/firebase";
@@ -10,6 +11,8 @@ import { useEffect, useState } from "react";
 export default function Page() {
 
     const [solicitacoes, setSolicitacoes] = useState<Comercio[]>([]);
+
+    console.log(solicitacoes)
 
     useEffect(() => {
         const fetchSolicitacoes = async () => {
@@ -27,8 +30,8 @@ export default function Page() {
                         endereco: data.endereco,
                         categoriaComercio: data.categoriaComercio,
                         redesSociais: data.redesSociais,
-                        data: data.data,
-                        situacao: data.situacao 
+                        data: data.data ? data.data.toDate() : null,
+                        situacao: data.situacao,
                     }
                 })
 
@@ -52,7 +55,7 @@ export default function Page() {
         try {
             const comercioRef = doc(db, "solicitacacaoDeCadastroDeComercio", solicitacao.id);
             await updateDoc(comercioRef, { situacao: true });
-    
+
             // Atualiza o estado localmente sem precisar buscar de novo no Firestore
             setSolicitacoes((prev) =>
                 prev.map((item) =>
@@ -63,12 +66,12 @@ export default function Page() {
             console.error("Erro ao aprovar comércio:", error);
         }
     }
-    
+
     async function reprovarComercio(solicitacao: Comercio) {
         try {
             const comercioRef = doc(db, "solicitacacaoDeCadastroDeComercio", solicitacao.id);
             await updateDoc(comercioRef, { situacao: false });
-    
+
             // Atualiza o estado localmente
             setSolicitacoes((prev) =>
                 prev.map((item) =>
@@ -121,6 +124,7 @@ export default function Page() {
                         ))}
                     </tbody>
                 </table>
+                <AncoraContainer linkVoltar="/adm"></AncoraContainer>
             </div>
         </Template>
     )

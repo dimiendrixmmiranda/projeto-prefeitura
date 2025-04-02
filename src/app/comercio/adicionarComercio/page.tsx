@@ -27,6 +27,7 @@ export default function Page() {
     const [imagemPreview, setImagemPreview] = useState<string | null>()
     const [bairro, setBairro] = useState('')
 
+    
     async function salvarNovoComercio(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
 
@@ -44,20 +45,35 @@ export default function Page() {
                 bairro,
                 localizacao: [latitude, longitude],
                 categoriaComercio,
-                redesSociais: {
-                    whatsapp: whatsapp,
-                    facebook: facebook,
-                    email: email,
-                    instagram: instagram,
+                redesSociais: [{
+                    icone: 'IoLogoWhatsapp',
+                    nome: 'WhatsApp',
+                    link: whatsapp
                 },
+                {
+                    icone: 'AiFillInstagram',
+                    nome: 'Instagram',
+                    link: instagram
+                },
+                {
+                    icone: 'IoLogoFacebook',
+                    nome: 'Facebook',
+                    link: facebook
+                },
+                {
+                    icone: 'MdEmail',
+                    nome: 'Email',
+                    link: email
+                },
+                ],
                 imagem: imagemBase64,
-                situacao: false, 
+                situacao: false,
                 data: new Date(),
             };
-            
+
             const docRef = await addDoc(collection(db, "solicitacacaoDeCadastroDeComercio"), solicitacao);
             await setDoc(doc(db, "solicitacacaoDeCadastroDeComercio", docRef.id), { ...solicitacao, id: docRef.id });
-            
+
             console.log("Pedido salvo com ID:", docRef.id);
             console.log(solicitacao);
 

@@ -7,6 +7,10 @@ import Item from "@/core/ItemMapa/ItemMapa";
 import Image from "next/image";
 import { SiGooglemaps } from "react-icons/si";
 import { FaClock, FaPhone } from "react-icons/fa";
+import Link from "next/link";
+import { IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io5";
+import { AiFillInstagram } from "react-icons/ai";
+import { MdEmail } from "react-icons/md";
 
 interface MapProps {
     latitude?: number;
@@ -55,22 +59,46 @@ const MapaComercio: FC<MapProps> = ({
                                                 </div>
                                             ) : ('')
                                         }
-                                        <h2>{ponto.nome}</h2>
+                                        <h2 className="text-2xl leading-7 text-center">{ponto.nome}</h2>
                                         {
                                             ponto.horarioDeAtendimento ? (
-                                                <p style={{ margin: '0px', alignSelf: 'start'}} className="flex items-center justify-center"><FaClock />: Horário de atendimento: {ponto.horarioDeAtendimento}</p>
+                                                <p style={{ margin: '0px', alignSelf: 'start' }} className="flex items-center justify-center"><FaClock />: Horário de atendimento: {ponto.horarioDeAtendimento}</p>
                                             ) : ''
                                         }
                                         {
                                             ponto.endereco ? (
-                                                <p style={{ margin: '0px', alignSelf: 'start'}} className="flex items-center justify-center"><SiGooglemaps />:  {ponto.endereco}</p>
+                                                <p style={{ margin: '0px', alignSelf: 'start' }} className="flex items-center justify-center"><SiGooglemaps />:  {ponto.endereco}</p>
                                             ) : ''
                                         }
                                         {
                                             ponto.telefone ? (
-                                                <p style={{ margin: '0px', alignSelf: 'start'}} className="flex items-center justify-center"><FaPhone />:  {ponto.telefone}</p>
+                                                <Link href={`tel:${ponto.telefone}`} style={{ margin: '0px', alignSelf: 'start', color: '#3F3F46' }} className="flex items-center justify-center" ><FaPhone />:  {ponto.telefone}</Link>
                                             ) : ''
                                         }
+                                        <ul className="flex w-full">
+                                            {
+                                                ponto.redesSociais?.map((rede, index) =>
+                                                    rede.link ? ( // Retorna diretamente sem `{}` e `return`
+                                                        <li key={index} className="flex-1 flex justify-center items-center">
+                                                            <Link href={rede.link} style={{ color: "#3F3F46" }}>
+                                                                {
+                                                                    rede.nome.toLowerCase() == 'whatsapp' ? <IoLogoWhatsapp className="text-3xl"/> : ''
+                                                                }
+                                                                {
+                                                                    rede.nome.toLowerCase() == 'instagram' ? <AiFillInstagram className="text-3xl"/> : ''
+                                                                }
+                                                                {
+                                                                    rede.nome.toLowerCase() == 'facebook' ? <IoLogoFacebook className="text-3xl"/> : ''
+                                                                }
+                                                                {
+                                                                    rede.nome.toLowerCase() == 'email' ? <MdEmail className="text-3xl"/> : ''
+                                                                }
+                                                            </Link>
+                                                        </li>
+                                                    ) : null
+                                                )
+                                            }
+                                        </ul>
                                     </div>
                                 </Popup>
                             </Marker>

@@ -3,9 +3,11 @@
 import Comercio from "@/core/comercio/Comercio";
 import Image from "next/image";
 import Link from "next/link";
+import { AiFillInstagram } from "react-icons/ai";
 import { BsTelephoneFill } from "react-icons/bs";
 import { FaBagShopping, FaClockRotateLeft } from "react-icons/fa6";
-import { IoLocation } from "react-icons/io5";
+import { IoLocation, IoLogoFacebook, IoLogoWhatsapp } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 
 interface CardComercioProps {
     comercio: Comercio
@@ -44,15 +46,26 @@ export default function CardComercio({ comercio }: CardComercioProps) {
                     </div>
                     <ul className="w-full flex text-2xl lg:max-w-[85%] lg:mx-auto ">
                         {
-                            comercio.redesSociais != undefined && comercio.redesSociais.map((rede, i) => {
-                                return (
-                                    <li key={i} className="flex-1 flex justify-center">
-                                        <Link href={rede.link}>
-                                            {rede.icone}
+                            comercio.redesSociais?.map((rede, index) =>
+                                rede.link ? (
+                                    <li key={index} className="flex-1 flex justify-center items-center">
+                                        <Link href={rede.link} style={{ color: "#3F3F46" }}>
+                                            {
+                                                rede.nome.toLowerCase() == 'whatsapp' ? <IoLogoWhatsapp className="text-3xl" /> : ''
+                                            }
+                                            {
+                                                rede.nome.toLowerCase() == 'instagram' ? <AiFillInstagram className="text-3xl" /> : ''
+                                            }
+                                            {
+                                                rede.nome.toLowerCase() == 'facebook' ? <IoLogoFacebook className="text-3xl" /> : ''
+                                            }
+                                            {
+                                                rede.nome.toLowerCase() == 'email' ? <MdEmail className="text-3xl" /> : ''
+                                            }
                                         </Link>
                                     </li>
-                                )
-                            })
+                                ) : null
+                            )
                         }
                     </ul>
                 </div>

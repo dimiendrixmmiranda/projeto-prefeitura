@@ -1,3 +1,4 @@
+import RedesSociais from "../redesSociais/RedesSociais"
 
 export default interface Item {
     latitude: number
@@ -7,11 +8,12 @@ export default interface Item {
     id?: string
     servicoSolicitado?: string
     condicaoAtual?: string
-    telefone?:string
+    telefone?: string
     tipoDeEntulho?: string
-    motivoDaSolicitacao?:string
+    motivoDaSolicitacao?: string
     tipoDeServico?: string
     imagem?: string
     horarioDeAtendimento?: string
     endereco?: string
+    redesSociais?: RedesSociais[]
 }

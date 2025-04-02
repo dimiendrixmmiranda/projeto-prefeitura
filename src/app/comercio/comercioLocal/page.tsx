@@ -9,8 +9,8 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import CardComercio from '@/components/cardComercio/CardComercio';
 import Comercio from '@/core/comercio/Comercio';
+import RedesSociais from '@/core/redesSociais/RedesSociais';
 const Mapa = dynamic(() => import("@/components/mapaComercio"), { ssr: false });
-
 
 interface Comercios {
     nome: string
@@ -24,6 +24,7 @@ interface Comercios {
     situacao: boolean
     imagem?: string
     data: Date
+    redesSociais: RedesSociais[]
 }
 
 
@@ -68,6 +69,7 @@ export default function ListaDeComercios() {
                         situacao: data.situacao,
                         categoriaComercio: data.categoriaComercio,
                         data: data.data,
+                        redesSociais: data.redesSociais
                     };
                 });
 
@@ -84,6 +86,7 @@ export default function ListaDeComercios() {
                     categoriaComercio: s.categoriaComercio ?? "Desconhecido",
                     data: s.data ?? new Date(), // Garante uma data padrão
                     situacao: s.situacao ?? false,
+                    redesSociais: s.redesSociais
                 }));
                 
 
@@ -103,7 +106,8 @@ export default function ListaDeComercios() {
                         telefone: s.telefone,
                         imagem: s.imagem,
                         endereco: s.endereco,
-                        horarioDeAtendimento: s.horarioDeAtendimento
+                        horarioDeAtendimento: s.horarioDeAtendimento,
+                        redesSociais: s.redesSociais
                     }));
 
                 setSolicitacoesMapa(solicitacoesFormatadas);
@@ -118,6 +122,7 @@ export default function ListaDeComercios() {
     console.log(solicitacoes)
     console.log(solicitacoesMapa)
     console.log(comercios)
+
 
     return (
         <Template>
