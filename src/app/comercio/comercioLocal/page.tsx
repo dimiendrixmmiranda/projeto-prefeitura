@@ -51,6 +51,9 @@ export default function ListaDeComercios() {
     const [solicitacoesMapa, setSolicitacoesMapa] = useState<Item[]>([]);
     const [comercios, setComercios] = useState<Comercio[]>([])
 
+    const [termoBusca, setTermoBusca] = useState('');
+    const [categoriaFiltro, setCategoriaFiltro] = useState('');
+
     useEffect(() => {
         const fetchSolicitacoes = async () => {
             try {
@@ -88,7 +91,7 @@ export default function ListaDeComercios() {
                     situacao: s.situacao ?? false,
                     redesSociais: s.redesSociais
                 }));
-                
+
 
                 setComercios(comerciosFormatados);
 
@@ -123,6 +126,10 @@ export default function ListaDeComercios() {
     console.log(solicitacoesMapa)
     console.log(comercios)
 
+    const comerciosFiltrados = comercios.filter(comercio =>
+        comercio.nome.toLowerCase().includes(termoBusca.toLowerCase()) &&
+        (categoriaFiltro === '' || comercio.categoriaComercio === categoriaFiltro)
+    );
 
     return (
         <Template>
@@ -141,17 +148,45 @@ export default function ListaDeComercios() {
                     </div>
                 </div>
 
+                {/* Filtros */}
+                <div className="flex flex-col gap-4 w-full md:grid md:grid-cols-2 lg:grid-cols-4">
+                    <fieldset className='flex flex-col'>
+                        <label htmlFor="buscar">Buscar Comércio</label>
+                        <input
+                            type="text"
+                            id="buscar"
+                            value={termoBusca}
+                            onChange={(e) => setTermoBusca(e.target.value)}
+                            className='h-[30px] px-2'
+                        />
+                    </fieldset>
+                    <fieldset className='flex flex-col'>
+                        <label htmlFor="categoria">Filtrar por Categoria</label>
+                        <select
+                            id="categoria"
+                            value={categoriaFiltro}
+                            onChange={(e) => setCategoriaFiltro(e.target.value)}
+                            className='h-[30px] px-2'
+                        >
+                            <option value="">Todas</option>
+                            <option value="padaria">Padaria</option>
+                            <option value="mercado">Mercado</option>
+                            <option value="farmacia">Farmácia</option>
+                            <option value="petshop">Petshop</option>
+                            <option value="veterinaria">Veterinária</option>
+                        </select>
+                    </fieldset>
+                </div>
+
                 <ul className='flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
                     {
-                        comercios.map((comercio, i) => {
-                            return (
-                                <CardComercio key={i} comercio={comercio}></CardComercio>
-                            )
-                        })
+                        comerciosFiltrados.map((comercio, i) => (
+                            <CardComercio key={i} comercio={comercio}></CardComercio>
+                        ))
                     }
                 </ul>
                 <AncoraContainer></AncoraContainer>
             </div>
-        </Template>
+        </Template >
     );
 }

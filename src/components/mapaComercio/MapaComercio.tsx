@@ -59,7 +59,7 @@ const MapaComercio: FC<MapProps> = ({
                                                 </div>
                                             ) : ('')
                                         }
-                                        <h2 className="text-2xl leading-7 text-center">{ponto.nome}</h2>
+                                        <h2 className="text-2xl leading-7 text-center mb-4">{ponto.nome}</h2>
                                         {
                                             ponto.horarioDeAtendimento ? (
                                                 <p style={{ margin: '0px', alignSelf: 'start' }} className="flex items-center justify-center"><FaClock />: Horário de atendimento: {ponto.horarioDeAtendimento}</p>
@@ -75,7 +75,7 @@ const MapaComercio: FC<MapProps> = ({
                                                 <Link href={`tel:${ponto.telefone}`} style={{ margin: '0px', alignSelf: 'start', color: '#3F3F46' }} className="flex items-center justify-center" ><FaPhone />:  {ponto.telefone}</Link>
                                             ) : ''
                                         }
-                                        <ul className="flex w-full">
+                                        <ul className="flex w-full mt-4">
                                             {
                                                 ponto.redesSociais?.map((rede, index) =>
                                                     rede.link ? ( // Retorna diretamente sem `{}` e `return`
