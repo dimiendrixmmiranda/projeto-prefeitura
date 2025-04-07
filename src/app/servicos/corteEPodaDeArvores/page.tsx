@@ -6,6 +6,7 @@ import handleImagemChange from "@/utils/handleImageChange";
 import limparCampos from "@/utils/limparCampos";
 import pegarLocalizacao from "@/utils/pegarLocalizacao";
 import { addDoc, collection } from "firebase/firestore";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Page() {
@@ -41,7 +42,7 @@ export default function Page() {
                 localizacao: [latitude, longitude],
                 motivoDaSolicitacao,
                 tipoDeServico,
-                alturaArvore,                
+                alturaArvore,
                 imagem: imagemBase64,
                 data: new Date(),
                 situacao: false
@@ -53,7 +54,7 @@ export default function Page() {
             console.log(solicitacao);
 
             // 4. Limpar campos após salvar
-            limparCampos([setNome,setCpf, setTelefone, setEndereco, setBairro, setLatitude, setLongitude, setMotivoDaSolicitacao, setTipoDeServico, setAlturaArvore, setImagemBase64, setImagemPreview]);
+            limparCampos([setNome, setCpf, setTelefone, setEndereco, setBairro, setLatitude, setLongitude, setMotivoDaSolicitacao, setTipoDeServico, setAlturaArvore, setImagemBase64, setImagemPreview]);
             const inputImagem = document.getElementById('imagens') as HTMLInputElement | null;
             if (inputImagem) {
                 inputImagem.value = '';
@@ -68,30 +69,31 @@ export default function Page() {
     return (
         <Template>
             <div className="text-black p-4">
-            <h2 className="text-2xl leading-6 text-center text-[--verde] font-bold mb-4 lg:text-3xl">Formulário de Solicitação de Corte ou Poda de Árvores</h2>
-                <form className="p-6 border-2 border-[--verde] relative flex flex-col gap-3 max-w-[500px] mx-auto sm:p-8">
+                <h2 className="text-2xl leading-6 text-center text-[--verde] font-bold mb-4 lg:text-3xl">Formulário de Solicitação de Corte ou Poda de Árvores</h2>
+                <form className="relative p-6 border-2 border-[--verde] flex flex-col gap-3 max-w-[500px] mx-auto sm:p-8">
+                    <Image src={'/logo-prefeitura.png'} alt="Logo Prefeitura" width={25} height={25} className="absolute top-2 right-2"></Image>
                     <fieldset>
                         <label htmlFor="nome">Informe seu nome completo:</label>
-                        <input type="text" name="nome" id="nome" className="w-full h-[30px] rounded-lg p-2 text-sm" value={nome} onChange={(e) => setNome(e.target.value)}/>
+                        <input type="text" name="nome" id="nome" className="w-full h-[30px] rounded-lg p-2 text-sm" value={nome} onChange={(e) => setNome(e.target.value)} />
                     </fieldset>
                     <fieldset>
                         <label htmlFor="cpf">Informe seu nome CPF:</label>
-                        <input type="text" name="cpf" id="cpf" className="w-full h-[30px] rounded-lg p-2 text-sm" value={cpf} onChange={(e) => setCpf(e.target.value)}/>
+                        <input type="text" name="cpf" id="cpf" className="w-full h-[30px] rounded-lg p-2 text-sm" value={cpf} onChange={(e) => setCpf(e.target.value)} />
                     </fieldset>
                     <fieldset>
                         <label htmlFor="telefone">Informe seu nome Telefone:</label>
-                        <input type="text" name="telefone" id="telefone" className="w-full h-[30px] rounded-lg p-2 text-sm" value={telefone} onChange={(e) => setTelefone(e.target.value)}/>
+                        <input type="text" name="telefone" id="telefone" className="w-full h-[30px] rounded-lg p-2 text-sm" value={telefone} onChange={(e) => setTelefone(e.target.value)} />
                     </fieldset>
                     <fieldset>
                         <label htmlFor="endereco">Informe seu Endereço:</label>
-                        <input type="text" name="endereco" id="endereco" className="w-full h-[30px] rounded-lg p-2 text-sm" value={endereco} onChange={(e) => setEndereco(e.target.value)}/>
+                        <input type="text" name="endereco" id="endereco" className="w-full h-[30px] rounded-lg p-2 text-sm" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
                     </fieldset>
                     <fieldset>
                         <label htmlFor="bairro">Informe seu Bairro:</label>
-                        <input type="text" name="bairro" id="bairro" className="w-full h-[30px] rounded-lg p-2 text-sm" value={bairro} onChange={(e) => setBairro(e.target.value)}/>
+                        <input type="text" name="bairro" id="bairro" className="w-full h-[30px] rounded-lg p-2 text-sm" value={bairro} onChange={(e) => setBairro(e.target.value)} />
                     </fieldset>
                     <fieldset className="grid grid-cols-2 gap-2">
-                        <label htmlFor="localizacao" className="col-start-1 col-end-3">Informe a localição (Opcional):</label>
+                        <label htmlFor="localizacao" className="col-start-1 col-end-3">Informe a localização (Opcional):</label>
                         <input type="text" name="latitude" id="latitude" className="w-full h-[30px] rounded-lg p-2 text-sm" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
                         <input type="text" name="longitude" id="longitude" className="w-full h-[30px] rounded-lg p-2 text-sm" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
                         <button
@@ -129,7 +131,7 @@ export default function Page() {
                     </fieldset>
                     <fieldset>
                         <label htmlFor="altura">Altura da Árvore (Opcional):</label>
-                        <input type="text" name="altura" id="altura" className="w-full h-[30px] rounded-lg p-2 text-sm" value={alturaArvore} onChange={(e) => setAlturaArvore(e.target.value)}/>
+                        <input type="text" name="altura" id="altura" className="w-full h-[30px] rounded-lg p-2 text-sm" value={alturaArvore} onChange={(e) => setAlturaArvore(e.target.value)} />
                     </fieldset>
                     {/* Area da foto */}
                     <fieldset>

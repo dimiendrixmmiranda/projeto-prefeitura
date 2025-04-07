@@ -15,13 +15,13 @@ export default function Page() {
     const [bairro, setBairro] = useState('')
     const [latitude, setLatitude] = useState('')
     const [longitude, setLongitude] = useState('')
-    const [tipoDeEntulho, setTipoDeEntulho] = useState('')
-    const [erroImagemTamanho, setErroImagemTamanho] = useState<string | null>('')
-    const [imagemBase64, setImagemBase64] = useState('')
-    const [imagemPreview, setImagemPreview] = useState('')
-    const [informacaoAdicional, setInformacaoAdicional] = useState('')
+    const [tipoDoLocal, setTipoDoLocal] = useState('')
+    const [descricao, setDescricao] = useState('')
+    const [erroImagemTamanho, setErroImagemTamanho] = useState<string | null>()
+    const [imagemBase64, setImagemBase64] = useState<string | null>()
+    const [imagemPreview, setImagemPreview] = useState<string | null>()
 
-    async function salvarSolicitacaoDeColetaDeEntulho(e: React.MouseEvent<HTMLButtonElement>) {
+    async function salvarSolicitacaoCortePodaDeArvore(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
 
         if (erroImagemTamanho) {
@@ -35,20 +35,19 @@ export default function Page() {
                 endereco,
                 bairro,
                 localizacao: [latitude, longitude],
-                tipoDeEntulho,
+                tipoDoLocal,
                 imagem: imagemBase64,
-                informacaoAdicional,
                 data: new Date(),
                 situacao: false
             };
 
             // 3. Salvar no Firestore
-            const docRef = await addDoc(collection(db, "solicitacaoColetaDeEntulho"), solicitacao);
+            const docRef = await addDoc(collection(db, "denunciaDengue"), solicitacao);
             console.log("Pedido salvo com ID:", docRef.id);
             console.log(solicitacao);
 
             // 4. Limpar campos após salvar
-            limparCampos([setNome, setEndereco, setBairro, setLatitude, setLongitude, setTipoDeEntulho, setImagemBase64, setImagemPreview, setInformacaoAdicional]);
+            limparCampos([setNome, setEndereco, setBairro, setLatitude, setLongitude, setTipoDoLocal, setDescricao, setImagemBase64, setImagemPreview]);
             const inputImagem = document.getElementById('imagens') as HTMLInputElement | null;
             if (inputImagem) {
                 inputImagem.value = '';
@@ -60,23 +59,22 @@ export default function Page() {
         }
     }
 
-
     return (
         <Template>
-            <div className="text-black p-4">
-                <h2 className="text-2xl leading-6 text-center text-[--verde] font-bold mb-4 lg:text-3xl">Formulário de Solicitação de coleta de Entulho Orgânico ou de Obra</h2>
-                <form className="p-6 border-2 border-[--verde] relative flex flex-col gap-3 max-w-[500px] mx-auto  overflow-hidden sm:p-8">
+            <div className="text-black p-4 overflow-hidden">
+                <h2 className="text-2xl leading-6 text-center text-[--verde] font-bold mb-4 lg:text-3xl">Formulário para denunciar possíves focos de dengue (Terrenos Baldios, Calhas Entupidas, Lixo Acumulado, etc...)</h2>
+                <form className="relative p-6 border-2 border-[--verde] flex flex-col gap-3 max-w-[500px] mx-auto sm:p-8">
                     <Image src={'/logo-prefeitura.png'} alt="Logo Prefeitura" width={25} height={25} className="absolute top-2 right-2"></Image>
                     <fieldset>
                         <label htmlFor="nome">Informe seu nome completo:</label>
                         <input type="text" name="nome" id="nome" className="w-full h-[30px] rounded-lg p-2 text-sm" value={nome} onChange={(e) => setNome(e.target.value)} />
                     </fieldset>
                     <fieldset>
-                        <label htmlFor="endereco">Informe seu Endereço:</label>
+                        <label htmlFor="endereco">Informe o endereço da denúncia:</label>
                         <input type="text" name="endereco" id="endereco" className="w-full h-[30px] rounded-lg p-2 text-sm" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
                     </fieldset>
                     <fieldset>
-                        <label htmlFor="bairro">Informe seu Bairro:</label>
+                        <label htmlFor="bairro">Informe o bairro da denúncia:</label>
                         <input type="text" name="bairro" id="bairro" className="w-full h-[30px] rounded-lg p-2 text-sm" value={bairro} onChange={(e) => setBairro(e.target.value)} />
                     </fieldset>
                     <fieldset className="grid grid-cols-2 gap-2">
@@ -100,12 +98,19 @@ export default function Page() {
                         </button>
                     </fieldset>
                     <fieldset className="flex flex-col">
-                        <label htmlFor="tipoDeEntulho">Tipo de Entulho</label>
-                        <select name="tipoDeEntulho" id="tipoDeEntulho" className="h-[30px] px-2" value={tipoDeEntulho} onChange={(e) => setTipoDeEntulho(e.target.value)}>
+                        <label htmlFor="tipoDoLocal">Tipo do Local</label>
+                        <select name="tipoDoLocal" id="tipoDoLocal" className="h-[30px] px-2" value={tipoDoLocal} onChange={(e) => setTipoDoLocal(e.target.value)}>
                             <option value="">Selecione</option>
-                            <option value="entulho-organico">Entulho Organico</option>
-                            <option value="entulho-de-obra">Entulho De Obra</option>
+                            <option value="terreno-baldio">Terreno Baldio</option>
+                            <option value="casa-abandonada">Casa Abandonada</option>
+                            <option value="obra-em-construcao">Obra Em Construcao</option>
+                            <option value="comercio">Comércio</option>
+                            <option value="outro">Outro</option>
                         </select>
+                    </fieldset>
+                    <fieldset>
+                        <label htmlFor="descricao">Descricao do Problema:</label>
+                        <textarea name="descricao" id="descricao" className="w-full h-[200px] p-2" value={descricao} onChange={(e) => setDescricao(e.target.value)}></textarea>
                     </fieldset>
                     {/* Area da foto */}
                     <fieldset>
@@ -118,12 +123,7 @@ export default function Page() {
                             </div>
                         )}
                     </fieldset>
-
-                    <fieldset className="flex flex-col">
-                        <label htmlFor="informacaoAdicional">Informação Adicional:</label>
-                        <textarea name="informacaoAdicional" id="informacaoAdicional" className="h-[200px]" value={informacaoAdicional} onChange={(e) => setInformacaoAdicional(e.target.value)}></textarea>
-                    </fieldset>
-                    <button className="bg-[--verde] py-1 text-2xl uppercase font-bold text-white" onClick={(e) => salvarSolicitacaoDeColetaDeEntulho(e)}>Enviar</button>
+                    <button className="bg-[--verde] py-1 text-2xl uppercase font-bold text-white" onClick={(e) => salvarSolicitacaoCortePodaDeArvore(e)}>Enviar</button>
                 </form>
                 <AncoraContainer></AncoraContainer>
             </div>

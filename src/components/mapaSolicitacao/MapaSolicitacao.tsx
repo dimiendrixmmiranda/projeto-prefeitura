@@ -78,6 +78,11 @@ const MapaSolicitacao: FC<MapProps> = ({
                                             ) : ('')
                                         }
                                         {
+                                            ponto.tipoDoLocal ? (
+                                                <p style={{ margin: '0px' }}>Tipo do Local: {ponto.tipoDoLocal}</p>
+                                            ) : ('')
+                                        }
+                                        {
                                             ponto.imagem ? (
                                                 <div style={{ margin: '0px' }}>
                                                     <p style={{ margin: '0px' }}>Imagem:</p>

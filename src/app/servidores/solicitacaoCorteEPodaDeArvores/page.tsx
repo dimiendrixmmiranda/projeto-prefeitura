@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Item from "@/core/ItemMapa/ItemMapa";
+import CaixaImagem from "@/components/caixaImagem/CaixaImagem";
 const Mapa = dynamic(() => import("@/components/mapaSolicitacao"), { ssr: false });
 
 interface SolicitacaoCortePodaDeArvore {
@@ -28,7 +29,9 @@ interface SolicitacaoCortePodaDeArvore {
 export default function Page() {
     const [solicitacoes, setSolicitacoes] = useState<SolicitacaoCortePodaDeArvore[]>([])
     const [solicitacoesMapa, setSolicitacoesMapa] = useState<Item[]>([]);
-
+    const [imagemAtual, setImagemAtual] = useState('')
+    const [mostrarImagem, setMostrarImagem] = useState(false)
+    
     function concluido(id: string) {
         const solicitacaoRef = doc(db, "solicitacaoCortePodaDeArvore", id);
 
@@ -121,7 +124,7 @@ export default function Page() {
                         </thead>
                         <tbody>
                             {solicitacoes.map((solicitacao, i) => (
-                                <tr key={i} className={`whitespace-nowrap ${i % 2 === 0 ? 'bg-green-200 text-black' : 'bg-green-600 text-white'}`}>
+                                <tr key={i} className={`whitespace-nowrap text-white ${solicitacao.situacao ? 'bg-green-600' : 'bg-red-600'}`}>
                                     <td className="px-4 py-1">{solicitacao.nome}</td>
                                     <td className="px-4 py-1">{solicitacao.cpf}</td>
                                     <td className="px-4 py-1">{solicitacao.endereco}</td>
@@ -131,18 +134,27 @@ export default function Page() {
                                     <td className="px-4 py-1">{solicitacao.alturaArvore}</td>
                                     <td className="px-4 py-1">{(solicitacao.data).toString()}</td>
                                     <td className="px-4 py-1">{solicitacao.localizacao[0]},{solicitacao.localizacao[1]}</td>
-                                    <td className="px-4 py-1">
+                                    <td
+                                        className="px-4 py-1 cursor-pointer"
+                                        onClick={() => {
+                                            if (solicitacao.imagem) {
+                                                setImagemAtual(solicitacao.imagem)
+                                                setMostrarImagem(true)
+                                            }
+                                        }}
+                                    >
                                         <Image alt="imagem da solicitação" src={solicitacao.imagem ? solicitacao.imagem : ''} width={100} height={100}></Image>
                                     </td>
                                     <td className="px-4 py-1">{solicitacao.situacao ? 'Atendida' : 'Não foi Atendida'}</td>
-                                    <td className="px-4 py-1 bg-blue-400">
-                                        <button onClick={() => concluido(solicitacao.id)}>Solicitação Atendida</button>
+                                    <td className="px-4 py-1 bg-[--cinza]">
+                                        <button className="bg-green-500 p-2 rounded-md" onClick={() => concluido(solicitacao.id)}>Solicitação Atendida</button>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 </div>
+                <CaixaImagem imagem={imagemAtual} visivel={mostrarImagem} onFechar={() => setMostrarImagem(false)} />
                 <div className="flex flex-col gap-4 lg:gap-8 lg:my-4">
                     <h2 className="text-2xl font-bold text-[--verde] uppercase leading-6 text-center md:text-3xl lg:text-4xl">Visão Geral de todos os pontos</h2>
                     <div className="w-full max-w-[1100px] mx-auto h-[300px] bg-black border-2 border-[--verde] overflow-hidden md:h-[400px] xl:h-[500px]">

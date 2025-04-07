@@ -106,6 +106,11 @@ export const listaDeMenus: Menu[] = [
                 id: 9
             },
             {
+                nome: 'Denunciar Possíveis Focos de Dengue',
+                link: `/servicos/denunciasFocoDengue`,
+                id: 16
+            },
+            {
                 nome: 'Concerto Iluminação Pública',
                 link: `/servicos/concertoIluminacaoPublica`,
                 id: 6

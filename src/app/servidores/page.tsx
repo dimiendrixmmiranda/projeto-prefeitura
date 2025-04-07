@@ -44,6 +44,11 @@ export default function Page() {
                                 <p>Solicitações de Cencerto de Iluminação Pública</p>
                             </Link>
                         </li>
+                        <li className="bg-[--verde] self-center justify-self-center flex justify-center items-center text-center w-full max-w-[300px] h-[100px] p-2">
+                            <Link href={'/servidores/denunciasFocoDengue'}>
+                                <p>Denúncias de Foco de Dengue</p>
+                            </Link>
+                        </li>
                     </ul>
                     <AncoraContainer></AncoraContainer>
                 </div>

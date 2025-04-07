@@ -16,4 +16,5 @@ export default interface Item {
     horarioDeAtendimento?: string
     endereco?: string
     redesSociais?: RedesSociais[]
+    tipoDoLocal?: string
 }

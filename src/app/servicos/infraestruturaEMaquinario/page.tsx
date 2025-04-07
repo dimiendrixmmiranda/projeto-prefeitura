@@ -5,6 +5,7 @@ import { db } from "@/lib/firebase";
 import handleImagemChange from "@/utils/handleImageChange";
 import pegarLocalizacao from "@/utils/pegarLocalizacao";
 import { addDoc, collection } from "firebase/firestore";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Page() {
@@ -82,8 +83,9 @@ export default function Page() {
     return (
         <Template>
             <div className="text-black p-4">
-            <h2 className="text-2xl leading-6 text-center text-[--verde] font-bold mb-4 lg:text-3xl">Formulário de Solicitação de Manutenção de Estradas e Serviços de Maquinário</h2>
+                <h2 className="text-2xl leading-6 text-center text-[--verde] font-bold mb-4 lg:text-3xl">Formulário de Solicitação de Manutenção de Estradas e Serviços de Maquinário</h2>
                 <form className="p-6 border-2 border-[--verde] relative flex flex-col gap-3 max-w-[500px] mx-auto  overflow-hidden sm:p-8">
+                    <Image src={'/logo-prefeitura.png'} alt="Logo Prefeitura" width={25} height={25} className="absolute top-2 right-2"></Image>
                     <fieldset>
                         <label htmlFor="nome">Informe seu nome completo:</label>
                         <input type="text" name="nome" id="nome" className="w-full h-[30px] rounded-lg p-2 text-sm" value={nome} onChange={(e) => setNome(e.target.value)} />
@@ -105,7 +107,7 @@ export default function Page() {
                         <input type="text" name="bairro" id="bairro" className="w-full h-[30px] rounded-lg p-2 text-sm" value={bairro} onChange={(e) => setBairro(e.target.value)} />
                     </fieldset>
                     <fieldset className="grid grid-cols-2 gap-2">
-                        <label htmlFor="localizacao" className="col-start-1 col-end-3">Informe a localição (Opcional):</label>
+                        <label htmlFor="localizacao" className="col-start-1 col-end-3">Informe a localização (Opcional):</label>
                         <input type="text" name="latitude" id="latitude" className="w-full h-[30px] rounded-lg p-2 text-sm" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
                         <input type="text" name="longitude" id="longitude" className="w-full h-[30px] rounded-lg p-2 text-sm" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
                         <button
