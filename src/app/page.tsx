@@ -19,7 +19,6 @@ export default function Home() {
 		<Template>
 			<AnunciosDaCidade />
 			<MenuDeServicos />
-
 			<div className="max-w-[1600px] mx-auto flex flex-col gap-4 overflow-hidden">
 				<div className="flex flex-col p-4 md:grid md:grid-cols-3 md:gap-4 xl:grid-cols-[300px_1fr] xl:gap-8">
 					{/* menu */}

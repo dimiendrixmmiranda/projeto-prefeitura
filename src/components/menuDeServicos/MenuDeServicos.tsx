@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function MenuDeServicos() {
     return (
-        <nav className="p-4">
+        <nav className="p-4 mt-4">
             <ul className="grid grid-cols-2 justify-center gap-2 md:grid-cols-3 md:max-w-[600px] md:mx-auto lg:grid-cols-6 lg:max-w-[1000px] lg:gap-8 2xl:max-w-[1260px]">
                 <li className=" mx-auto w-[130px] h-[130px] border-2 border-zinc-500 hover:scale-110 duration-300 transition-all sm:w-[150px] sm:h-[150px] md:w-[150px] md:h-[150px] 2xl:w-[200px] 2xl:h-[200px] overflow-hidden" style={{ borderRadius: '16px' }}>
                     <Link

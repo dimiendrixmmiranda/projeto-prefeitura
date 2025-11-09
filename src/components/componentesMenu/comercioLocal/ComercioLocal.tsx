@@ -71,7 +71,7 @@ export default function MapaComercioLocal() {
             </div>
             <div className="flex flex-col gap-4">
                 <h3 className="uppercase font-bold text-xl leading-6 lg:text-2xl xl:text-3xl">Encontre o Comércio ou Serviço Desejado:</h3>
-                <div className="flex flex-col gap-2 md:grid md:grid-cols-2">
+                <div className="flex flex-col gap-2 md:grid md:grid-cols-2 md:max-w-[730px] md:gap-6">
                     <input
                         type="text"
                         name="buscarPorNome"

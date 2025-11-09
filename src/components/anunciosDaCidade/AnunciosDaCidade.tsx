@@ -14,6 +14,11 @@ export default function AnunciosDaCidade() {
             id: 1,
             link: '',
             imagem: '/anuncios/iptu.png'
+        },
+        {
+            id: 2,
+            link: '',
+            imagem: '/anuncios/concurso-publico.png'
         }
     ];
 
@@ -27,7 +32,8 @@ export default function AnunciosDaCidade() {
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 5000 }}
                 loop
-                className="w-full h-[250px] sm:h-[300px] md:h-[380px] xl:h-[450px] 2xl:h-[550px]"
+                className="w-full h-[200px] sm:h-[250px] md:h-[400px] lg:h-[550px] xl:h-[600px] 2xl:max-w-[1440px] 2xl:mt-4"
+                style={{boxShadow: '2px 2px 4px black'}}
             >
                 {slides.map((slide) => (
                     <SwiperSlide key={slide.id} className="w-full h-full">

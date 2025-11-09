@@ -72,7 +72,7 @@ export default function Formulario() {
                 <div className="flex flex-col gap-2 w-full h-[940px] bg-zinc-900 text-white p-4 relative overflow-hidden sm:h-[940px] md:h-[1050px] md:p-8 lg:h-[600px] lg:grid lg:grid-cols-2 lg:gap-8 lg:p-8" style={{ boxShadow: '0 0 4px 2px black' }}>
                     <div className="flex flex-col w-full h-full z-10 lg:p-8">
                         <div className={`${active === 'cadastro' ? 'hidden' : 'flex'} flex-col gap-4 my-auto md:gap-6`}>
-                            <h2 className="uppercase font-secundaria text-3xl font-bold text-center md:text-5xl" style={{ textShadow: '1px 1px 3px black' }}>Fazer Login</h2>
+                            <h2 className="uppercase font-secundaria text-3xl font-bold text-center md:text-5xl" style={{ textShadow: '2px 2px 4px black' }}>Fazer Login</h2>
                             <form className="flex flex-col gap-2 md:gap-4" onSubmit={(e) => submeterLogin(e)}>
                                 <input type="text" placeholder="E-mail..." className="p-2 h-[35px] overflow-hidden text-black" value={email} onChange={(e) => setEmail(e.target.value)} style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
                                 <input type="password" placeholder="Senha..." className="p-2 h-[35px] overflow-hidden text-black" value={senha} onChange={(e) => setSenha(e.target.value)} style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
@@ -97,7 +97,7 @@ export default function Formulario() {
                     </div>
                     <div className="flex flex-col w-full h-full z-10 lg:p-8">
                         <div className={`${active === 'cadastro' ? 'flex' : 'hidden'} flex-col gap-4 my-auto md:gap-6`}>
-                            <h2 className="uppercase font-secundaria text-3xl font-bold text-center md:text-5xl" style={{ textShadow: '1px 1px 3px black' }}>Cadastro</h2>
+                            <h2 className="uppercase font-secundaria text-3xl font-bold text-center md:text-5xl" style={{ textShadow: '2px 2px 3px black' }}>Cadastro</h2>
                             <form className="flex flex-col gap-2 md:gap-4" onSubmit={(e) => submeterCadastro(e)}>
                                 <input type="text" placeholder="Nome..." className="p-2 h-[35px] overflow-hidden text-black" value={nome} onChange={(e) => setNome(e.target.value)} style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
                                 <input type="text" placeholder="E-mail..." className="p-2 h-[35px] overflow-hidden text-black" value={email} onChange={(e) => setEmail(e.target.value)} style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
@@ -124,7 +124,7 @@ export default function Formulario() {
                             </button>
                         </div>
                     </div>
-                    <div className={`flex flex-col gap-2 w-full h-full bg-[url('/background/bg.jpg')] bg-cover bg-center absolute top-[-50%] transition-all duration-500 left-0 ${active === 'login' ? 'top-[-50%] left-0 lg:top-0 lg:left-[-50%]' : 'top-[50%] left-0 lg:top-0 lg:left-[50%]'}`}></div>
+                    <div className={`flex flex-col gap-2 w-full h-full bg-[url('/background/bg.png')] bg-cover bg-center absolute top-[-50%] transition-all duration-500 left-0 ${active === 'login' ? 'top-[-50%] left-0 lg:top-0 lg:left-[-50%]' : 'top-[50%] left-0 lg:top-0 lg:left-[50%]'}`}></div>
                 </div>
                 <BotaoNavegar icone={<FaArrowLeft />} label="Voltar" link="/" style="ml-auto"/>
             </section>

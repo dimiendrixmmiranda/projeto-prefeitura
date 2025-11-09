@@ -12,6 +12,7 @@ import { Button } from "primereact/button";
 import useAuth from "@/lib/hooks/useAuth"
 import BotaoVoltar from "@/components/base/botaoVoltar/BotaoVoltar"
 import Horario from "@/interfaces/Horario"
+import pegarLocalizacao from "@/lib/utils/pegarLocalizacao"
 
 export default function CadastreComercio() {
     const { usuario } = useAuth()
@@ -141,6 +142,18 @@ export default function CadastreComercio() {
         }
     }
 
+    async function pegarLocalizacaoAtual() {
+        try {
+            const [lat, lon] = await pegarLocalizacao();
+            setLatitude(lat.toString());
+            setLongitude(lon.toString());
+            console.log("Localização atual:", lat, lon);
+        } catch (error) {
+            console.error("Erro ao obter localização:", error);
+            alert("Não foi possível obter sua localização. Verifique as permissões do navegador.");
+        }
+    }
+
     if (!usuario) {
         return (
             <div className="p-4 max-w-[900px] mx-auto flex flex-col justify-center items-center gap-4 min-h-[60vh] lg:p-8 lg:min-h-[70vh] lg:max-w-[1000px] xl:min-h-[75vh]">
@@ -198,12 +211,15 @@ export default function CadastreComercio() {
                     <input type="text" placeholder="Complemento..." className="p-2 h-[35px] text-black"
                         value={complemento} onChange={(e) => setComplemento(e.target.value)}
                         style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
-                    <input type="text" placeholder="Latitude..." className="p-2 h-[35px] text-black"
-                        value={latitude} onChange={(e) => setLatitude(e.target.value)}
-                        style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
-                    <input type="text" placeholder="Longitude..." className="p-2 h-[35px] text-black"
-                        value={longitude} onChange={(e) => setLongitude(e.target.value)}
-                        style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
+                    <fieldset className="grid grid-cols-2 gap-4">
+                        <input type="text" placeholder="Latitude..." className="p-2 h-[35px] text-black"
+                            value={latitude} onChange={(e) => setLatitude(e.target.value)}
+                            style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
+                        <input type="text" placeholder="Longitude..." className="p-2 h-[35px] text-black"
+                            value={longitude} onChange={(e) => setLongitude(e.target.value)}
+                            style={{ borderRadius: '12px', boxShadow: '0 0 2px 1px black' }} />
+                        <button type="button" className="col-start-1 col-end-3 bg-verde-escuro py-2 text-white font-bold" onClick={() => pegarLocalizacaoAtual()}>Pegar Localização Atual</button>
+                    </fieldset>
                 </div>
 
                 {/* Redes sociais */}
